@@ -1,5 +1,6 @@
 _backups/
 .claude/
+*.pdf
 sites/lu2co-v1/
 sites/lu2co-v3/
 sites/lu2co-v4/
