@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | LU2COHOUSE</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:         #fff9f9;
+      --accent:     #8b6770;
+      --accent-dark:#5a3d45;
+      --text:       #3d2b30;
+      --text-muted: #9b8085;
+      --divider:    rgba(139,103,112,0.15);
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Dot grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(139,103,112,0.18) 0.8px, transparent 0.8px);
+      background-size: 14px 14px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Soft radial glow */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70vmax;
+      height: 70vmax;
+      background: radial-gradient(circle, rgba(139,103,112,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      max-width: 520px;
+    }
+
+    .logo {
+      height: 36px;
+      width: auto;
+      margin-bottom: 3rem;
+      opacity: 0.85;
+    }
+
+    .code {
+      font-family: var(--font-serif);
+      font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+      opacity: 0.25;
+      margin-bottom: -0.5rem;
+      user-select: none;
+    }
+
+    .title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--accent-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.4;
+      margin: 0 auto 1.5rem;
+    }
+
+    .desc {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .btn-primary {
+      font-family: var(--font-sans);
+      font-size: 0.6875rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .btn-primary:hover { background: transparent; color: var(--accent); }
+    .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .btn-primary:active { opacity: 0.8; }
+
+    .btn-ghost {
+      font-family: var(--font-sans);
+      font-size: 0.6875rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: transparent;
+      text-decoration: none;
+      border: 1px solid rgba(139,103,112,0.35);
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .btn-ghost:active { opacity: 0.8; }
+
+    .footnote {
+      margin-top: 3.5rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(139,103,112,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="Brand%20Logos/logo1.png" onerror="this.style.display='none'" alt="LU2COHOUSE">
+
+    <p class="code">404</p>
+    <h1 class="title">This page doesn't exist</h1>
+    <div class="divider"></div>
+    <p class="desc">The page you're looking for may have moved,<br>been renamed, or never existed.</p>
+
+    <div class="actions">
+      <a href="/" class="btn-primary">Back to homepage</a>
+      <a href="/sites/lu2co-laptop/shop-all.html" class="btn-ghost">Browse all patterns</a>
+    </div>
+
+    <p class="footnote">lu2cohouse.com</p>
+  </div>
+
+  <script>
+    /* Route to the right version on load */
+    (function () {
+      var w = window.innerWidth;
+      var shopAll;
+      if (w <= 767) shopAll = 'sites/lu2co-mobile/shop-all.html';
+      else if (w >= 1600) shopAll = 'sites/lu2co-desktop/shop-all.html';
+      else shopAll = 'sites/lu2co-laptop/shop-all.html';
+      var link = document.querySelector('a[href*="shop-all"]');
+      if (link) link.href = shopAll;
+
+      /* Try to load the correct logo */
+      /* Logo is always the same path from root */
+    })();
+  </script>
+</body>
+</html>
