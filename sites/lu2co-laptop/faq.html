@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com https://db.onlinewebfonts.com;
+    font-src 'self' https://fonts.gstatic.com https://fonts.cdnfonts.com https://db.onlinewebfonts.com;
+    img-src 'self' data: https://img.youtube.com https://yt3.googleusercontent.com https://placehold.co;
+    connect-src 'none';
+    media-src 'self';
+    frame-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'none';
+  ">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    /* Device router */
+    (function(){
+      var p = location.pathname.split('/').pop() || 'index.html';
+      if (window.matchMedia('(max-width: 767px)').matches)
+        location.replace('../lu2co-mobile/' + p);
+      else if (window.matchMedia('(min-width: 1600px)').matches)
+        location.replace('../lu2co-desktop/' + p);
+    })();
+  </script>
+  <title>FAQ | Sewing Pattern Questions Answered | LU2COHOUSE</title>
+  <meta name="description" content="Answers to common questions about LU2COHOUSE sewing patterns — printing, downloads, skill levels, seam allowance, the shop bundle, licensing, and support.">
+  <meta name="keywords" content="sewing pattern FAQ, sewing pattern questions, PDF pattern help, how to print sewing patterns, sewing pattern for beginners, lu2cohouse FAQ">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lu2cohouse.com/faq">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lu2cohouse.com/faq">
+  <meta property="og:site_name" content="LU2COHOUSE">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="FAQ | Sewing Pattern Questions Answered | LU2COHOUSE">
+  <meta property="og:description" content="Answers to common questions about LU2COHOUSE sewing patterns — printing, downloads, skill levels, seam allowance, licensing, and support.">
+  <meta property="og:image" content="https://lu2cohouse.com/assets/products/product%201/1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FAQ | Sewing Pattern Questions Answered | LU2COHOUSE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ | LU2COHOUSE Sewing Patterns">
+  <meta name="twitter:description" content="Common questions about printing, downloads, skill levels, and support.">
+  <meta name="twitter:image" content="https://lu2cohouse.com/assets/products/product%201/1.jpg">
+  <meta name="twitter:image:alt" content="FAQ | Sewing Pattern Questions Answered | LU2COHOUSE">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:         #fff9f9;
+      --bg-soft:    #f4dada;
+      --accent:     #8b6770;
+      --accent-dark:#5a3d45;
+      --text:       #3d2b30;
+      --text-muted: #9b8085;
+      --white:      #ffffff;
+      --white-800:  rgba(61,43,48,0.85);
+      --white-600:  rgba(61,43,48,0.70);
+      --white-400:  rgba(61,43,48,0.45);
+      --divider:    rgba(139,103,112,0.15);
+
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-nav:   "Inter", sans-serif;
+      --w-light:   300;
+      --w-regular: 400;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: var(--w-regular);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-top: 80px;
+    }
+
+    /* ─── DOT GRID ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(139,103,112,0.22) 0.8px, transparent 0.8px);
+      background-size: 14px 14px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #nav, .faq-hero, .faq-body, footer { position: relative; z-index: 2; }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 5rem;
+      background: rgba(255,249,249,0.88);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border-bottom: 1px solid var(--divider);
+      transition: background 0.4s ease;
+    }
+    #nav.scrolled { background: rgba(255,249,249,0.98); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; padding: 0; }
+    .nav-logo img { height: 42px; width: auto; object-fit: contain; display: block; }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .nav-link {
+      position: relative;
+      font-family: var(--font-nav); font-size: .6875rem; font-weight: 300;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--accent-dark); text-decoration: none; transition: color .25s ease;
+    }
+    .nav-link::before {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 100%; height: 1px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left center; transition: transform 0.3s ease;
+    }
+    .nav-link:hover::before { transform: scaleX(1); }
+    .nav-link.active::before { transform: scaleX(1); }
+    .nav-book {
+      font-family: var(--font-nav); font-size: .6875rem; font-weight: 300;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--white); background: var(--accent);
+      text-decoration: none; border: 1px solid var(--accent);
+      padding: .55rem 1.4rem; border-radius: 999px;
+      transition: background .25s ease, color .25s ease;
+    }
+    .nav-book:hover { background: transparent; color: var(--accent); }
+
+    /* ─── FAQ HERO ─── */
+    .faq-hero {
+      padding: 6rem 3rem 4.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid var(--divider);
+    }
+    .faq-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.625rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.6rem;
+    }
+    .faq-title {
+      font-family: "Open Sans", sans-serif;
+      font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+      color: var(--accent-dark);
+      margin-bottom: 2rem;
+    }
+    .faq-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.6;
+      margin-bottom: 2rem;
+      flex-shrink: 0;
+    }
+    .faq-intro {
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: var(--w-light);
+      line-height: 1.85;
+      color: var(--white-600);
+      max-width: 560px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── FAQ BODY ─── */
+    .faq-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 5rem 3rem 8rem;
+    }
+
+    /* ─── CATEGORY LABEL ─── */
+    .faq-category {
+      font-family: var(--font-sans);
+      font-size: 0.5625rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      margin-top: 4rem;
+    }
+    .faq-category:first-child { margin-top: 0; }
+
+    /* ─── ACCORDION ─── */
+    .faq-item {
+      border-top: 1px solid var(--divider);
+    }
+    .faq-item:last-of-type {
+      border-bottom: 1px solid var(--divider);
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.6rem 0;
+      text-align: left;
+    }
+
+    .faq-question-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--accent-dark);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid rgba(139,103,112,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .faq-icon { position: relative; }
+    .faq-icon::before { width: 10px; height: 1.5px; }
+    .faq-icon::after  { width: 1.5px; height: 10px; }
+
+    .faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); }
+    .faq-item.open .faq-icon::before { background: #fff9f9; }
+    .faq-item.open .faq-icon::after  { background: #fff9f9; transform: rotate(90deg) scaleY(0); opacity: 0; }
+    .faq-item.open .faq-question-text { color: var(--accent); font-style: normal; }
+
+    .faq-answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq-answer-inner {
+      padding-bottom: 1.8rem;
+    }
+
+    .faq-answer p {
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: var(--w-light);
+      line-height: 1.85;
+      color: var(--white-600);
+      letter-spacing: 0.01em;
+      margin-bottom: 0.85rem;
+    }
+    .faq-answer p:last-child { margin-bottom: 0; }
+
+    .faq-answer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .faq-answer ul li {
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: var(--w-light);
+      line-height: 1.7;
+      color: var(--white-600);
+      letter-spacing: 0.01em;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .faq-answer ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 300;
+    }
+
+    .faq-answer strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .faq-link {
+      color: var(--accent-dark);
+      font-weight: 400;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+    .faq-link:hover { color: var(--accent); }
+
+    .faq-note {
+      background: rgba(139,103,112,0.06);
+      border-left: 2px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin-top: 1rem;
+    }
+    .faq-note p { color: var(--text) !important; font-weight: 400 !important; margin: 0 !important; }
+
+    /* ─── STILL HAVE QUESTIONS ─── */
+    .faq-contact {
+      margin-top: 5rem;
+      padding: 3rem;
+      border: 1px solid var(--divider);
+      border-radius: 12px;
+      background: rgba(139,103,112,0.03);
+      text-align: center;
+    }
+    .faq-contact h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--accent-dark);
+      margin-bottom: 0.75rem;
+    }
+    .faq-contact p {
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      font-weight: var(--w-light);
+      line-height: 1.7;
+      color: var(--white-600);
+      margin-bottom: 1.75rem;
+    }
+    .faq-contact-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff9f9;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+    .faq-contact-btn:hover { background: var(--accent-dark); }
+
+    @media (max-width: 640px) {
+      .faq-hero { padding: 4rem 1.5rem 3.5rem; }
+      .faq-body { padding: 3.5rem 1.5rem 5rem; }
+      .faq-contact { padding: 2rem 1.5rem; }
+    }
+
+    /* ─── SITE FOOTER ─── */
+    .gd-bridge { display: none; }
+
+    .site-footer {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 7rem 4rem 3.5rem;
+      background: #fff9f9;
+      color: #3d2b30;
+      overflow: hidden;
+      user-select: none;
+      box-sizing: border-box;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    .sf-base {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: linear-gradient(to bottom,
+        transparent 0%, transparent 18%,
+        rgba(253,242,244,0.08) 28%, rgba(253,242,244,0.28) 40%,
+        rgba(253,242,244,0.60) 52%, #fdf2f4 63%,
+        #fae8ec 76%, #f4dada 88%, #eec8d0 100%);
+    }
+    .sf-blob-1,.sf-blob-2,.sf-blob-3,.sf-blob-4,.sf-blob-5,.sf-blob-6 {
+      position: absolute; z-index: 1; pointer-events: none;
+      will-change: transform, opacity; border-radius: 50%; mix-blend-mode: multiply;
+    }
+    .sf-blob-1 { width:22%;height:170%;bottom:-38%;left:3%;filter:blur(24px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(185,105,128,0.62)0%,rgba(210,148,168,0.32)50%,transparent 75%);animation:ab1 7s ease-in-out infinite alternate;animation-delay:-0.5s; }
+    @keyframes ab1{0%{transform:translateX(0)scaleX(1);opacity:.82}25%{transform:translateX(10%)scaleX(1.28);opacity:1}50%{transform:translateX(-6%)scaleX(.8);opacity:.84}75%{transform:translateX(14%)scaleX(1.22);opacity:1}100%{transform:translateX(-4%)scaleX(.88);opacity:.84}}
+    .sf-blob-2{width:20%;height:168%;bottom:-35%;left:20%;filter:blur(22px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(160,90,115,.58)0%,rgba(195,138,158,.3)50%,transparent 75%);animation:ab2 9s ease-in-out infinite alternate;animation-delay:-4.8s}
+    @keyframes ab2{0%{transform:translateX(0)scaleX(.85);opacity:.78}30%{transform:translateX(-12%)scaleX(1.3);opacity:.96}55%{transform:translateX(8%)scaleX(.78);opacity:.8}80%{transform:translateX(-16%)scaleX(1.24);opacity:.96}100%{transform:translateX(4%)scaleX(.9);opacity:.78}}
+    .sf-blob-3{width:22%;height:172%;bottom:-38%;left:38%;filter:blur(24px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(195,128,150,.6)0%,rgba(218,165,182,.32)50%,transparent 75%);animation:ab3 8s ease-in-out infinite alternate;animation-delay:-7s}
+    @keyframes ab3{0%{transform:translateX(0)scaleX(1.1);opacity:.8}28%{transform:translateX(12%)scaleX(.76);opacity:.96}52%{transform:translateX(-8%)scaleX(1.32);opacity:.82}76%{transform:translateX(16%)scaleX(.82);opacity:.96}100%{transform:translateX(-6%)scaleX(1.18);opacity:.8}}
+    .sf-blob-4{width:28%;height:165%;bottom:-34%;left:55%;filter:blur(30px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(172,112,135,.54)0%,rgba(200,150,168,.28)50%,transparent 75%);animation:ab4 11s ease-in-out infinite alternate;animation-delay:-2.2s}
+    @keyframes ab4{0%{transform:translateX(0)scaleX(1);opacity:.7}32%{transform:translateX(-10%)scaleX(1.26);opacity:.88}58%{transform:translateX(7%)scaleX(.82);opacity:.7}82%{transform:translateX(-14%)scaleX(1.2);opacity:.88}100%{transform:translateX(4%)scaleX(.92);opacity:.7}}
+    .sf-blob-5{width:26%;height:162%;bottom:-32%;left:72%;filter:blur(28px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(158,100,124,.52)0%,rgba(190,142,160,.26)50%,transparent 75%);animation:ab5 8s ease-in-out infinite alternate;animation-delay:-9s}
+    @keyframes ab5{0%{transform:translateX(0)scaleX(.88);opacity:.68}27%{transform:translateX(12%)scaleX(1.22);opacity:.86}54%{transform:translateX(-9%)scaleX(.84);opacity:.68}78%{transform:translateX(16%)scaleX(1.18);opacity:.86}100%{transform:translateX(-5%)scaleX(.9);opacity:.68}}
+    .sf-blob-6{width:28%;height:168%;bottom:-36%;right:1%;filter:blur(32px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(148,92,116,.5)0%,rgba(180,132,150,.25)50%,transparent 75%);animation:ab6 10s ease-in-out infinite alternate;animation-delay:-5.5s}
+    @keyframes ab6{0%{transform:translateX(0)scaleX(1.05);opacity:.66}35%{transform:translateX(-11%)scaleX(.8);opacity:.84}60%{transform:translateX(8%)scaleX(1.24);opacity:.66}85%{transform:translateX(-15%)scaleX(.86);opacity:.84}100%{transform:translateX(5%)scaleX(1.12);opacity:.66}}
+    .sf-storm-light,.sf-storm-light-l,.sf-storm-light-r{display:none}
+    .sf-edge-fade{position:absolute;bottom:-10%;left:50%;transform:translateX(-50%);width:70%;height:35%;z-index:3;pointer-events:none;border-radius:50%;filter:blur(38px);background:radial-gradient(ellipse at center bottom,rgba(244,218,218,.55)0%,rgba(248,232,236,.25)40%,transparent 70%);animation:edge-drift 5.5s cubic-bezier(.4,0,.2,1) infinite alternate}
+    @keyframes edge-drift{0%{transform:translateX(-50%) translate(0,0)}25%{transform:translateX(-50%) translate(-10%,-4%)}55%{transform:translateX(-50%) translate(8%,-6%)}80%{transform:translateX(-50%) translate(-6%,-3%)}100%{transform:translateX(-50%) translate(10%,-5%)}}
+    .sf-grain{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:multiply;opacity:0;will-change:opacity;background-size:380px 380px;animation:grain-cycle .1s steps(1) infinite}
+    .sf-g1{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncG type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncB type='linear' slope='1.1' intercept='-0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");animation-delay:0s}
+    .sf-g2{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncG type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncB type='linear' slope='1.1' intercept='-0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");animation-delay:-0.025s}
+    .sf-g3{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='4' seed='13' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncG type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncB type='linear' slope='1.1' intercept='-0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");animation-delay:-0.05s}
+    .sf-g4{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.28' numOctaves='4' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncG type='linear' slope='1.1' intercept='-0.16'/%3E%3CfeFuncB type='linear' slope='1.1' intercept='-0.16'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");animation-delay:-0.075s}
+    @keyframes grain-cycle{0%,24%{opacity:.18}25%,100%{opacity:0}}
+    .sf-vignette{display:none}
+    .site-footer>*:not(.sf-base):not(.sf-blob-1):not(.sf-blob-2):not(.sf-blob-3):not(.sf-blob-4):not(.sf-blob-5):not(.sf-blob-6):not(.sf-storm-light):not(.sf-storm-light-l):not(.sf-storm-light-r):not(.sf-edge-fade):not(.sf-grain):not(.sf-vignette){position:relative;z-index:5}
+    .sf-upper{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;align-items:flex-start;flex:1;padding-bottom:5rem}
+    @media(max-width:860px){.sf-upper{grid-template-columns:1fr;gap:3rem;padding-bottom:4rem}}
+    .sf-brand{max-width:100%}
+    .sf-heading{font-family:var(--font-serif);font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:300;line-height:1.1;letter-spacing:-0.04em;color:#3d2b30;margin:0 0 1rem}
+    .sf-heading em{font-style:italic;font-weight:300;color:#8b6770}
+    .sf-sub{font-family:var(--font-sans);font-size:1rem;font-weight:300;letter-spacing:.016em;color:rgba(61,43,48,.55);margin:0 0 2rem;line-height:1.5}
+    .sf-submit{background:#8b6770;border:1px solid #8b6770;color:#fff9f9;font-family:var(--font-sans);font-size:.8rem;font-weight:300;letter-spacing:.06em;text-transform:uppercase;padding:.85rem 2rem;border-radius:999px;cursor:pointer;white-space:nowrap;display:inline-block;transition:background .2s ease,border-color .2s ease}
+    .sf-submit:hover{background:#5a3d45;border-color:#5a3d45}
+    .sf-submit:focus-visible{outline:2px solid #8b6770;outline-offset:2px}
+
+    /* ─── ETSY BRANDED BUTTON ─── */
+    .sf-etsy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #F1641E;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem 0.8rem 1rem;
+      border-radius: 999px;
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 4px 18px rgba(241,100,30,0.30),
+        0 1px 4px  rgba(241,100,30,0.18);
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.25s ease;
+    }
+    .sf-etsy-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -80%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255,255,255,0.26) 50%,
+        transparent 100%
+      );
+      animation: etsy-shimmer 3s ease-in-out infinite;
+      animation-delay: 2s;
+      pointer-events: none;
+    }
+    @keyframes etsy-shimmer {
+      0%   { left: -80%; }
+      100% { left: 130%; }
+    }
+    .sf-etsy-btn:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 10px 30px rgba(241,100,30,0.42),
+        0 3px 10px  rgba(241,100,30,0.22);
+    }
+    .sf-etsy-btn:active { transform: translateY(-1px); }
+    .sf-etsy-btn:focus-visible { outline: 2px solid #F1641E; outline-offset: 3px; }
+    .sf-etsy-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .sf-etsy-label {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sf-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.85rem;padding-top:.4rem}
+    .sf-nav li{display:flex;align-items:center;gap:.5rem}
+    .sf-nav a{font-family:var(--font-sans);font-size:1.1rem;font-weight:400;letter-spacing:.016em;color:#3d2b30;text-decoration:none;transition:opacity .2s ease}
+    .sf-nav a:hover{opacity:.42}
+    .sf-nav a:focus-visible{outline:1px solid #8b6770;outline-offset:3px}
+    .sf-badge{display:inline-flex;align-items:center;background:#8b6770;color:#fff9f9;font-family:var(--font-sans);font-size:.46rem;font-weight:700;letter-spacing:.10em;padding:.2rem .55rem;border-radius:999px;flex-shrink:0;text-shadow:none}
+    .sf-bottom{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem;align-items:start;border-top:1px solid rgba(139,103,112,.10);padding-top:2rem}
+    @media(max-width:768px){.sf-bottom{grid-template-columns:1fr 1fr;gap:1.5rem}}
+    @media(max-width:480px){.sf-bottom{grid-template-columns:1fr;gap:1.25rem}}
+    .sf-meta{display:flex;flex-direction:column;gap:.25rem}
+    .sf-meta-label{font-family:var(--font-sans);font-size:.875rem;font-weight:400;letter-spacing:.016em;color:rgba(61,43,48,.88);line-height:1.5}
+    .sf-meta-val{font-family:var(--font-sans);font-size:.875rem;font-weight:300;letter-spacing:.016em;color:rgba(61,43,48,.45);line-height:1.5;text-decoration:none}
+    a.sf-meta-val{transition:color .2s ease,text-decoration-color .2s ease;text-underline-offset:3px}
+    a.sf-meta-val:hover{color:rgba(61,43,48,.75);text-decoration:underline;text-decoration-color:rgba(61,43,48,.35)}
+    .sf-back-top{background:none;border:none;cursor:pointer;font-family:var(--font-sans);font-size:.875rem;font-weight:300;letter-spacing:.016em;color:rgba(61,43,48,.45);padding:0;transition:color .2s ease}
+    .sf-back-top:hover{color:#5a3d45}
+  
+  /* ── Language Picker ── */
+  .lang-picker { position: relative; display: flex; align-items: center; }
+  .lang-btn {
+    background: none; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.6);
+    font-size: 0.68rem; letter-spacing: 0.08em; padding: 0.28rem 0.65rem; border-radius: 2rem;
+    cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 0.3rem;
+    white-space: nowrap; line-height: 1;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .lang-btn:hover, .lang-btn:focus-visible { border-color: rgba(255,255,255,0.5); color: #fff; }
+  .lang-dropdown {
+    position: absolute; bottom: calc(100% + 8px); right: 0;
+    background: rgba(14,18,18,0.97); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 0.3rem; min-width: 112px;
+    opacity: 0; visibility: hidden; transform: translateY(4px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+    z-index: 999; box-shadow: 0 -8px 24px rgba(0,0,0,0.4);
+  }
+  .sf-lang-row { display: flex; justify-content: flex-end; padding: 0.5rem 2rem 1rem; }
+  .lang-picker:hover .lang-dropdown,
+  .lang-picker:focus-within .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  .lang-option {
+    display: flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.65rem;
+    border-radius: 5px; cursor: pointer; color: rgba(255,255,255,0.6);
+    font-size: 0.68rem; letter-spacing: 0.06em; font-family: inherit;
+    background: none; border: none; width: 100%; text-align: left;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .lang-option:hover { background: rgba(255,255,255,0.07); color: #fff; }
+
+
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I receive my pattern after purchasing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every LU2COHOUSE pattern is an instant digital download. The moment your payment is confirmed on Etsy, your files are ready — nothing ships, and there is no waiting. You can find your downloads at any time by logging into your Etsy account, going to Account → Purchases and Reviews, and clicking the download button next to your order. Your files stay available there permanently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does delivery take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instantly. As soon as your payment clears, the files are available in your Etsy account. There is no processing time and nothing is shipped in the post."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I am having trouble downloading my file. What should I do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Try refreshing the Purchases page on Etsy and clicking the download button again. Try downloading on a desktop rather than a mobile device. Make sure you have enough storage space. On mobile, download to your Files app first then open with a PDF reader. If none of these work, message us through your Etsy order and we will send you the file directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "My download link expired or I lost my files. Can you resend them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your purchase gives you lifetime access to the files — the link does not actually expire. You can re-download at any time by logging into your Etsy account and going to Account → Purchases and Reviews. If you are still unable to access your files, send us a message through Etsy with your order number and we will get them to you directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I print my sewing pattern at home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use A4 or US Letter paper and open the file in Adobe Acrobat Reader. In the print settings, select Actual Size or Do Not Scale, and turn off all automatic fit and resize options. Each pattern includes a test square on the first page — print that first and measure it to confirm scaling is correct before printing the rest. Avoid printing from your browser's built-in PDF viewer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the A0 file for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The A0 file is a single large-format sheet with all pattern pieces and no page breaks or tape lines. Take it to a copy shop with wide-format or plotter printing and request an A0 print at 100% scale. This saves significant time compared to taping together A4 or US Letter pages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are your patterns made with AI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every LU2COHOUSE pattern is designed, drafted, and tested by hand. Each one goes through a full human sewing process before it is published. We do not use AI to generate pattern pieces, instructions, or any part of the sewing content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What skill level are the LU2COHOUSE patterns designed for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our patterns are designed to be accessible to a wide range of sewists. The majority are beginner-friendly — each one includes step-by-step illustrated instructions written so that you can follow along even if it is your first garment. The skill level for each pattern is listed clearly on the product page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is seam allowance included in the patterns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every LU2COHOUSE pattern includes seam allowance — you do not need to add your own. Most patterns use a 1 cm seam allowance throughout. The exact amount is specified in the product description and printed at the beginning of the pattern booklet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What size should I buy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every LU2COHOUSE pattern includes all sizes from XXS to 5XL in a single purchase. To choose your size, check the size chart in the listing photos and compare your bust, waist, and hip measurements directly against the chart. Do not go by ready-to-wear clothing size. If your measurements fall between two sizes, we generally recommend sizing up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I sell finished garments I make from your patterns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You are welcome to sell finished garments sewn from LU2COHOUSE patterns — whether at a market stall, through an online shop, or as custom orders. For larger-scale commercial production, please reach out first. What you may not do is share, resell, or distribute the pattern file itself in any form."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Whole Shop Bundle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Whole Shop Bundle gives you access to every sewing pattern currently available in the LU2COHOUSE catalogue — all in one purchase, at a significantly lower price than buying each pattern individually. After purchasing, you receive access to a private Google Drive folder where all patterns are organised and ready to download."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer customer support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you have a question about a pattern, a download issue, a printing problem, or anything else — send us a message through your Etsy order and we will get back to you typically within 24 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your copyright policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All LU2COHOUSE patterns and content are protected by copyright law. You may not distribute, share, upload, resell, or sublicense the pattern file. You may not reproduce or redraw the pattern pieces. You may not use AI tools to recreate any part of the work. Selling finished garments made from the patterns is permitted for personal-scale production."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img loading="lazy" src="../../Brand Logos/logo.png" alt="LU2COHOUSE">
+  </a>
+  <div class="nav-links">
+    <a href="jackets.html" class="nav-link">Jackets</a>
+    <a href="vests.html" class="nav-link">Vests</a>
+    <a href="blouses.html" class="nav-link">Blouses</a>
+    <a href="pants.html" class="nav-link">Pants</a>
+    <a href="shop-all.html" class="nav-link">Shop All</a>
+    <a href="guides.html" class="nav-link">Guides</a>
+  </div>
+  <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener noreferrer" class="nav-book">Visit Etsy</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="faq-hero">
+  <p class="faq-eyebrow">LU2COHOUSE &nbsp;&middot;&nbsp; Help Center</p>
+  <h1 class="faq-title">Frequently Asked Questions</h1>
+  <div class="faq-divider"></div>
+  <p class="faq-intro">Everything we get asked most often — about printing, downloading, sizing, licensing, and the shop bundle. If your question isn't here, reach out through Etsy and we'll get back to you.</p>
+</section>
+
+<!-- ─── FAQ BODY ─── -->
+<main class="faq-body">
+
+  <!-- CATEGORY: Downloads & Delivery -->
+  <p class="faq-category">Downloads &amp; Delivery</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">How do I receive my pattern after purchasing?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Every LU2COHOUSE pattern is an instant digital download. The moment your payment is confirmed on Etsy, your files are ready — nothing ships, and there is no waiting.</p>
+        <p>You can find your downloads at any time by logging into your Etsy account, going to <strong>Account &rarr; Purchases and Reviews</strong>, and clicking the download button next to your order. Your files stay available there permanently, so you can re-download whenever you need to.</p>
+        <div class="faq-note">
+          <p>If you checked out as a guest, create a free Etsy account using the same email address to access your purchases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">How long does delivery take?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Instantly. As soon as your payment clears, the files are available in your Etsy account. There is no processing time and nothing is shipped in the post.</p>
+        <p>If you placed your order and the download button is not appearing, try refreshing the Purchases page. If the issue persists, contact us through your Etsy order and we will sort it out.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">I am having trouble downloading my file. What should I do?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Most download issues resolve quickly. Try these steps first:</p>
+        <ul>
+          <li>Refresh the Purchases page on Etsy and try the download button again.</li>
+          <li>Try downloading on a desktop or laptop rather than a mobile device — browsers on mobile occasionally handle large PDFs differently.</li>
+          <li>Make sure you have enough storage space available on your device.</li>
+          <li>On mobile, download the file to your Files app first, then open it with a dedicated PDF reader app.</li>
+        </ul>
+        <p>If none of the above works, message us directly through your Etsy order. We will send you a working file straight away.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">My download link expired or I lost my files. Can you resend them?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Your purchase gives you lifetime access to the files — the link does not actually expire. You can re-download at any time by logging into your Etsy account and going to <strong>Account &rarr; Purchases and Reviews</strong>. The download button will always be there.</p>
+        <p>If you are still unable to access your files for any reason, send us a message through Etsy with your order number and we will get them to you directly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: Printing -->
+  <p class="faq-category">Printing</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">How do I print my sewing pattern at home?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Use A4 or US Letter paper and open the file in <strong>Adobe Acrobat Reader</strong> (free to download). In the print settings, select <strong>Actual Size</strong> — or <strong>Do Not Scale</strong> — and make sure all automatic fit, resize, and margin adjustment options are turned off.</p>
+        <p>The A4 and US Letter files are both sized to print correctly on either paper size, so you do not need to adjust anything beyond setting the scale to 100%.</p>
+        <p>Each pattern includes a test square on the first page. Print that page first and measure the square — if it matches the dimensions printed on it, everything is set correctly before you print the rest.</p>
+        <div class="faq-note">
+          <p>Avoid printing from your browser's built-in PDF viewer. It can strip layers and alter page scaling, which shifts your pattern pieces.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">What is the A0 file for?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>The A0 file is a single large-format sheet that contains all the pattern pieces without any page breaks or tape lines. Take it to a copy shop or print bureau that offers wide-format or plotter printing and ask for an A0 print at 100% scale.</p>
+        <p>This saves a significant amount of time compared to taping together an A4 or US Letter version, and the result is a clean single sheet you can use directly on your fabric.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: The Patterns -->
+  <p class="faq-category">The Patterns</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">Are your patterns made with AI?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>No. Every LU2COHOUSE pattern is designed, drafted, and tested by hand. Each one goes through a full human sewing process before it is published — we sew the garment ourselves to check the fit, construction, and instructions at every step.</p>
+        <p>We do not use AI to generate pattern pieces, instructions, or any part of the sewing content. What you receive is the result of real design work and real testing.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">What skill level are the LU2COHOUSE patterns designed for?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Our patterns are designed to be accessible to a wide range of sewists. The majority are beginner-friendly — each one includes step-by-step illustrated instructions written so that you can follow along even if it is your first garment.</p>
+        <p>The skill level for each pattern is listed clearly on the product page before you purchase, so you can always check whether a design suits where you are in your sewing journey.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">Is seam allowance included in the patterns?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Yes. Every LU2COHOUSE pattern includes seam allowance — you do not need to add your own. Most patterns use a 1 cm seam allowance throughout. The exact amount is specified in the product description and printed at the beginning of the pattern booklet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">What size should I buy?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Every LU2COHOUSE pattern includes all sizes from XXS to 5XL in a single purchase — you receive the full size range and can cut the size that fits you, or blend between sizes for a closer fit.</p>
+        <p>To choose your size, check the size chart in the listing photos for the specific pattern you are buying. Compare your body measurements — bust, waist, and hip — directly against the chart. Do not go by your ready-to-wear clothing size, as garment sizing varies significantly across brands.</p>
+        <p>If your measurements fall between two sizes, we generally recommend sizing up. You can always take in a seam, but adding ease back in requires more work.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: Licensing -->
+  <p class="faq-category">Licensing &amp; Usage</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">Can I sell finished garments I make from your patterns?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Yes. You are welcome to sell finished garments sewn from LU2COHOUSE patterns — whether at a market stall, through an online shop, or as custom orders.</p>
+        <p>If you are planning to move into larger-scale commercial production, please reach out to us first. We offer commercial licences for higher-volume manufacturing and are happy to discuss the right arrangement for your situation.</p>
+        <div class="faq-note">
+          <p>What you may not do is share, resell, or distribute the pattern file itself in any form. Each purchase covers one person's personal use of the design.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: Shop Bundle -->
+  <p class="faq-category">Shop Bundle</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">What is the Whole Shop Bundle?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>The Whole Shop Bundle gives you access to every sewing pattern currently available in the LU2COHOUSE catalogue — all in one purchase, at a significantly lower price than buying each pattern individually.</p>
+        <p>After purchasing, you receive access to a private Google Drive folder where all patterns are organised and ready to download. The bundle covers all patterns listed in the shop at the time of purchase.</p>
+        <p>You can find the bundle directly on Etsy: <a href="https://www.etsy.com/listing/4430360285/whole-shop-lu2coh-sewing-patterns-bundle" target="_blank" rel="noopener" class="faq-link">Whole Shop Bundle &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: Support -->
+  <p class="faq-category">Support</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">Do you offer customer support?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>Yes. If you have a question about a pattern, a download issue, a printing problem, or anything else — send us a message through your Etsy order and we will get back to you as quickly as we can, typically within 24 hours.</p>
+        <p>We genuinely want your sewing experience to go well, so please do not hesitate to reach out.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY: Copyright -->
+  <p class="faq-category">Copyright &amp; Intellectual Property</p>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span class="faq-question-text">What is your copyright policy?</span>
+      <span class="faq-icon" aria-hidden="true"></span>
+    </button>
+    <div class="faq-answer" role="region">
+      <div class="faq-answer-inner">
+        <p>All elements of LU2COHOUSE patterns and this shop are protected by copyright law. This includes, but is not limited to:</p>
+        <ul>
+          <li>The sewing pattern itself — the PDF file, its digital structure, and the underlying design.</li>
+          <li>All instructional text, written guides, and step-by-step content inside the booklets.</li>
+          <li>All photographs, product images, and lifestyle imagery.</li>
+          <li>All graphic elements, technical illustrations, and the LU2COHOUSE logo.</li>
+        </ul>
+        <p>The following are strictly prohibited without prior written permission:</p>
+        <ul>
+          <li>Distributing, sharing, uploading, or gifting the pattern file to any third party.</li>
+          <li>Reselling or sublicensing the pattern in any format.</li>
+          <li>Reproducing, tracing, or redrawing the pattern pieces to create a derivative work.</li>
+          <li>Using artificial intelligence tools, software, or any automated method to recreate, generate, or approximate the patterns, instructions, or any part of this work.</li>
+          <li>Reverse engineering the design from a finished garment and distributing the result.</li>
+          <li>Re-uploading files to any cloud storage, file-sharing service, or social platform.</li>
+        </ul>
+        <div class="faq-note">
+          <p>Copyright infringement is taken seriously and will be pursued. If you are unsure whether your intended use is permitted, please contact us before proceeding — we are always happy to discuss licensing for legitimate use cases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STILL HAVE QUESTIONS ─── -->
+  <div class="faq-contact">
+    <h3>Still have a question?</h3>
+    <p>If what you are looking for is not covered above, we are always reachable through Etsy. Send us a message and we will respond as soon as possible.</p>
+    <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener" class="faq-contact-btn">Message us on Etsy</a>
+  </div>
+
+</main>
+
+<!-- ─── SITE FOOTER ─── -->
+<footer class="site-footer" id="site-footer">
+
+  <div class="sf-base"   aria-hidden="true"></div>
+  <div class="sf-blob-1" aria-hidden="true"></div>
+  <div class="sf-blob-2" aria-hidden="true"></div>
+  <div class="sf-blob-3" aria-hidden="true"></div>
+  <div class="sf-blob-4" aria-hidden="true"></div>
+  <div class="sf-blob-5" aria-hidden="true"></div>
+  <div class="sf-blob-6" aria-hidden="true"></div>
+  <div class="sf-storm-light"   aria-hidden="true"></div>
+  <div class="sf-storm-light-l" aria-hidden="true"></div>
+  <div class="sf-storm-light-r" aria-hidden="true"></div>
+  <div class="sf-edge-fade"     aria-hidden="true"></div>
+  <div class="sf-grain sf-g1" aria-hidden="true"></div>
+  <div class="sf-grain sf-g2" aria-hidden="true"></div>
+  <div class="sf-grain sf-g3" aria-hidden="true"></div>
+  <div class="sf-grain sf-g4" aria-hidden="true"></div>
+  <div class="sf-vignette" aria-hidden="true"></div>
+
+  <div class="sf-upper">
+
+    <div class="sf-brand">
+      <h2 class="sf-heading">Follow what<br>we're <em>making</em></h2>
+      <p class="sf-sub">New patterns, sewing guides &amp; drops — straight from the studio.</p>
+      <button class="sf-submit" type="button" onclick="window.open('https://www.etsy.com/shop/lu2cohouse','_blank')">Shop on Etsy</button>
+    </div>
+
+    <ul class="sf-nav">
+      <li><a href="jackets.html">Jackets</a></li>
+      <li><a href="vests.html">Vests</a></li>
+      <li><a href="shop-all.html">Shop All</a></li>
+      <li><a href="guides.html">Guides</a>&nbsp;<span class="sf-badge">NEW</span></li>
+    </ul>
+
+    <ul class="sf-nav">
+      <li><a href="https://www.instagram.com/lu2cohouse" target="_blank" rel="noopener">Instagram</a></li>
+
+      <li><a href="https://www.youtube.com/@LU2COHOUSE" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="digital-download-policy.html">Download Policy</a></li>
+    </ul>
+
+  </div>
+
+  <div class="sf-bottom">
+    <div class="sf-meta">
+      <span class="sf-meta-label">&copy; 2025 LU2COHOUSE</span>
+      <span class="sf-meta-val">All rights reserved</span>
+    </div>
+    <div class="sf-meta">
+      <span class="sf-meta-label">SHOP ON ETSY</span>
+      <a class="sf-meta-val" href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener noreferrer">LU2COHOUSE</a>
+    </div>
+    <div class="sf-meta">
+      <span class="sf-meta-label">Designed &amp; made</span>
+      <span class="sf-meta-val">By hand</span>
+    </div>
+    <div class="sf-meta">
+      <span class="sf-meta-label">Patterns made by</span>
+      <span class="sf-meta-val">Leila.</span>
+    </div>
+  </div>
+
+
+  <div class="sf-lang-row">
+    <div class="lang-picker">
+      <button class="lang-btn" aria-label="Select language" id="langBtn">EN</button>
+      <div class="lang-dropdown">
+        <button class="lang-option" onclick="setLang('en')">&#127482;&#127480; English</button>
+        <button class="lang-option" onclick="setLang('fr')">&#127467;&#127479; Fran&#231;ais</button>
+        <button class="lang-option" onclick="setLang('de')">&#127465;&#127466; Deutsch</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', function () {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
+  }, { passive: true });
+
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item   = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('open');
+
+      /* close all */
+      document.querySelectorAll('.faq-item.open').forEach(function (el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-answer').style.maxHeight = '0';
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      /* open clicked if it was closed */
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+</script>
+
+  <script>
+    function setLang(l) {
+      var url = window.location.href;
+      if (url.indexOf('.translate.goog') > -1) {
+        var m = url.match(/[?&]u=([^&]+)/);
+        if (m) url = decodeURIComponent(m[1]);
+      }
+      if (l === 'en') { window.location.href = url; return; }
+      window.location.href = 'https://translate.google.com/translate?sl=en&tl=' + l + '&u=' + encodeURIComponent(url);
+    }
+    (function() {
+      var b = document.getElementById('langBtn');
+      if (!b) return;
+      var h = window.location.href;
+      if (h.indexOf('tl=fr') > -1 || h.indexOf('_x_tr_tl=fr') > -1) b.innerHTML = '&#127758; FR';
+      else if (h.indexOf('tl=de') > -1 || h.indexOf('_x_tr_tl=de') > -1) b.innerHTML = '&#127758; DE';
+    })();
+  </script>
+</body>
+</html>

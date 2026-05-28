@@ -1,0 +1,140 @@
+{
+  "site": {
+    "name": "LU2COHOUSE",
+    "tagline": "Sewing Patterns for the Modern Maker",
+    "baseUrl": "https://lu2cohouse.com",
+    "defaultLocale": "en_US",
+    "twitterHandle": "@lu2cohouse",
+    "themeColor": "#121717",
+    "brandColor": "#ff7a00"
+  },
+
+  "blog_index": {
+    "slug": "/seo/",
+    "title": "Sewing Guides & Pattern Tutorials | LU2COHOUSE Blog",
+    "metaDescription": "Discover beginner-friendly sewing tutorials, quilted garment guides, and pattern tips from the LU2COHOUSE studio. Learn to sew coats, jackets, and more.",
+    "keywords": ["sewing tutorials", "quilted jacket pattern", "sewing patterns for beginners", "quilt coat guide", "LU2COHOUSE blog"],
+    "ogTitle": "Sewing Guides & Pattern Tutorials — LU2COHOUSE",
+    "ogDescription": "Step-by-step guides for sewists ready to make something beautiful. From quilt coats to patchwork jackets — we walk you through it all.",
+    "ogImage": "https://placehold.co/1200x630",
+    "ogType": "website",
+    "canonical": "https://lu2cohouse.com/seo/",
+    "robots": "index, follow",
+    "schema": {
+      "@type": "Blog",
+      "name": "LU2COHOUSE Sewing Blog",
+      "description": "Tutorials, pattern guides, and sewing tips from the LU2COHOUSE studio"
+    }
+  },
+
+  "posts": [
+    {
+      "id": 1,
+      "slug": "/seo/posts/siena-quilt-jacket",
+      "title": "How to Sew a Beginner-Friendly Quilt Jacket: The Siena Pattern",
+      "metaTitle": "How to Sew a Quilt Jacket for Beginners: Siena Pattern Guide | LU2COHOUSE",
+      "metaDescription": "Follow our stitch-by-stitch walkthrough of the Siena quilted jacket pattern. Perfect for confident beginners ready to tackle their first structured quilt garment.",
+      "keywords": ["quilt jacket pattern", "beginner quilted jacket", "Siena pattern", "sewing quilt jacket", "how to sew a quilted jacket"],
+      "category": "Beginner Friendly",
+      "secondaryCategory": "Quilted Jackets",
+      "h2Title": "How to Sew a Beginner-Friendly Quilt Jacket: The Siena Pattern",
+      "excerpt": "Follow our stitch-by-stitch walkthrough of the Siena pattern — ideal for confident beginners ready to tackle their first quilted layer.",
+      "ctaLabel": "Read the Guide",
+      "publishDate": "2026-04-15",
+      "readTime": "8 min read",
+      "ogTitle": "How to Sew a Beginner Quilt Jacket — Siena Pattern | LU2COHOUSE",
+      "ogDescription": "A full walk-through of the Siena quilted jacket pattern: cutting, quilting, and construction — step by step.",
+      "ogImage": "https://placehold.co/1200x630/121717/ff7a00?text=Siena+Quilt+Jacket",
+      "ogType": "article",
+      "canonical": "https://lu2cohouse.com/seo/posts/siena-quilt-jacket",
+      "robots": "index, follow",
+      "schema": {
+        "@type": "Article",
+        "headline": "How to Sew a Beginner-Friendly Quilt Jacket: The Siena Pattern",
+        "author": { "@type": "Organization", "name": "LU2COHOUSE" },
+        "datePublished": "2026-04-15"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "/seo/posts/blossom-coat-guide",
+      "title": "Your First Blossom Quilt Coat: What to Know Before You Cut",
+      "metaTitle": "Blossom Quilt Coat Pattern Guide — What to Know Before You Cut | LU2COHOUSE",
+      "metaDescription": "Before your scissors touch fabric, learn grainlines, seam allowances, and quilt sandwich prep for the Blossom Quilt Coat sewing pattern by LU2COHOUSE.",
+      "keywords": ["Blossom quilt coat pattern", "quilt coat sewing guide", "LU2COHOUSE pattern", "quilt sandwich prep", "sewing coat pattern"],
+      "category": "Pattern Guide",
+      "secondaryCategory": "Quilt Coats",
+      "h2Title": "Your First Blossom Quilt Coat: What to Know Before You Cut",
+      "excerpt": "Before your scissors touch fabric, here's what you need to know about grainlines, seam allowances, and quilt sandwich prep.",
+      "ctaLabel": "Start Sewing",
+      "publishDate": "2026-04-22",
+      "readTime": "10 min read",
+      "ogTitle": "Blossom Quilt Coat Pattern Guide | LU2COHOUSE",
+      "ogDescription": "Everything to prepare before cutting your Blossom Quilt Coat — grainlines, batting, seam allowances, and pattern prep.",
+      "ogImage": "https://placehold.co/1200x630/121717/ff7a00?text=Blossom+Quilt+Coat",
+      "ogType": "article",
+      "canonical": "https://lu2cohouse.com/seo/posts/blossom-coat-guide",
+      "robots": "index, follow",
+      "schema": {
+        "@type": "Article",
+        "headline": "Your First Blossom Quilt Coat: What to Know Before You Cut",
+        "author": { "@type": "Organization", "name": "LU2COHOUSE" },
+        "datePublished": "2026-04-22"
+      }
+    },
+    {
+      "id": 3,
+      "slug": "/seo/posts/patchwork-101",
+      "title": "Patchwork 101: A Beginner's Guide to Fabric Placement",
+      "metaTitle": "Patchwork 101: Fabric Placement Guide for Beginners | LU2COHOUSE",
+      "metaDescription": "Understanding color distribution and value contrast before sewing a single seam. A practical patchwork fabric placement guide for new garment sewists.",
+      "keywords": ["patchwork fabric placement", "patchwork for beginners", "quilting basics", "value contrast sewing", "beginner patchwork guide"],
+      "category": "Technique",
+      "secondaryCategory": "Patchwork Basics",
+      "h2Title": "Patchwork 101: A Beginner's Guide to Fabric Placement",
+      "excerpt": "Understanding color distribution and value contrast before you sew a single seam can save hours of unpicking later.",
+      "ctaLabel": "Read the Guide",
+      "publishDate": "2026-04-29",
+      "readTime": "7 min read",
+      "ogTitle": "Patchwork 101 — Fabric Placement for Beginners | LU2COHOUSE",
+      "ogDescription": "Learn how to plan your patchwork layout before cutting — the single step that separates a polished result from a patchy one.",
+      "ogImage": "https://placehold.co/1200x630/121717/ff7a00?text=Patchwork+101",
+      "ogType": "article",
+      "canonical": "https://lu2cohouse.com/seo/posts/patchwork-101",
+      "robots": "index, follow",
+      "schema": {
+        "@type": "Article",
+        "headline": "Patchwork 101: A Beginner's Guide to Fabric Placement",
+        "author": { "@type": "Organization", "name": "LU2COHOUSE" },
+        "datePublished": "2026-04-29"
+      }
+    },
+    {
+      "id": 4,
+      "slug": "/seo/posts/quilted-garment-mistakes",
+      "title": "5 Mistakes Beginners Make with Quilted Garments (And How to Fix Them)",
+      "metaTitle": "5 Common Quilted Garment Mistakes & How to Fix Them | LU2COHOUSE",
+      "metaDescription": "From skipped markings to ignored bias grain, discover the five most common beginner mistakes with quilted sewing patterns — and how to avoid them.",
+      "keywords": ["quilted garment mistakes", "sewing mistakes beginners", "quilted jacket tips", "how to fix sewing mistakes", "beginner quilted sewing"],
+      "category": "Tips & Tricks",
+      "secondaryCategory": "Garment Sewing",
+      "h2Title": "5 Mistakes Beginners Make with Quilted Garments (And How to Fix Them)",
+      "excerpt": "From skipped markings to ignored bias, these are the five missteps that turn a good pattern into a frustrating project.",
+      "ctaLabel": "Read the Guide",
+      "publishDate": "2026-05-04",
+      "readTime": "6 min read",
+      "ogTitle": "5 Quilted Garment Mistakes Beginners Make | LU2COHOUSE",
+      "ogDescription": "Avoid the most common beginner mistakes in quilted garment sewing — with practical fixes for each one.",
+      "ogImage": "https://placehold.co/1200x630/121717/ff7a00?text=5+Mistakes+Beginners+Make",
+      "ogType": "article",
+      "canonical": "https://lu2cohouse.com/seo/posts/quilted-garment-mistakes",
+      "robots": "index, follow",
+      "schema": {
+        "@type": "Article",
+        "headline": "5 Mistakes Beginners Make with Quilted Garments (And How to Fix Them)",
+        "author": { "@type": "Organization", "name": "LU2COHOUSE" },
+        "datePublished": "2026-05-04"
+      }
+    }
+  ]
+}
