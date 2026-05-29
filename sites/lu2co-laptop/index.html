@@ -76,20 +76,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
   <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&family=Libre+Baskerville:wght@700&family=Pacifico&family=Bodoni+Moda:opsz,wght@6..96,900&family=Raleway:wght@200;900&family=Playfair+Display:ital,wght@1,700;1,800&family=Droid+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/tex-gyre-termes" rel="stylesheet">
   <link href="https://db.onlinewebfonts.com/c/5da49843f66caf14799662bd12aa55a2?family=Dream+Avenue" rel="stylesheet">
 
   <!-- Preload hero background at highest priority to eliminate black flash on load -->
-  <link rel="preload" as="image" href="../../Brand%20Logos/132.png">
+  <link rel="preload" as="image" href="../../Brand%20Logos/132.webp">
 
   <!-- Preload carousel product images at highest browser priority -->
-  <link rel="preload" as="image" href="assets/products/product%201/2.png">
-  <link rel="preload" as="image" href="assets/products/product%202/2.png">
-  <link rel="preload" as="image" href="assets/products/Product%203/2.png">
-  <link rel="preload" as="image" href="assets/products/Product%204/2.png">
-  <link rel="preload" as="image" href="assets/products/Product%205/4.png">
-  <link rel="preload" as="image" href="assets/products/Product%206/2.png">
+  <link rel="preload" as="image" href="assets/products/product%201/2.webp">
+  <link rel="preload" as="image" href="assets/products/product%202/2.webp">
+  <link rel="preload" as="image" href="assets/products/Product%203/2.webp">
+  <link rel="preload" as="image" href="assets/products/Product%204/2.webp">
+  <link rel="preload" as="image" href="assets/products/Product%205/4.webp">
+  <link rel="preload" as="image" href="assets/products/Product%206/2.webp">
 
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -313,7 +313,7 @@
       flex-direction: column;
       justify-content: flex-end;
       pointer-events: none;
-      background-image: url('../../Brand Logos/132.png');
+      background-image: url('../../Brand Logos/132.webp');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -676,11 +676,7 @@
       margin-top: 0;
     }
 
-    /* ── exact mechanics from the original Marquee component ── */
-    @keyframes t-marquee-vertical {
-      from { transform: translateY(0); }
-      to   { transform: translateY(calc(-100% - 1.75rem)); }
-    }
+    /* t-marquee-vertical removed — scroll-driven parallax replaces it */
 
     .testimonials-stage {
       width: 100%;
@@ -728,12 +724,7 @@
       gap: 1.75rem;
       flex-shrink: 0;
       width: 100%;
-      animation: t-marquee-vertical 70s linear infinite;
-      will-change: transform;
       contain: layout;
-    }
-    .t-col--reverse .t-repeat {
-      animation-direction: reverse;
     }
 
     /* extra column for top-left gap fill */
@@ -750,7 +741,6 @@
       padding: 0 0.3rem;
     }
     .t-col--extra .t-repeat {
-      animation: t-marquee-vertical 70s linear infinite;
     }
 
     /* cards */
@@ -2521,34 +2511,6 @@
 
   
   /* ── Language Picker ── */
-  .lang-picker { position: relative; display: flex; align-items: center; }
-  .lang-btn {
-    background: none; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.6);
-    font-size: 0.68rem; letter-spacing: 0.08em; padding: 0.28rem 0.65rem; border-radius: 2rem;
-    cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 0.3rem;
-    white-space: nowrap; line-height: 1;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  .lang-btn:hover, .lang-btn:focus-visible { border-color: rgba(255,255,255,0.5); color: #fff; }
-  .lang-dropdown {
-    position: absolute; bottom: calc(100% + 8px); right: 0;
-    background: rgba(14,18,18,0.97); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px; padding: 0.3rem; min-width: 112px;
-    opacity: 0; visibility: hidden; transform: translateY(4px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-    z-index: 999; box-shadow: 0 -8px 24px rgba(0,0,0,0.4);
-  }
-  .sf-lang-row { display: flex; justify-content: flex-end; padding: 0.5rem 2rem 1rem; }
-  .lang-picker:hover .lang-dropdown,
-  .lang-picker:focus-within .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-  .lang-option {
-    display: flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.65rem;
-    border-radius: 5px; cursor: pointer; color: rgba(255,255,255,0.6);
-    font-size: 0.68rem; letter-spacing: 0.06em; font-family: inherit;
-    background: none; border: none; width: 100%; text-align: left;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .lang-option:hover { background: rgba(255,255,255,0.07); color: #fff; }
 
   .seo-h1 { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 </style>
@@ -2580,7 +2542,7 @@
   </div>
   <div class="pm-right" id="pmRight">
     <button class="pm-close" id="pmClose" aria-label="Close">✕</button>
-    <div class="pm-brand"><img loading="lazy" src="../../Brand Logos/logo1.png" alt="LU2COHOUSE"></div>
+    <div class="pm-brand"><img loading="lazy" src="../../Brand Logos/logo1.webp" alt="LU2COHOUSE"></div>
     <h2 class="pm-title" id="pmTitle"></h2>
     <div class="pm-divider"></div>
     <p class="pm-desc" id="pmDesc"></p>
@@ -2599,7 +2561,7 @@
 <!-- ─── NAVIGATION ─── -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <img loading="lazy" src="../../Brand Logos/logo1.png" alt="Elyse">
+    <img loading="lazy" src="../../Brand Logos/logo1.webp" alt="Elyse">
   </a>
   <div class="nav-links">
     <a href="jackets.html" class="nav-link">Jackets</a>
@@ -2696,204 +2658,204 @@
       <!-- Col 0: extra absolute column for top-left gap -->
       <div class="t-col t-col--extra">
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3072.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3075.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3076.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3077.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3078.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3079.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3081.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3082.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3072.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3075.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3076.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3077.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3078.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3079.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3081.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3082.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3072.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3075.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3076.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3077.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3078.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3079.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3081.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3082.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3072.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3075.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3076.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3077.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3078.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3079.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3081.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3082.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3072.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3075.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3076.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3077.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3078.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3079.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3081.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3082.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3072.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3075.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3076.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3077.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3078.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3079.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3081.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3082.webp" loading="eager" alt="Customer review"></div>
         </div>
       </div>
 
       <!-- Col 1 -->
       <div class="t-col">
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3083.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3084.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3085.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3086.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3087.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3089.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3092.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3096.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3083.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3084.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3085.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3086.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3087.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3089.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3092.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3096.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3083.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3084.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3085.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3086.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3087.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3089.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3092.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3096.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3083.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3084.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3085.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3086.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3087.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3089.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3092.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3096.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3083.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3084.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3085.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3086.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3087.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3089.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3092.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3096.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3083.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3084.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3085.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3086.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3087.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3089.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3092.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3096.webp" loading="eager" alt="Customer review"></div>
         </div>
       </div>
 
       <!-- Col 2 -->
       <div class="t-col t-col--reverse">
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/FB_01.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_02.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_03.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_04.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_05.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_06.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_07.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_08.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_01.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_02.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_03.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_04.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_05.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_06.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_07.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_08.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/FB_01.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_02.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_03.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_04.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_05.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_06.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_07.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_08.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_01.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_02.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_03.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_04.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_05.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_06.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_07.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_08.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/FB_01.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_02.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_03.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_04.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_05.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_06.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_07.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_08.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_01.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_02.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_03.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_04.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_05.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_06.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_07.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_08.webp" loading="eager" alt="Customer review"></div>
         </div>
       </div>
 
       <!-- Col 3 -->
       <div class="t-col">
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/FB_09.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_10.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_11.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_12.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3072.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3075.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3076.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3077.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_09.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_10.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_11.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_12.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3072.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3075.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3076.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3077.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/FB_09.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_10.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_11.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_12.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3072.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3075.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3076.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3077.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_09.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_10.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_11.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_12.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3072.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3075.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3076.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3077.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/FB_09.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_10.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_11.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_12.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3072.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3075.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3076.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3077.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_09.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_10.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_11.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_12.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3072.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3075.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3076.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3077.webp" loading="eager" alt="Customer review"></div>
         </div>
       </div>
 
       <!-- Col 4 -->
       <div class="t-col t-col--reverse">
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3078.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3079.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3081.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3082.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3083.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3084.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3085.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3086.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3078.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3079.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3081.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3082.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3083.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3084.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3085.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3086.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3078.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3079.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3081.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3082.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3083.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3084.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3085.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3086.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3078.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3079.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3081.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3082.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3083.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3084.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3085.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3086.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3078.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3079.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3081.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3082.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3083.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3084.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3085.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3086.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3078.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3079.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3081.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3082.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3083.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3084.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3085.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3086.webp" loading="eager" alt="Customer review"></div>
         </div>
       </div>
 
       <!-- Col 5 -->
       <div class="t-col">
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3087.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3089.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3092.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3096.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_01.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_02.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_03.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_04.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3087.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3089.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3092.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3096.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_01.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_02.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_03.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_04.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3087.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3089.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3092.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3096.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_01.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_02.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_03.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_04.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3087.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3089.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3092.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3096.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_01.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_02.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_03.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_04.webp" loading="eager" alt="Customer review"></div>
         </div>
         <div class="t-repeat">
-          <div class="t-card"><img src="assets/feedback/IMG_3087.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3089.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3092.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/IMG_3096.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_01.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_02.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_03.jpg" loading="eager" alt="Customer review"></div>
-          <div class="t-card"><img src="assets/feedback/FB_04.jpg" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3087.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3089.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3092.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/IMG_3096.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_01.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_02.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_03.webp" loading="eager" alt="Customer review"></div>
+          <div class="t-card"><img src="assets/feedback/FB_04.webp" loading="eager" alt="Customer review"></div>
         </div>
       </div>
 
@@ -2964,12 +2926,12 @@
   </div>
   <div class="learn-right">
     <div class="learn-img-wrap-1">
-      <img class="learn-img-1" src="assets/products/Product 12/1.png" alt="Quilted jacket sewing tutorial" loading="eager">
-      <img class="learn-img-hover" src="assets/products/Product 12/2.png" alt="LU2COHOUSE sewing pattern — alternate view" loading="eager">
+      <img class="learn-img-1" src="assets/products/Product 12/1.webp" alt="Quilted jacket sewing tutorial" loading="eager">
+      <img class="learn-img-hover" src="assets/products/Product 12/2.webp" alt="LU2COHOUSE sewing pattern — alternate view" loading="eager">
     </div>
     <div class="learn-img-wrap-2">
-      <img class="learn-img-2" src="assets/products/Product 3/1.png" alt="Quilted jacket sewing tutorial" loading="eager">
-      <img class="learn-img-hover" src="assets/products/Product 3/3.png" alt="LU2COHOUSE sewing pattern — alternate view" loading="eager">
+      <img class="learn-img-2" src="assets/products/Product 3/1.webp" alt="Quilted jacket sewing tutorial" loading="eager">
+      <img class="learn-img-hover" src="assets/products/Product 3/3.webp" alt="LU2COHOUSE sewing pattern — alternate view" loading="eager">
     </div>
   </div>
 </section>
@@ -2988,7 +2950,7 @@
     <video class="duo-video" src="assets/v1.mp4" autoplay muted loop playsinline></video>
     <div class="duo-video-logo-wrap">
       <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener" style="display:inline-block;">
-        <img src="../../Brand Logos/logo1.png" alt="LU2COHOUSE" class="duo-video-logo">
+        <img src="../../Brand Logos/logo1.webp" alt="LU2COHOUSE" class="duo-video-logo">
       </a>
     </div>
   </div>
@@ -3238,14 +3200,6 @@
   </div>
 
 
-  <div class="sf-lang-row">
-    <div class="lang-picker">
-      <button class="lang-btn" aria-label="Select language" id="langBtn">EN</button>
-      <div class="lang-dropdown">
-        <button class="lang-option" onclick="setLang('en')">&#127482;&#127480; English</button>
-        <button class="lang-option" onclick="setLang('fr')">&#127467;&#127479; Fran&#231;ais</button>
-        <button class="lang-option" onclick="setLang('de')">&#127465;&#127466; Deutsch</button>
-      </div>
     </div>
   </div>
 </footer>
@@ -3714,48 +3668,48 @@ ScrollTrigger.create({
       name: 'Siena Quilt Coat Sewing Pattern | Beginner-Friendly, XXS-4XL (Instant Download)',
       short: 'Siena Quilt Coat', lines: ['Siena', 'Quilt Coat'],
       url: 'https://www.etsy.com/listing/4430351753/siena-quilt-coat-sewing-pattern-beginner',
-      img: 'assets/products/product 1/2.png',
-      imgs: ['assets/products/product 1/1.jpg','assets/products/product 1/2.png','assets/products/product 1/3.png','assets/products/product 1/4.jpg','assets/products/product 1/5.jpg','assets/products/product 1/6.jpg','assets/products/product 1/7.png'],
+      img: 'assets/products/product 1/2.webp',
+      imgs: ['assets/products/product 1/1.webp','assets/products/product 1/2.webp','assets/products/product 1/3.webp','assets/products/product 1/4.webp','assets/products/product 1/5.webp','assets/products/product 1/6.webp','assets/products/product 1/7.webp'],
       desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted coat</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`
     },
     {
       name: 'Hooded Quilted Jacket Sewing Pattern | Beginner-Friendly, XXS-4XL (Instant Download)',
       short: 'Hooded Quilted Jacket', lines: ['Hooded Quilted', 'Jacket'],
       url: 'https://www.etsy.com/listing/4411882487/hooded-quilted-jacket-sewing-pattern',
-      img: 'assets/products/product 2/2.png',
-      imgs: ['assets/products/product 2/1.png','assets/products/product 2/2.png','assets/products/product 2/3.png','assets/products/product 2/4.png','assets/products/product 2/5.png','assets/products/product 2/6.png','assets/products/product 2/7.png'],
+      img: 'assets/products/product 2/2.webp',
+      imgs: ['assets/products/product 2/1.webp','assets/products/product 2/2.webp','assets/products/product 2/3.webp','assets/products/product 2/4.webp','assets/products/product 2/5.webp','assets/products/product 2/6.webp','assets/products/product 2/7.webp'],
       desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`
     },
     {
       name: 'Beginner Hooded Quilted Jacket Sewing Pattern | Beginner-Friendly, XXS-4XL (Instant Download)',
       short: 'Beginner Hooded Jacket', lines: ['Beginner', 'Hooded Jacket'],
       url: 'https://www.etsy.com/listing/4430353699/beginner-hooded-quilted-jacket-sewing',
-      img: 'assets/products/Product 3/2.png',
-      imgs: ['assets/products/Product 3/1.png','assets/products/Product 3/2.png','assets/products/Product 3/3.png','assets/products/Product 3/4.jpg','assets/products/Product 3/5.png','assets/products/Product 3/6.jpg','assets/products/Product 3/7.png','assets/products/Product 3/8.png'],
+      img: 'assets/products/Product 3/2.webp',
+      imgs: ['assets/products/Product 3/1.webp','assets/products/Product 3/2.webp','assets/products/Product 3/3.webp','assets/products/Product 3/4.webp','assets/products/Product 3/5.webp','assets/products/Product 3/6.webp','assets/products/Product 3/7.webp','assets/products/Product 3/8.webp'],
       desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`
     },
     {
       name: 'Florence Quilt Coat Beginner Sewing Pattern | Sizes XXS-4XL | INSTANT DOWNLOAD',
       short: 'Florence Quilt Coat', lines: ['Florence', 'Quilt Coat'],
       url: 'https://www.etsy.com/listing/4415566335/florence-quilt-coat-beginner-sewing',
-      img: 'assets/products/Product 4/2.png',
-      imgs: ['assets/products/Product 4/1.png','assets/products/Product 4/2.png','assets/products/Product 4/3.jpg','assets/products/Product 4/4.png','assets/products/Product 4/5.png','assets/products/Product 4/6.png','assets/products/Product 4/7.png','assets/products/Product 4/8.png'],
+      img: 'assets/products/Product 4/2.webp',
+      imgs: ['assets/products/Product 4/1.webp','assets/products/Product 4/2.webp','assets/products/Product 4/3.webp','assets/products/Product 4/4.webp','assets/products/Product 4/5.webp','assets/products/Product 4/6.webp','assets/products/Product 4/7.webp','assets/products/Product 4/8.webp'],
       desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted coat</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`
     },
     {
       name: 'Blossom Quilt Coat Sewing Pattern | Beginner Friendly, Sizes XXS-4XL (Instant Download)',
       short: 'Blossom Quilt Coat', lines: ['Blossom', 'Quilt Coat'],
       url: 'https://www.etsy.com/listing/4432059064/blossom-quilt-coat-sewing-pattern',
-      img: 'assets/products/Product 5/4.png',
-      imgs: ['assets/products/Product 5/1.png','assets/products/Product 5/2.png','assets/products/Product 5/3.png','assets/products/Product 5/4.png','assets/products/Product 5/5.png','assets/products/Product 5/6.png','assets/products/Product 5/7.png','assets/products/Product 5/8.png'],
+      img: 'assets/products/Product 5/4.webp',
+      imgs: ['assets/products/Product 5/1.webp','assets/products/Product 5/2.webp','assets/products/Product 5/3.webp','assets/products/Product 5/4.webp','assets/products/Product 5/5.webp','assets/products/Product 5/6.webp','assets/products/Product 5/7.webp','assets/products/Product 5/8.webp'],
       desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`
     },
     {
       name: 'Rosa Quilted Jacket Sewing Pattern | Beginner Friendly, Sizes XXS-4XL (Instant Download)',
       short: 'Rosa Quilted Jacket', lines: ['Rosa Quilted', 'Jacket'],
       url: 'https://www.etsy.com/listing/4431240739/rosa-quilted-jacket-sewing-pattern',
-      img: 'assets/products/Product 6/2.png',
-      imgs: ['assets/products/Product 6/1.jpg','assets/products/Product 6/2.png','assets/products/Product 6/3.png','assets/products/Product 6/4.png','assets/products/Product 6/5.jpg','assets/products/Product 6/6.jpg'],
+      img: 'assets/products/Product 6/2.webp',
+      imgs: ['assets/products/Product 6/1.webp','assets/products/Product 6/2.webp','assets/products/Product 6/3.webp','assets/products/Product 6/4.webp','assets/products/Product 6/5.webp','assets/products/Product 6/6.webp'],
       desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li><li>Exclusive video tutorial providing visual step-by-step guidance</li><li>Printable pattern pieces marked clearly for easy cutting and assembly</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`
     },
   ];
@@ -4161,16 +4115,46 @@ ScrollTrigger.create({
   }
 });
 
-/* ── Pause testimonial marquee when off-screen ── */
+/* ── Testimonials scroll-driven parallax ── */
 (function() {
-  const stage = document.querySelector('.testimonials-stage');
-  if (!stage || !('IntersectionObserver' in window)) return;
-  const repeats = stage.querySelectorAll('.t-repeat');
-  repeats.forEach(el => { el.style.animationPlayState = 'paused'; });
-  new IntersectionObserver(([entry]) => {
-    const state = entry.isIntersecting ? 'running' : 'paused';
-    repeats.forEach(el => { el.style.animationPlayState = state; });
-  }, { rootMargin: '100px' }).observe(stage);
+  var stage = document.querySelector('.testimonials-stage');
+  if (!stage || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  var cols = Array.from(stage.querySelectorAll('.t-col:not(.t-col--extra)'));
+  var extra = stage.querySelector('.t-col--extra');
+
+  var startY = [-220, -440, -160, -360, -300, -480];
+  var travel = [-180, 200, -160, 180, -170, 200];
+
+  cols.forEach(function(col, i) {
+    gsap.set(col, { y: startY[i] || -200 });
+    var isReverse = col.classList.contains('t-col--reverse');
+    var move = isReverse ? Math.abs(travel[i]) : -Math.abs(travel[i]);
+    gsap.to(col, {
+      y: (startY[i] || -200) + move,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.testimonials-section',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2
+      }
+    });
+  });
+
+  if (extra) {
+    gsap.set(extra, { y: -260 });
+    gsap.to(extra, {
+      y: -260 + (-180),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.testimonials-section',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2
+      }
+    });
+  }
 })();
 
 /* ── LEARN SECTION REVEAL ── */
@@ -4398,23 +4382,5 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
 
 </script>
 
-  <script>
-    function setLang(l) {
-      var url = window.location.href;
-      if (url.indexOf('.translate.goog') > -1) {
-        var m = url.match(/[?&]u=([^&]+)/);
-        if (m) url = decodeURIComponent(m[1]);
-      }
-      if (l === 'en') { window.location.href = url; return; }
-      window.location.href = 'https://translate.google.com/translate?sl=en&tl=' + l + '&u=' + encodeURIComponent(url);
-    }
-    (function() {
-      var b = document.getElementById('langBtn');
-      if (!b) return;
-      var h = window.location.href;
-      if (h.indexOf('tl=fr') > -1 || h.indexOf('_x_tr_tl=fr') > -1) b.innerHTML = '&#127758; FR';
-      else if (h.indexOf('tl=de') > -1 || h.indexOf('_x_tr_tl=de') > -1) b.innerHTML = '&#127758; DE';
-    })();
-  </script>
 </body>
 </html>

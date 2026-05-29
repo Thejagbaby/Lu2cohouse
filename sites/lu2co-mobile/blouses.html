@@ -1048,24 +1048,6 @@
       .pm-title { font-size: 1rem; }
       .page-footer { padding: 1.25rem 1.1rem !important; }
     }
-  
-  /* ── Language Picker ── */
-  .mob-lang {
-    position: absolute; bottom: 5.5rem; left: 0; right: 0;
-    display: flex; justify-content: center; gap: 0.6rem;
-    opacity: 0;
-    transition: opacity 0.4s ease 0.6s;
-  }
-  .mob-menu.is-open .mob-lang { opacity: 1; }
-  .mob-lang-btn {
-    background: none; border: 1px solid rgba(255,255,255,0.18);
-    color: rgba(255,255,255,0.45); font-size: 0.62rem; letter-spacing: 0.12em;
-    padding: 0.28rem 0.7rem; border-radius: 2rem; cursor: pointer;
-    font-family: inherit;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  .mob-lang-btn:hover,
-  .mob-lang-btn--active { border-color: rgba(255,255,255,0.55); color: #fff; }
 </style>
   <script type="application/ld+json">
 {
@@ -1110,11 +1092,6 @@
     <a href="pants.html" class="mob-link">Pants</a>
     <a href="shop-all.html" class="mob-link">Shop All</a>
     <a href="guides.html" class="mob-link">Guides</a>
-  </div>
-  <div class="mob-lang">
-    <button class="mob-lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="mob-lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-    <button class="mob-lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
   </div>
   <div class="mob-etsy-logo-wrap">
     <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener" class="mob-etsy-logo">Etsy</a>
@@ -1416,8 +1393,10 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
         '<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars">' + bars.map(function(b){return '<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">'+b[0]+'</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:'+b[1]+'"></div></div><span class="pm-rv-bar-num">'+b[1]+'</span></div>';}).join('') + '</div></div>' +
         REVIEWS2.map(function(r){return '<div class="pm-rv-card"><div class="pm-rv-card-stars">'+'★'.repeat(r.stars)+'</div><div class="pm-rv-card-text">'+r.text+'</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">'+r.name+'</span> · '+r.date+'</div></div>';}).join('') +
         '<a href="'+p.link+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
-    }    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
+    }    const _pmPanel = modal.querySelector('.pm-panel');
+    modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    if (_pmPanel) { _pmPanel.scrollTop = 0; requestAnimationFrame(function(){ _pmPanel.scrollTop = 0; }); }
 
     const pmLeft  = modal.querySelector('.pm-left');
     const pmRight = modal.querySelector('.pm-right');
@@ -1555,7 +1534,7 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
   if (!container) return;
   var marks = ['×', '+', '◊', '·', '✶', '✦', '✧', '⋆', '★', '✵', '✴', '✸', '*', '⁎', '✺', '✻'];
   var anims  = ['yt-float', 'yt-twinkle', 'yt-drift'];
-  for (var i = 0; i < 80; i++) {
+  for (var i = 0; i < 0; i++) {
     var dot  = document.createElement('span');
     var sz   = (Math.random() * 10 + 5).toFixed(0);
     var op   = (Math.random() * 0.18 + 0.04).toFixed(2);
@@ -1645,25 +1624,5 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
 })();
 </script>
 
-  <script>
-    function setLang(l) {
-      var url = window.location.href;
-      if (url.indexOf('.translate.goog') > -1) {
-        var m = url.match(/[?&]u=([^&]+)/);
-        if (m) url = decodeURIComponent(m[1]);
-      }
-      if (l === 'en') { window.location.href = url; return; }
-      window.location.href = 'https://translate.google.com/translate?sl=en&tl=' + l + '&u=' + encodeURIComponent(url);
-    }
-    (function() {
-      var h = window.location.href;
-      var lang = 'en';
-      if (h.indexOf('tl=fr') > -1 || h.indexOf('_x_tr_tl=fr') > -1) lang = 'fr';
-      else if (h.indexOf('tl=de') > -1 || h.indexOf('_x_tr_tl=de') > -1) lang = 'de';
-      document.querySelectorAll('.mob-lang-btn').forEach(function(b) {
-        if (b.getAttribute('data-lang') === lang) b.classList.add('mob-lang-btn--active');
-      });
-    })();
-  </script>
 </body>
 </html>
