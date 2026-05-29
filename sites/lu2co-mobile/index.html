@@ -2806,11 +2806,15 @@
     }
     .duo-video-side--left .dvs-list li,
     .duo-video-side--right .dvs-list li { font-size: 0.7rem; }
-    .duo-video-logo { width: 64px; height: 64px; filter: brightness(0) invert(1) !important; animation: logo-mob-fade 2.4s ease-in-out infinite !important; position: relative; z-index: 2; }
+    .duo-video-logo { width: 64px; height: 64px; animation: logo-glow-mob 2.4s ease-in-out infinite !important; }
     .duo-video-logo-wrap { position: relative; animation: none !important; }
-    .duo-video-logo-wrap::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 130px; height: 130px; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.25) 45%, transparent 72%); animation: logo-glow-mob 2.4s ease-in-out infinite; pointer-events: none; z-index: 1; }
-    @keyframes logo-mob-fade { 0%, 100% { opacity: 0.82; } 50% { opacity: 1; } }
-    @keyframes logo-glow-mob { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+    @keyframes logo-glow-mob {
+      0%   { opacity: 0.82; filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.25)); }
+      40%  { opacity: 0.92; filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,0.6)); }
+      60%  { opacity: 1;    filter: brightness(0) invert(1) drop-shadow(0 0 32px rgba(255,255,255,0.95)) drop-shadow(0 0 70px rgba(255,255,255,0.55)); }
+      80%  { opacity: 0.92; filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,0.6)); }
+      100% { opacity: 0.82; filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.25)); }
+    }
 
     /* ── YOUTUBE ── */
     .yt-section { padding: 0; }

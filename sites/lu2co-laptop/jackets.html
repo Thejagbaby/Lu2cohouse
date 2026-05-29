@@ -1718,7 +1718,7 @@ gsap.timeline({
     /* click: slide page content + nav up, then navigate */
     next.addEventListener('click', () => {
       sessionStorage.setItem('fromScroll', '1');
-      gsap.to(['#pageHeader', '.grid-wrap', 'footer'], {
+      gsap.to(['.grid-wrap', 'footer'], {
         y: -80, opacity: 0, duration: 0.5, ease: 'power2.in'
       });
       gsap.to([active, next], {
