@@ -4554,32 +4554,66 @@ ScrollTrigger.create({
 
   // GSAP continuous marquee — translates by one set width, then repeats
   let tween;
+  let setW = 0;
+  let touchStartX = 0;
+  let touchStartMarqueeX = 0;
+
   function startMarquee() {
-    const setW = set1.offsetWidth;
+    setW = set1.offsetWidth;
     tween = gsap.to(marquee, {
       x: -setW,
-      duration: setW / 28,
+      duration: setW / 22,
       ease: 'none',
       repeat: -1,
       onRepeat() { gsap.set(marquee, { x: 0 }); }
     });
   }
 
-  // Prevent page scroll while finger is on the marquee; pause/resume animation
+  function resumeFromCurrent() {
+    if (tween) tween.kill();
+    let curX = gsap.getProperty(marquee, 'x');
+    while (curX > 0) curX -= setW;
+    while (curX < -setW) curX += setW;
+    gsap.set(marquee, { x: curX });
+    const totalDur = setW / 22;
+    const dist = Math.abs(-setW - curX);
+    const dur = (dist / setW) * totalDur;
+    if (dur < 0.05) {
+      gsap.set(marquee, { x: 0 });
+      tween = gsap.to(marquee, { x: -setW, duration: totalDur, ease: 'none', repeat: -1, onRepeat() { gsap.set(marquee, { x: 0 }); } });
+    } else {
+      tween = gsap.to(marquee, {
+        x: -setW,
+        duration: dur,
+        ease: 'none',
+        onComplete() {
+          gsap.set(marquee, { x: 0 });
+          tween = gsap.to(marquee, { x: -setW, duration: totalDur, ease: 'none', repeat: -1, onRepeat() { gsap.set(marquee, { x: 0 }); } });
+        }
+      });
+    }
+  }
+
+  // Swipe left/right on marquee without vertical page scroll
   const marqueeWrap = document.querySelector('.bss-marquee-wrap');
   if (marqueeWrap) {
-    marqueeWrap.addEventListener('touchmove', function(e) {
-      e.preventDefault();
-    }, { passive: false });
-    marqueeWrap.addEventListener('touchstart', function() {
+    marqueeWrap.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartMarqueeX = gsap.getProperty(marquee, 'x');
       if (tween) tween.pause();
     }, { passive: true });
-    marqueeWrap.addEventListener('touchend', function() {
-      if (tween) tween.play();
-    }, { passive: true });
-    marqueeWrap.addEventListener('touchcancel', function() {
-      if (tween) tween.play();
-    }, { passive: true });
+
+    marqueeWrap.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      const dx = e.touches[0].clientX - touchStartX;
+      let newX = touchStartMarqueeX + dx;
+      while (newX > 0) newX -= setW;
+      while (newX < -setW) newX += setW;
+      gsap.set(marquee, { x: newX });
+    }, { passive: false });
+
+    marqueeWrap.addEventListener('touchend', resumeFromCurrent, { passive: true });
+    marqueeWrap.addEventListener('touchcancel', resumeFromCurrent, { passive: true });
   }
 
   // Pause marquee when section is off-screen to save CPU/battery
