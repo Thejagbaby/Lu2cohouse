@@ -2346,6 +2346,7 @@
     80%  { opacity: 0.92; filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,0.6)); }
     100% { opacity: 0.82; filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.25)); }
   }
+  @keyframes logo-mob-pulse { 0%, 100% { opacity: 0.88; } 50% { opacity: 1; } }
   .duo-video-col {
     width: 100%;
     max-width: 900px;
@@ -2806,9 +2807,8 @@
     }
     .duo-video-side--left .dvs-list li,
     .duo-video-side--right .dvs-list li { font-size: 0.7rem; }
-    .duo-video-logo { width: 64px; height: 64px; filter: brightness(0) invert(1) drop-shadow(0 0 14px rgba(255,255,255,0.55)) !important; animation: logo-mob-fade 2.4s ease-in-out infinite !important; }
+    .duo-video-logo { width: 64px; height: 64px; filter: brightness(0) invert(1) drop-shadow(0 0 18px rgba(255,255,255,0.7)) !important; animation: logo-mob-pulse 2.4s ease-in-out infinite !important; }
     .duo-video-logo-wrap { position: relative; animation: none !important; }
-    @keyframes logo-mob-fade { 0%, 100% { opacity: 0.70; } 50% { opacity: 1; } }
 
     /* ── YOUTUBE ── */
     .yt-section { padding: 0; }
