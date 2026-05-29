@@ -2357,17 +2357,32 @@
   .duo-video-logo-wrap {
     display: flex;
     justify-content: center;
+    margin-top: 0.5rem;
+  }
+  .duo-video-logo-wrap a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 80px;
+    background: rgba(255,210,110,0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,215,120,0.22);
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .duo-video-logo-wrap a:hover {
+    background: rgba(255,210,110,0.13);
+    border-color: rgba(255,215,120,0.45);
+    transform: scale(1.05);
   }
   .duo-video-logo {
     width: 86px;
     height: 86px;
     object-fit: contain;
-    margin-top: 0.75rem;
+    margin-top: 0;
     animation: logo-glow 2.4s ease-in-out infinite;
     transition: transform 0.55s cubic-bezier(0.34,1.56,0.64,1);
-  }
-  .duo-video-logo-wrap a:hover .duo-video-logo {
-    transform: scale(1.18);
   }
   .duo-video {
     width: 100%;
@@ -2806,7 +2821,7 @@
     }
     .duo-video-side--left .dvs-list li,
     .duo-video-side--right .dvs-list li { font-size: 0.7rem; }
-    .duo-video-logo { width: 52px; height: 52px; }
+    .duo-video-logo { width: 80px; height: 80px; }
 
     /* ── YOUTUBE ── */
     .yt-section { padding: 0; }
