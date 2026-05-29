@@ -2949,9 +2949,17 @@
       width: 100% !important;
       top: auto !important; left: auto !important;
       transform: none !important;
-      overflow: hidden;
+      display: grid !important;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+      height: auto !important;
+      overflow: hidden !important;
+    }
+    .faq-item.is-open .faq-reveal {
+      grid-template-rows: 1fr;
     }
     .faq-answer {
+      min-height: 0;
       opacity: 1 !important;
       padding: 0.75rem 0 0.3rem;
       font-size: 0.8rem;
@@ -4555,29 +4563,15 @@ ScrollTrigger.create({
     });
   }
 
-  // Drag-while-moving — marquee always runs; touch drag shifts progress
+  // Pause marquee when section is off-screen to save CPU/battery
   const section = document.getElementById('bestsellers');
-  let isDragging = false, lastTouchX = 0;
-
-  section.addEventListener('touchstart', e => {
-    isDragging = true;
-    lastTouchX = e.touches[0].clientX;
-  }, { passive: true });
-
-  section.addEventListener('touchmove', e => {
-    if (!isDragging || !tween) return;
-    const dx = e.touches[0].clientX - lastTouchX;
-    lastTouchX = e.touches[0].clientX;
-    const setW = set1.offsetWidth;
-    let newProg = tween.progress() - (dx / setW);
-    newProg = ((newProg % 1) + 1) % 1;
-    tween.progress(newProg);
-  }, { passive: true });
-
-  section.addEventListener('touchend', () => {
-    isDragging = false;
-    tween && tween.play();
-  });
+  if ('IntersectionObserver' in window) {
+    var bssObs = new IntersectionObserver(function(entries) {
+      if (!tween) return;
+      entries[0].isIntersecting ? tween.play() : tween.pause();
+    }, { rootMargin: '100px' });
+    bssObs.observe(section);
+  }
 
   // Scroll reveal — start marquee only after section enters view
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
@@ -4981,43 +4975,16 @@ ScrollTrigger.create({
   });
 })();
 
-/* ─── FAQ ACCORDION (mobile: animated, desktop: hover CSS) ─── */
+/* ─── FAQ ACCORDION (mobile: CSS grid transition, desktop: hover CSS) ─── */
 (function() {
-  const isMobile = () => window.innerWidth <= 767;
-
-  // initialise all reveals as collapsed on mobile
-  if (isMobile()) {
-    document.querySelectorAll('.faq-reveal').forEach(el => {
-      gsap.set(el, { height: 0, overflow: 'hidden' });
-    });
-  }
-
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      if (!isMobile()) return; // desktop uses hover CSS
-
-      const reveal  = item.querySelector('.faq-reveal');
-      const isOpen  = item.classList.contains('is-open');
-
-      // close any currently open item
-      document.querySelectorAll('.faq-item.is-open').forEach(el => {
+  if (window.innerWidth > 767) return;
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach(function(el) {
         el.classList.remove('is-open');
-        gsap.to(el.querySelector('.faq-reveal'), {
-          height: 0, duration: 0.32,
-          ease: 'power2.inOut',
-          onComplete() { gsap.set(el.querySelector('.faq-reveal'), { overflow: 'hidden' }); }
-        });
       });
-
-      // open this one if it was closed
-      if (!isOpen) {
-        item.classList.add('is-open');
-        gsap.to(reveal, {
-          height: 'auto', duration: 0.42,
-          ease: 'power3.out',
-          clearProps: 'overflow'
-        });
-      }
+      if (!isOpen) item.classList.add('is-open');
     });
   });
 })();
@@ -5183,17 +5150,23 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
     }
   }
 
-  /* continuous float on the scene wrapper */
+  /* continuous float on the scene wrapper — paused when off-screen */
   var scene = document.querySelector('.yt-scene');
   var mount = document.getElementById('yt-mount');
   if (scene) {
+    var floatTween;
     if (window.innerWidth <= 767) {
-      gsap.fromTo(scene,
+      floatTween = gsap.fromTo(scene,
         { x: -8, y: 0, rotation: -0.5 },
         { x: 8, y: -30, rotation: 0.5, duration: 4.5, ease: 'sine.inOut', yoyo: true, repeat: -1 }
       );
     } else {
-      gsap.to(scene, { y: -18, x: 6, rotation: 0.6, duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+      floatTween = gsap.to(scene, { y: -18, x: 6, rotation: 0.6, duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries) {
+        entries[0].isIntersecting ? floatTween.play() : floatTween.pause();
+      }, { rootMargin: '100px' }).observe(scene);
     }
   }
 
@@ -5217,11 +5190,6 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
     scene.addEventListener('mousemove', function (e) { applyTilt(e.clientX, e.clientY); });
     scene.addEventListener('mouseleave', resetTilt);
 
-    /* mobile touch */
-    scene.addEventListener('touchmove', function (e) {
-      e.preventDefault();
-      applyTilt(e.touches[0].clientX, e.touches[0].clientY);
-    }, { passive: false });
     scene.addEventListener('touchend', resetTilt);
   }
 
@@ -5249,6 +5217,24 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
   if (!ham || !menu) return;
   let closeTimer = null;
 
+  let savedScrollY = 0;
+
+  function lockScroll() {
+    savedScrollY = window.scrollY;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + savedScrollY + 'px';
+    document.body.style.width = '100%';
+  }
+
+  function unlockScroll() {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
   function closeMenu() {
     menu.classList.add('is-closing');
     ham.classList.remove('is-open');
@@ -5260,7 +5246,7 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
       menu.classList.remove('is-closing');
       menu.offsetHeight;
       menu.style.transition = '';
-      document.body.style.overflow = '';
+      unlockScroll();
     }, 480);
   }
 
@@ -5280,7 +5266,7 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
     menu.classList.add('is-open');
     ham.classList.add('is-open');
     ham.setAttribute('aria-label', 'Close menu');
-    document.body.style.overflow = 'hidden';
+    lockScroll();
   }
 
   ham.addEventListener('click', function(){
