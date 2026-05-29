@@ -2346,6 +2346,11 @@
     80%  { opacity: 0.92; filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,0.6)); }
     100% { opacity: 0.82; filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,0.25)); }
   }
+  /* iOS Safari cannot animate filter in keyframes — use opacity-only pulse */
+  @keyframes logo-ios-pulse {
+    0%, 100% { opacity: 0.82; }
+    60%      { opacity: 1;    }
+  }
 
   .duo-video-col {
     width: 100%;
@@ -2807,7 +2812,7 @@
     }
     .duo-video-side--left .dvs-list li,
     .duo-video-side--right .dvs-list li { font-size: 0.7rem; }
-    .duo-video-logo { width: 64px; height: 64px; }
+    .duo-video-logo { width: 64px; height: 64px; filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(255,255,255,0.65)) !important; animation: logo-ios-pulse 2.4s ease-in-out infinite !important; }
     .duo-video-logo-wrap { position: relative; animation: none !important; }
 
     /* ── YOUTUBE ── */
