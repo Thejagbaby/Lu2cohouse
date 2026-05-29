@@ -4565,6 +4565,23 @@ ScrollTrigger.create({
     });
   }
 
+  // Prevent page scroll while finger is on the marquee; pause/resume animation
+  const marqueeWrap = document.querySelector('.bss-marquee-wrap');
+  if (marqueeWrap) {
+    marqueeWrap.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+    }, { passive: false });
+    marqueeWrap.addEventListener('touchstart', function() {
+      if (tween) tween.pause();
+    }, { passive: true });
+    marqueeWrap.addEventListener('touchend', function() {
+      if (tween) tween.play();
+    }, { passive: true });
+    marqueeWrap.addEventListener('touchcancel', function() {
+      if (tween) tween.play();
+    }, { passive: true });
+  }
+
   // Pause marquee when section is off-screen to save CPU/battery
   const section = document.getElementById('bestsellers');
   if ('IntersectionObserver' in window) {
