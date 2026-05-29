@@ -879,24 +879,6 @@
       .sf-heading { font-size: clamp(1.4rem, 6vw, 2rem); }
       .sf-nav a { font-size: 0.78rem; }
     }
-  
-  /* ── Language Picker ── */
-  .mob-lang {
-    position: absolute; bottom: 5.5rem; left: 0; right: 0;
-    display: flex; justify-content: center; gap: 0.6rem;
-    opacity: 0;
-    transition: opacity 0.4s ease 0.6s;
-  }
-  .mob-menu.is-open .mob-lang { opacity: 1; }
-  .mob-lang-btn {
-    background: none; border: 1px solid rgba(255,255,255,0.18);
-    color: rgba(255,255,255,0.45); font-size: 0.62rem; letter-spacing: 0.12em;
-    padding: 0.28rem 0.7rem; border-radius: 2rem; cursor: pointer;
-    font-family: inherit;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  .mob-lang-btn:hover,
-  .mob-lang-btn--active { border-color: rgba(255,255,255,0.55); color: #fff; }
 </style>
   <script type="application/ld+json">
   {
@@ -948,11 +930,6 @@
       <video class="mob-video-img" src="assets/v1.mp4" autoplay muted loop playsinline></video>
     </div>
   </div>
-  <div class="mob-lang">
-    <button class="mob-lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="mob-lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-    <button class="mob-lang-btn" data-lang="de" onclick="setLang('de')">DE</button>
-  </div>
   <div class="mob-etsy-logo-wrap">
     <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener" class="mob-etsy-logo">Etsy</a>
   </div>
@@ -960,7 +937,7 @@
 
 <!-- ─── COVER HEADER ─── -->
 <div class="blog-cover">
-  <img src="../../Brand Logos/COVER1.png" alt="LU2COHOUSE" loading="eager">
+  <img src="../../Brand Logos/COVER1.webp" alt="LU2COHOUSE" loading="eager">
   <div class="blog-cover-overlay"></div>
   <div class="scroll-arrow">↓</div>
 </div>
@@ -1222,25 +1199,5 @@
 })();
 </script>
 
-  <script>
-    function setLang(l) {
-      var url = window.location.href;
-      if (url.indexOf('.translate.goog') > -1) {
-        var m = url.match(/[?&]u=([^&]+)/);
-        if (m) url = decodeURIComponent(m[1]);
-      }
-      if (l === 'en') { window.location.href = url; return; }
-      window.location.href = 'https://translate.google.com/translate?sl=en&tl=' + l + '&u=' + encodeURIComponent(url);
-    }
-    (function() {
-      var h = window.location.href;
-      var lang = 'en';
-      if (h.indexOf('tl=fr') > -1 || h.indexOf('_x_tr_tl=fr') > -1) lang = 'fr';
-      else if (h.indexOf('tl=de') > -1 || h.indexOf('_x_tr_tl=de') > -1) lang = 'de';
-      document.querySelectorAll('.mob-lang-btn').forEach(function(b) {
-        if (b.getAttribute('data-lang') === lang) b.classList.add('mob-lang-btn--active');
-      });
-    })();
-  </script>
 </body>
 </html>

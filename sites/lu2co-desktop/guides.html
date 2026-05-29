@@ -839,34 +839,6 @@
     }
   
   /* ── Language Picker ── */
-  .lang-picker { position: relative; display: flex; align-items: center; }
-  .lang-btn {
-    background: none; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.6);
-    font-size: 0.68rem; letter-spacing: 0.08em; padding: 0.28rem 0.65rem; border-radius: 2rem;
-    cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 0.3rem;
-    white-space: nowrap; line-height: 1;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-  .lang-btn:hover, .lang-btn:focus-visible { border-color: rgba(255,255,255,0.5); color: #fff; }
-  .lang-dropdown {
-    position: absolute; bottom: calc(100% + 8px); right: 0;
-    background: rgba(14,18,18,0.97); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px; padding: 0.3rem; min-width: 112px;
-    opacity: 0; visibility: hidden; transform: translateY(4px);
-    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-    z-index: 999; box-shadow: 0 -8px 24px rgba(0,0,0,0.4);
-  }
-  .sf-lang-row { display: flex; justify-content: flex-end; padding: 0.5rem 2rem 1rem; }
-  .lang-picker:hover .lang-dropdown,
-  .lang-picker:focus-within .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-  .lang-option {
-    display: flex; align-items: center; gap: 0.45rem; padding: 0.42rem 0.65rem;
-    border-radius: 5px; cursor: pointer; color: rgba(255,255,255,0.6);
-    font-size: 0.68rem; letter-spacing: 0.06em; font-family: inherit;
-    background: none; border: none; width: 100%; text-align: left;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .lang-option:hover { background: rgba(255,255,255,0.07); color: #fff; }
 
 
 </style>
@@ -892,7 +864,7 @@
 <!-- ─── NAV ─── -->
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <img loading="lazy" src="../../Brand Logos/logo.png" alt="LU2COHOUSE">
+    <img loading="lazy" src="../../Brand Logos/logo.webp" alt="LU2COHOUSE">
   </a>
   <div class="nav-links">
     <a href="jackets.html" class="nav-link">Jackets</a>
@@ -907,7 +879,7 @@
 
 <!-- ─── COVER HERO ─── -->
 <div class="blog-cover">
-  <img src="../../Brand Logos/COVER1.png" alt="Elyse Cover">
+  <img src="../../Brand Logos/COVER1.webp" alt="Elyse Cover">
   <div class="scroll-arrow">↓</div>
 </div>
 
@@ -926,7 +898,7 @@
     <article class="post-card">
       <div class="post-img">
         <a href="seo/posts/siena-quilt-jacket.html" class="post-img-inner">
-          <img src="assets/products/Product 12/1.png" alt="Siena Quilt Coat by LU2COHOUSE" loading="eager">
+          <img src="assets/products/Product 12/1.webp" alt="Siena Quilt Coat by LU2COHOUSE" loading="eager">
         </a>
       </div>
       <div class="post-content">
@@ -945,7 +917,7 @@
     <article class="post-card">
       <div class="post-img">
         <a href="seo/posts/hooded-quilted-jacket.html" class="post-img-inner">
-          <img src="assets/products/product 2/4.png" alt="Hooded Quilted Jacket by LU2COHOUSE" loading="eager">
+          <img src="assets/products/product 2/4.webp" alt="Hooded Quilted Jacket by LU2COHOUSE" loading="eager">
         </a>
       </div>
       <div class="post-content">
@@ -964,7 +936,7 @@
     <article class="post-card">
       <div class="post-img">
         <a href="seo/posts/laurel-crop-jacket.html" class="post-img-inner">
-          <img src="assets/products/Product 7/1.png" alt="Laurel Crop Jacket" loading="eager">
+          <img src="assets/products/Product 7/1.webp" alt="Laurel Crop Jacket" loading="eager">
         </a>
       </div>
       <div class="post-content">
@@ -983,7 +955,7 @@
     <article class="post-card">
       <div class="post-img">
         <a href="seo/posts/funnel-neck-jacket.html" class="post-img-inner">
-          <img src="assets/products/Product 8/5.png" alt="Funnel Neck Jacket" loading="lazy">
+          <img src="assets/products/Product 8/5.webp" alt="Funnel Neck Jacket" loading="lazy">
         </a>
       </div>
       <div class="post-content">
@@ -1002,7 +974,7 @@
     <article class="post-card">
       <div class="post-img">
         <a href="seo/posts/blossom-quilted-vest.html" class="post-img-inner">
-          <img src="assets/blog5/10.png" alt="Blossom Quilted Vest by LU2COHOUSE" loading="lazy">
+          <img src="assets/blog5/10.webp" alt="Blossom Quilted Vest by LU2COHOUSE" loading="lazy">
         </a>
       </div>
       <div class="post-content">
@@ -1021,7 +993,7 @@
     <article class="post-card">
       <div class="post-img">
         <a href="seo/posts/blossom-quilted-coat.html" class="post-img-inner">
-          <img src="assets/products/Product 5/1.png" alt="Blossom Quilted Coat" loading="lazy">
+          <img src="assets/products/Product 5/1.webp" alt="Blossom Quilted Coat" loading="lazy">
         </a>
       </div>
       <div class="post-content">
@@ -1112,14 +1084,6 @@
   </div>
 
 
-  <div class="sf-lang-row">
-    <div class="lang-picker">
-      <button class="lang-btn" aria-label="Select language" id="langBtn">EN</button>
-      <div class="lang-dropdown">
-        <button class="lang-option" onclick="setLang('en')">&#127482;&#127480; English</button>
-        <button class="lang-option" onclick="setLang('fr')">&#127467;&#127479; Fran&#231;ais</button>
-        <button class="lang-option" onclick="setLang('de')">&#127465;&#127466; Deutsch</button>
-      </div>
     </div>
   </div>
 </footer>
@@ -1130,23 +1094,5 @@
   }, { passive: true });
 </script>
 
-  <script>
-    function setLang(l) {
-      var url = window.location.href;
-      if (url.indexOf('.translate.goog') > -1) {
-        var m = url.match(/[?&]u=([^&]+)/);
-        if (m) url = decodeURIComponent(m[1]);
-      }
-      if (l === 'en') { window.location.href = url; return; }
-      window.location.href = 'https://translate.google.com/translate?sl=en&tl=' + l + '&u=' + encodeURIComponent(url);
-    }
-    (function() {
-      var b = document.getElementById('langBtn');
-      if (!b) return;
-      var h = window.location.href;
-      if (h.indexOf('tl=fr') > -1 || h.indexOf('_x_tr_tl=fr') > -1) b.innerHTML = '&#127758; FR';
-      else if (h.indexOf('tl=de') > -1 || h.indexOf('_x_tr_tl=de') > -1) b.innerHTML = '&#127758; DE';
-    })();
-  </script>
 </body>
 </html>
