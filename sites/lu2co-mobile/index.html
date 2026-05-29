@@ -4567,7 +4567,7 @@ ScrollTrigger.create({
     setW = set1.offsetWidth;
     tween = gsap.to(marquee, {
       x: -setW,
-      duration: setW / 17,
+      duration: setW / 13,
       ease: 'none',
       repeat: -1,
       onRepeat() { gsap.set(marquee, { x: 0 }); }
@@ -4580,7 +4580,7 @@ ScrollTrigger.create({
     while (curX > 0) curX -= setW;
     while (curX < -setW) curX += setW;
     gsap.set(marquee, { x: curX });
-    const totalDur = setW / 17;
+    const totalDur = setW / 13;
     const dist = Math.abs(-setW - curX);
     const dur = (dist / setW) * totalDur;
     if (dur < 0.05) {
@@ -4636,7 +4636,7 @@ ScrollTrigger.create({
     gsap.set('.bss-card', { opacity: 0, y: 28 });
     ScrollTrigger.create({
       trigger: '#bestsellers',
-      start: 'top 85%',
+      start: 'top 120%',
       once: true,
       onEnter() {
         gsap.to('.bss-card', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.06,
