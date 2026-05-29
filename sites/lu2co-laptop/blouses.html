@@ -1055,7 +1055,7 @@ gsap.to(['#colLeft', '#colRight'], {
       prev.innerHTML = `<span class="side-nav-name">${PAGES[prevIdx].name}</span>`;
       prev.addEventListener('click', () => {
         sessionStorage.setItem('fromScroll', '1');
-        gsap.to(['#pageHeader', '.grid-wrap', 'footer'], { y: -80, opacity: 0, duration: 0.5, ease: 'power2.in' });
+        gsap.to(['.grid-wrap', 'footer'], { y: -80, opacity: 0, duration: 0.5, ease: 'power2.in' });
         gsap.to(elems, { y: -50, opacity: 0, duration: .45, ease: 'power2.in', stagger: .08,
           onComplete() { window.location.href = PAGES[prevIdx].url; }
         });
@@ -1082,7 +1082,7 @@ gsap.to(['#colLeft', '#colRight'], {
 
     next.addEventListener('click', () => {
       sessionStorage.setItem('fromScroll', '1');
-      gsap.to(['#pageHeader', '.grid-wrap', 'footer'], {
+      gsap.to(['.grid-wrap', 'footer'], {
         y: -80, opacity: 0, duration: 0.5, ease: 'power2.in'
       });
       gsap.to(elems, {
