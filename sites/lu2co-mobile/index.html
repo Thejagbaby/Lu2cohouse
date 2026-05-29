@@ -324,7 +324,7 @@
       flex-direction: column;
       justify-content: flex-end;
       pointer-events: none;
-      background-image: url('assets/coveriphone.webp');
+      background-image: url('assets/phonecov2.png');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -4567,7 +4567,7 @@ ScrollTrigger.create({
     setW = set1.offsetWidth;
     tween = gsap.to(marquee, {
       x: -setW,
-      duration: setW / 8,
+      duration: setW / 5,
       ease: 'none',
       repeat: -1,
       onRepeat() { gsap.set(marquee, { x: 0 }); }
@@ -4580,7 +4580,7 @@ ScrollTrigger.create({
     while (curX > 0) curX -= setW;
     while (curX < -setW) curX += setW;
     gsap.set(marquee, { x: curX });
-    const totalDur = setW / 8;
+    const totalDur = setW / 5;
     const dist = Math.abs(-setW - curX);
     const dur = (dist / setW) * totalDur;
     if (dur < 0.05) {
