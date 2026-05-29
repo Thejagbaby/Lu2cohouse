@@ -4567,7 +4567,7 @@ ScrollTrigger.create({
     setW = set1.offsetWidth;
     tween = gsap.to(marquee, {
       x: -setW,
-      duration: setW / 5,
+      duration: setW / 80,
       ease: 'none',
       repeat: -1,
       onRepeat() { gsap.set(marquee, { x: 0 }); }
@@ -4580,7 +4580,7 @@ ScrollTrigger.create({
     while (curX > 0) curX -= setW;
     while (curX < -setW) curX += setW;
     gsap.set(marquee, { x: curX });
-    const totalDur = setW / 5;
+    const totalDur = setW / 80;
     const dist = Math.abs(-setW - curX);
     const dur = (dist / setW) * totalDur;
     if (dur < 0.05) {
