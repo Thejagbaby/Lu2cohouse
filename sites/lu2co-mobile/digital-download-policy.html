@@ -902,7 +902,7 @@
 <!-- ─── NAV ─── -->
 <nav id="nav">
   <a href="index.html" class="nav-logo">
-    <img loading="lazy" src="../../Brand Logos/DarkLogo.webp" alt="LU2COHOUSE">
+    <img loading="lazy" src="../../Brand Logos/logo1.webp" alt="LU2COHOUSE">
   </a>
   <div class="nav-links">
     <a href="jackets.html" class="nav-link">Jackets</a>
@@ -1150,6 +1150,7 @@
   const menu = document.getElementById('mobMenu');
   if (!ham || !menu) return;
   let closeTimer = null;
+  let savedScrollY = 0;
 
   function closeMenu() {
     menu.classList.add('is-closing');
@@ -1163,6 +1164,10 @@
       menu.offsetHeight;
       menu.style.transition = '';
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, savedScrollY);
     }, 480);
   }
 
@@ -1182,7 +1187,11 @@
     menu.classList.add('is-open');
     ham.classList.add('is-open');
     ham.setAttribute('aria-label', 'Close menu');
+    savedScrollY = window.scrollY;
     document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + savedScrollY + 'px';
+    document.body.style.width = '100%';
   }
 
   ham.addEventListener('click', function(){
