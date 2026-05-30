@@ -766,8 +766,12 @@
   }
   </script>
   <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
+<style id="overlay-style">
+  #page-overlay{position:fixed;inset:0;background:#0d1212;z-index:9999;pointer-events:none;opacity:1;}
+</style>
 </head>
 <body>
+<div id="page-overlay"></div>
 
 <!-- ─── NAV ─── -->
 <nav id="nav">
@@ -990,5 +994,28 @@
 
 </script>
 
+<script>
+(function(){
+  var o=document.getElementById('page-overlay');
+  if(!o)return;
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      o.style.transition='opacity 0.35s ease';
+      o.style.opacity='0';
+    });
+  });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href]');
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href||href.startsWith('http')||href.startsWith('#')||href.startsWith('mailto')||a.target==='_blank')return;
+    e.preventDefault();
+    o.style.transition='opacity 0.28s ease';
+    o.style.opacity='1';
+    o.style.pointerEvents='all';
+    setTimeout(function(){window.location.href=href;},290);
+  });
+})();
+</script>
 </body>
 </html>
