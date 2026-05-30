@@ -1755,13 +1755,21 @@ const PRODUCTS = [
   var list1 = PRODUCTS.slice(0, half);
   var list2 = PRODUCTS.slice(half);
 
-  // Build two sets each for seamless loop
-  buildCards(col1, list1); buildCards(col1, list1);
-  buildCards(col2, list2); buildCards(col2, list2);
+  // Build one set first to measure, then fill to cover container
+  buildCards(col1, list1);
+  buildCards(col2, list2);
 
   requestAnimationFrame(function() {
-    var h1 = col1.scrollHeight / 2 + 24; // half + one gap
-    var h2 = col2.scrollHeight / 2 + 24;
+    var oneH1 = col1.scrollHeight;
+    var oneH2 = col2.scrollHeight;
+    var containerH = col1.parentElement.offsetHeight;
+
+    // Keep adding copies until content is at least 3x the container height
+    while (col1.scrollHeight < containerH * 3) buildCards(col1, list1);
+    while (col2.scrollHeight < containerH * 3) buildCards(col2, list2);
+
+    var h1 = oneH1; // one list cycle = one copy height
+    var h2 = oneH2;
 
     // Col 1: scroll up
     gsap.to(col1, {
