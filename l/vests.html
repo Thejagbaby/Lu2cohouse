@@ -956,7 +956,8 @@ function makeCard(p, i) {
   `;
 
   card.querySelector('.card-btn--buy').addEventListener('click', e => e.stopPropagation());
-  card.addEventListener('click', function(){if(!p.slug)return;window.location.href='products/'+p.slug+'.html';});
+  card.querySelector('.card-btn:not(.card-btn--buy)').addEventListener('click', function(e){ e.stopPropagation(); if(p.slug) window.location.href='products/'+p.slug+'.html'; });
+  card.addEventListener('click', () => openModal(p));
   wrap.appendChild(card);
   return wrap;
 }
