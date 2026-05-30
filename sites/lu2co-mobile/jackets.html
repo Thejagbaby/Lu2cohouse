@@ -2011,7 +2011,7 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
         </div>
 
         ${REVIEWS.map(r => `<div class="pm-rv-card"><div class="pm-rv-card-stars">${'★'.repeat(r.stars)}</div><div class="pm-rv-card-text">${r.text}</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">${r.name}</span> · ${r.date}</div></div>`).join('')}
-        <a href="${p.link}" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>
+        <a href="${p.url}" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>
       `;
     }
     /* open */

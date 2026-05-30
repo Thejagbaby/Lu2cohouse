@@ -1955,7 +1955,7 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
       pmReviews.innerHTML =
         '<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars">' + bars.map(function(b){return '<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">'+b[0]+'</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:'+b[1]+'"></div></div><span class="pm-rv-bar-num">'+b[1]+'</span></div>';}).join('') + '</div></div>' +
         REVIEWS2.map(function(r){return '<div class="pm-rv-card"><div class="pm-rv-card-stars">'+'★'.repeat(r.stars)+'</div><div class="pm-rv-card-text">'+r.text+'</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">'+r.name+'</span> · '+r.date+'</div></div>';}).join('') +
-        '<a href="'+p.link+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
+        '<a href="'+p.url+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
     }    const _pmPanel = modal.querySelector('.pm-panel');
     modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';
