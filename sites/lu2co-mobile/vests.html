@@ -153,9 +153,9 @@
     .mob-menu {
       position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       z-index: 300;
-      background: #0e1212;
+      background: #121717;
       display: flex; flex-direction: column;
-      padding: 80px 1.8rem 2rem;
+      padding: 80px 1.8rem 1.5rem;
       overflow-y: auto;
       opacity: 0; visibility: hidden;
       transform: translateY(-100%);
@@ -174,13 +174,13 @@
     }
     .mob-link {
       font-family: var(--font-sans);
-      font-size: clamp(1.5rem, 6.5vw, 2.2rem);
+      font-size: clamp(1.2rem, 5.2vw, 1.7rem);
       font-weight: 300;
       color: rgba(255,255,255,0.55);
       text-decoration: none;
       letter-spacing: -0.03em;
       line-height: 1.3;
-      padding: 0.45rem 0;
+      padding: 0.35rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.05);
       opacity: 0;
       transform: translateY(-22px);
@@ -196,8 +196,9 @@
     .mob-link--active { color: #fff !important; font-weight: 500; }
     .mob-link:active { color: #fff; }
     .mob-etsy-logo-wrap {
-      position: absolute; bottom: 2rem; left: 0; right: 0;
+      
       display: flex; justify-content: center;
+      padding: 1.2rem 0 0.5rem;
       opacity: 0;
       transition: opacity 0.75s ease;
     }
