@@ -3661,8 +3661,6 @@ ScrollTrigger.create({
         });
       });
     }
-  });
-})();
 
 /* ── 6. BEST SELLERS — centered track slider ── */
 (function initBestSellers() {
@@ -4192,8 +4190,6 @@ ScrollTrigger.create({
       gsap.to('.learn-img-wrap-2',        { opacity: 1, y: 0,      duration: 1.2,  ease: 'power3.out', delay: 0.3 });
     },
     onEnterBack: learnSnap,
-  });
-})();
 
 /* ─── FAQ VIEW ALL TOGGLE ─── */
 (function() {
@@ -4218,8 +4214,6 @@ ScrollTrigger.create({
     }
     btn.textContent = open ? 'Show Less' : 'View All';
     btn.classList.toggle('is-open', open);
-  });
-})();
 
 /* ─── FAQ TOUCH TOGGLE (hover handles desktop via CSS) ─── */
 (function() {
@@ -4232,8 +4226,6 @@ ScrollTrigger.create({
         if (!isOpen) item.classList.add('is-open');
       }
     });
-  });
-})();
 
 /* ─── FAQ ENTRANCE ANIMATION ─── */
 (function() {
@@ -4251,8 +4243,6 @@ ScrollTrigger.create({
   gsap.from('.faq-item', {
     opacity: 0, y: 18, duration: 0.65, ease: 'power3.out', stagger: 0.06, delay: 0.35,
     scrollTrigger: { trigger: '.faq-list', start: 'top 85%', once: true }
-  });
-})();
 
 
 
@@ -4426,6 +4416,9 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
     o.style.opacity='1';
     o.style.pointerEvents='all';
     setTimeout(function(){window.location.href=href;},290);
+  });
+  window.addEventListener('pageshow',function(e){
+    if(e.persisted){o.style.transition='none';o.style.opacity='0';o.style.pointerEvents='none';}
   });
 })();
 </script>
