@@ -1914,12 +1914,36 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
     /* ── REVIEWS ── */
     const pmReviews = document.getElementById('pmReviews');
     if (pmReviews) {
-      const REVIEWS2 = [
-        { name: 'Sarah M.', stars: 5, text: 'Absolutely love this pattern! So clear and easy to follow. Finished it in a weekend.', date: '3 weeks ago' },
-        { name: 'Emma R.', stars: 5, text: 'Beautiful design. I am a beginner and had no issues. The booklet is incredibly detailed.', date: '1 month ago' },
-        { name: 'Jennifer K.', stars: 5, text: 'Excellent PDF quality. Everything clearly labeled, sizing runs true. Very happy!', date: '2 months ago' },
-        { name: 'Maria L.', stars: 5, text: 'Made two of these already. Quick to sew and always looks professional.', date: '3 months ago' },
+      const ALL_REVIEWS = [
+        { name: 'Sarah M.',     stars: 5, text: 'Absolutely love this pattern! The instructions were so clear and easy to follow. I finished it in a weekend and the result looks amazing.', date: '3 weeks ago' },
+        { name: 'Emma R.',      stars: 5, text: 'Beautiful design. I am a beginner and had no issues at all. The instruction booklet is incredibly detailed and the pattern is well-tested.', date: '1 month ago' },
+        { name: 'Jennifer K.',  stars: 5, text: 'The PDF quality is excellent. Everything is clearly labeled and the sizing runs true. Very happy with this purchase!', date: '2 months ago' },
+        { name: 'Maria L.',     stars: 5, text: 'Made two of these already. Quick to sew and the end result always looks professional. Highly recommend!', date: '3 months ago' },
+        { name: 'Chloe B.',     stars: 5, text: 'I have bought many sewing patterns and this is by far the best quality. The A0 file is perfect for printing at a copy shop.', date: '2 weeks ago' },
+        { name: 'Amelia T.',    stars: 5, text: 'Stunning result! I used a vintage quilt I had stored away and the transformation is incredible. Getting so many compliments.', date: '1 month ago' },
+        { name: 'Lily W.',      stars: 5, text: 'Very well drafted pattern. I am an intermediate sewer and found it quick to assemble. The fit was perfect on the first try.', date: '5 weeks ago' },
+        { name: 'Grace H.',     stars: 5, text: 'The instruction booklet is so thorough — it feels like having a teacher guide you through each step. Loved the whole process!', date: '6 weeks ago' },
+        { name: 'Sophie C.',    stars: 5, text: 'I made this for my daughter and she absolutely loves it. The sizing chart is accurate and the pattern pieces fit together perfectly.', date: '2 months ago' },
+        { name: 'Olivia P.',    stars: 5, text: 'This is my third LU2CO pattern and the quality just keeps getting better. Worth every penny. Instant download worked flawlessly.', date: '3 weeks ago' },
+        { name: 'Ava N.',       stars: 5, text: 'Loved how beginner-friendly this is. I only started sewing six months ago and the result looks like something from a boutique!', date: '1 month ago' },
+        { name: 'Isabella F.',  stars: 5, text: 'I appreciated that the pattern includes all sizes in one file. No extra costs for different sizes — very thoughtful design.', date: '7 weeks ago' },
+        { name: 'Mia D.',       stars: 5, text: 'Such a unique design! I have received so many questions about where I bought it. People are shocked when I say I made it myself!', date: '2 months ago' },
+        { name: 'Charlotte S.', stars: 5, text: 'Excellent digital product. Downloaded instantly and the files are very organized. The A4 format printed perfectly on my home printer.', date: '3 months ago' },
+        { name: 'Zoe A.',       stars: 5, text: 'I was nervous buying my first digital pattern but the instructions are so detailed I never felt lost. Beautifully made result!', date: '4 weeks ago' },
+        { name: 'Hannah J.',    stars: 5, text: 'The pattern is brilliant. Layers are clearly labeled in the PDF and the fit guide helped me pick the right size immediately.', date: '6 weeks ago' },
+        { name: 'Natalie V.',   stars: 5, text: 'I thrifted an old quilt and turned it into the most beautiful jacket. This pattern made it so easy — cannot recommend enough!', date: '2 months ago' },
+        { name: 'Claire O.',    stars: 5, text: 'Fast download, clear instructions, incredible end result. The quality is on par with big brand patterns but at a fraction of the price.', date: '5 weeks ago' },
+        { name: 'Ruby E.',      stars: 5, text: 'My sewing group and I all bought this together and we all loved it. Great for group sewing sessions because the steps are so clear.', date: '3 months ago' },
+        { name: 'Luna K.',      stars: 5, text: 'I am obsessed with this pattern! Made it in three different fabrics already. It is truly timeless. So glad I found this brand.', date: '1 month ago' },
+        { name: 'Stella Y.',    stars: 5, text: 'Sent as a gift to my sister who loves sewing. She was thrilled and completed it in just a few days. Already planning to buy another!', date: '7 weeks ago' },
+        { name: 'Violet M.',    stars: 5, text: 'Printing was flawless and the pattern pieces are well sized — no tiny fiddly parts. This is a joy to sew from start to finish.', date: '6 weeks ago' },
+        { name: 'Aurora B.',    stars: 5, text: 'I followed every step and got a gorgeous result. The included booklet is like a mini sewing course. Learned so much from this project!', date: '4 months ago' },
+        { name: 'Iris Q.',      stars: 4, text: 'Very good pattern overall. The instructions could use a few more diagrams but I figured it out. Beautiful finished piece.', date: '2 months ago' },
       ];
+      var _seed = 0; for (var _i = 0; _i < (p.short||'').length; _i++) _seed += (p.short||'').charCodeAt(_i);
+      var _pool = [], _used = {}, _n = ALL_REVIEWS.length;
+      for (var _j = 0; _j < 4; _j++) { var _idx = (_seed * (_j+1) * 7 + _j * 13) % _n; while(_used[_idx]) _idx = (_idx+1)%_n; _used[_idx]=true; _pool.push(ALL_REVIEWS[_idx]); }
+      const REVIEWS2 = _pool;
       const bars = [['5 star','79%'],['4 star','11%'],['3 star','3%'],['2 star','2%'],['1 star','4%']];
       pmReviews.innerHTML =
         '<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars">' + bars.map(function(b){return '<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">'+b[0]+'</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:'+b[1]+'"></div></div><span class="pm-rv-bar-num">'+b[1]+'</span></div>';}).join('') + '</div></div>' +
