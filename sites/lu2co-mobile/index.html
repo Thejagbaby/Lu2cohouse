@@ -3790,7 +3790,7 @@
             <div class="yt-pin-head"></div>
             <div class="yt-pin-stem"></div>
           </div>
-          <div class="yt-card" id="yt-card-embed" aria-label="Play video" role="button" tabindex="0" onclick="(function(el){var id='GZ2QQRiP6FU';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0&modestbranding=1';f.allow='autoplay;encrypted-media';f.allowFullscreen=true;f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;';el.innerHTML='';el.style.paddingBottom='56.25%';el.style.position='relative';el.style.cursor='default';el.appendChild(f);})(this)">
+          <div class="yt-card" id="yt-card-embed" aria-label="Play video" role="button" tabindex="0" style="cursor:pointer;">
             <img class="yt-thumb-img" src="https://img.youtube.com/vi/GZ2QQRiP6FU/maxresdefault.jpg" alt="How To Sew a Hooded Quilted Jacket From Scratch">
             <div class="yt-play" aria-hidden="true">
               <div class="yt-play-ring">
@@ -5499,6 +5499,27 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
     if (now - lastTap < 300) { setScale(scale > 1.2 ? 1 : 2.4); e.stopPropagation(); }
     lastTap = now;
   });
+})();
+</script>
+
+<script>
+(function () {
+  var card = document.getElementById('yt-card-embed');
+  if (!card) return;
+  function embedVideo() {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/GZ2QQRiP6FU?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+    f.allow = 'autoplay; encrypted-media; fullscreen';
+    f.allowFullscreen = true;
+    f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;';
+    card.innerHTML = '';
+    card.style.paddingBottom = '56.25%';
+    card.style.position = 'relative';
+    card.style.cursor = 'default';
+    card.appendChild(f);
+  }
+  card.addEventListener('click', embedVideo);
+  card.addEventListener('touchend', function (e) { e.preventDefault(); embedVideo(); }, { passive: false });
 })();
 </script>
 
