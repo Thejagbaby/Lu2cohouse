@@ -55,7 +55,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="spa-data.js"></script>
 
   <style>
     @import url("https://db.onlinewebfonts.com/c/5da49843f66caf14799662bd12aa55a2?family=Dream+Avenue");
@@ -812,41 +811,6 @@ if (PRODUCTS.length >= 3) {
   });
 }
 
-/* ── SPA helpers ── */
-function _spaRenderSideNav(currentFilename) {
-  var SP=[{name:'Jackets',url:'jackets.html'},{name:'Vests',url:'vests.html'},{name:'Blouses',url:'blouses.html'},{name:'Pants',url:'pants.html'},{name:'Shop All',url:'shop-all.html'}];
-  var nav=document.getElementById('sideNav');if(!nav)return;
-  var cIdx=SP.findIndex(function(p){return p.url===currentFilename;});if(cIdx<0)cIdx=3;
-  var nIdx=(cIdx+1)%SP.length;
-  nav.innerHTML='';
-  var active=document.createElement('div');active.className='side-nav-item is-active';
-  active.innerHTML='<span class="side-nav-name">'+SP[cIdx].name+'</span>';nav.appendChild(active);
-  var next=document.createElement('div');next.className='side-nav-item is-next';
-  next.innerHTML='<span class="side-nav-name">'+SP[nIdx].name+'</span>';
-  next.addEventListener('click',function(){if(window._spaNavigate)window._spaNavigate(SP[nIdx].url);else window.location.href=SP[nIdx].url;});
-  nav.appendChild(next);
-  gsap.from([active,next],{y:40,opacity:0,duration:0.9,ease:'power3.out',stagger:0.12});
-}
-window.reinitGrid=function(newProducts,newHeading,newFilename){
-  ScrollTrigger.getAll().forEach(function(st){st.kill();});
-  gsap.killTweensOf([colLeft,colMid,colRight]);
-  var grid=document.querySelector('.product-grid');if(grid)grid.style.justifyContent='';
-  [colLeft,colMid,colRight].forEach(function(c){gsap.set(c,{clearProps:'y'});c.style.display='';c.style.flex='';c.style.maxWidth='';c.innerHTML='';});
-  gsap.set(['.grid-wrap','footer'],{clearProps:'all'});
-  if(newProducts.length===1){colLeft.style.display='none';colRight.style.display='none';if(grid)grid.style.justifyContent='center';colMid.style.flex='0 0 32%';colMid.style.maxWidth='420px';colMid.appendChild(makeCard(newProducts[0],0));}
-  else if(newProducts.length===2){colMid.style.display='none';if(grid)grid.style.justifyContent='center';colLeft.style.flex='0 0 32%';colLeft.style.maxWidth='420px';colRight.style.flex='0 0 32%';colRight.style.maxWidth='420px';colLeft.appendChild(makeCard(newProducts[0],0));colRight.appendChild(makeCard(newProducts[1],1));}
-  else{newProducts.forEach(function(p,i){cols[i%3].appendChild(makeCard(p,i));});var ml=Math.max(colLeft.children.length,colMid.children.length,colRight.children.length);cols.forEach(function(col){while(col.children.length<ml)col.appendChild(col.lastElementChild.cloneNode(true));});}
-  var h=document.getElementById('pageHeading');if(h&&newHeading)h.textContent=newHeading;
-  window.scrollTo(0,0);
-  if(h){gsap.set(h,{yPercent:105});gsap.to(h,{yPercent:0,duration:1.1,ease:'power3.out',delay:0.1});}
-  var _amt=Math.min(600,Math.max(60,colMid.scrollHeight*0.18));
-  gsap.timeline({scrollTrigger:{trigger:document.documentElement,start:'top top',end:'bottom bottom',scrub:true}}).to([colLeft,colRight],{y:-_amt,ease:'none'}).to([colLeft,colRight],{y:0,ease:'none'});
-  gsap.to('#pageHeading',{yPercent:-25,ease:'none',scrollTrigger:{trigger:'#pageHeader',start:'top top',end:'bottom top',scrub:true}});
-  var cards=Array.from(colLeft.children).concat(Array.from(colMid.children),Array.from(colRight.children));
-  gsap.from(cards,{opacity:0,y:30,duration:0.65,ease:'power2.out',stagger:0.025,delay:0.1});
-  if(newFilename)_spaRenderSideNav(newFilename);
-};
-
 /* ── PAGE ENTRANCE: slides in from below only when arriving via scroll/nav ── */
 if (sessionStorage.getItem('fromScroll')) {
   sessionStorage.removeItem('fromScroll');
@@ -1094,7 +1058,6 @@ gsap.to(['#colLeft', '#colRight'], {
       prev.className = 'side-nav-item is-prev';
       prev.innerHTML = `<span class="side-nav-name">${PAGES[prevIdx].name}</span>`;
       prev.addEventListener('click', () => {
-        if (window._spaNavigate) { window._spaNavigate(PAGES[prevIdx].url); return; }
         sessionStorage.setItem('fromScroll', '1');
         gsap.to(['.grid-wrap', 'footer'], { y: -80, opacity: 0, duration: 0.5, ease: 'power2.in' });
         gsap.to(elems, { y: -50, opacity: 0, duration: .45, ease: 'power2.in', stagger: .08,
@@ -1122,10 +1085,12 @@ gsap.to(['#colLeft', '#colRight'], {
     });
 
     next.addEventListener('click', () => {
-      if (window._spaNavigate) { window._spaNavigate(PAGES[nIdx].url); return; }
       sessionStorage.setItem('fromScroll', '1');
-      gsap.to(['.grid-wrap', 'footer'], { y: -80, opacity: 0, duration: 0.5, ease: 'power2.in' });
-      gsap.to(elems, { y: -50, opacity: 0, duration: .45, ease: 'power2.in', stagger: .08,
+      gsap.to(['.grid-wrap', 'footer'], {
+        y: -80, opacity: 0, duration: 0.5, ease: 'power2.in'
+      });
+      gsap.to(elems, {
+        y: -50, opacity: 0, duration: .45, ease: 'power2.in', stagger: .08,
         onComplete() { window.location.href = PAGES[nIdx].url; }
       });
     });
@@ -1195,16 +1160,25 @@ gsap.to(['#colLeft', '#colRight'], {
 
 <script>
 (function(){
-  var o=document.getElementById('page-overlay');if(!o)return;
-  var SPA_FILES=['jackets.html','vests.html','blouses.html','pants.html','shop-all.html'];
-  function spaNavigate(href){var fn=href.split('/').pop()||href;var data=window.SPA_DATA&&window.SPA_DATA[fn];
-    if(!data||typeof window.reinitGrid!=='function'){o.style.transition='opacity 0.28s ease';o.style.opacity='1';o.style.pointerEvents='all';setTimeout(function(){window.location.href=href;},290);return;}
-    o.style.transition='opacity 0.18s ease';o.style.opacity='0.9';o.style.pointerEvents='all';
-    setTimeout(function(){history.pushState({fn:fn},'',href);document.querySelectorAll('.nav-link').forEach(function(l){l.classList.toggle('active',l.getAttribute('href')===href);});window.reinitGrid(data.products,data.heading,fn);o.style.transition='opacity 0.35s ease';o.style.opacity='0';o.style.pointerEvents='none';},180);}
-  window._spaNavigate=spaNavigate;
-  requestAnimationFrame(function(){requestAnimationFrame(function(){o.style.transition='opacity 0.35s ease';o.style.opacity='0';});});
-  document.addEventListener('click',function(e){var a=e.target.closest('a[href]');if(!a)return;var href=a.getAttribute('href');if(!href||href.startsWith('http')||href.startsWith('#')||href.startsWith('mailto')||a.target==='_blank')return;var fn=href.split('/').pop()||href;e.preventDefault();if(SPA_FILES.indexOf(fn)>=0)spaNavigate(href);else{o.style.transition='opacity 0.28s ease';o.style.opacity='1';o.style.pointerEvents='all';setTimeout(function(){window.location.href=href;},290);}});
-  window.addEventListener('popstate',function(){window.location.reload();});
+  var o=document.getElementById('page-overlay');
+  if(!o)return;
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){
+      o.style.transition='opacity 0.35s ease';
+      o.style.opacity='0';
+    });
+  });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href]');
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href||href.startsWith('http')||href.startsWith('#')||href.startsWith('mailto')||a.target==='_blank')return;
+    e.preventDefault();
+    o.style.transition='opacity 0.28s ease';
+    o.style.opacity='1';
+    o.style.pointerEvents='all';
+    setTimeout(function(){window.location.href=href;},290);
+  });
 })();
 </script>
 </body>
