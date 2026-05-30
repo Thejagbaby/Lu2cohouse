@@ -1700,6 +1700,15 @@ gsap.timeline({
       o.style.opacity='0';
     });
   });
+  window.addEventListener('pageshow',function(e){
+    if(!e.persisted)return;
+    o.style.transition='none';
+    o.style.opacity='0';
+    o.style.pointerEvents='none';
+    requestAnimationFrame(function(){
+      o.style.transition='opacity 0.35s ease';
+    });
+  });
   document.addEventListener('click',function(e){
     var a=e.target.closest('a[href]');
     if(!a)return;
