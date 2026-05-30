@@ -9,7 +9,7 @@
     img-src 'self' data: https://img.youtube.com https://yt3.googleusercontent.com https://placehold.co;
     connect-src 'none';
     media-src 'self';
-    frame-src 'none';
+    frame-src https://www.youtube.com https://www.youtube-nocookie.com;
     object-src 'none';
     base-uri 'self';
     form-action 'none';
@@ -3104,7 +3104,7 @@
             <div class="yt-pin-head"></div>
             <div class="yt-pin-stem"></div>
           </div>
-          <a href="https://www.youtube.com/watch?v=GZ2QQRiP6FU" target="_blank" rel="noopener" class="yt-card" aria-label="Watch tutorial on YouTube">
+          <div class="yt-card" id="yt-card-embed" aria-label="Play video" role="button" tabindex="0" style="cursor:pointer;">
             <img class="yt-thumb-img" src="https://img.youtube.com/vi/GZ2QQRiP6FU/maxresdefault.jpg" alt="How To Sew a Hooded Quilted Jacket From Scratch">
             <div class="yt-play" aria-hidden="true">
               <div class="yt-play-ring">
@@ -3112,8 +3112,8 @@
               </div>
             </div>
             <div class="yt-duration-badge" aria-hidden="true">7:57</div>
-          </a>
-          <div class="yt-mount-caption">Watch on YouTube &nbsp;·&nbsp; @LU2COHOUSE</div>
+          </div>
+          <div class="yt-mount-caption">@LU2COHOUSE</div>
         </div>
       </div>
     </div>
@@ -4380,6 +4380,26 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
 })();
 
 
+</script>
+
+<script>
+(function () {
+  var card = document.getElementById('yt-card-embed');
+  if (!card) return;
+  function embedVideo() {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/GZ2QQRiP6FU?autoplay=1&playsinline=1&rel=0&modestbranding=1';
+    f.allow = 'autoplay; encrypted-media; fullscreen';
+    f.allowFullscreen = true;
+    f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;';
+    card.innerHTML = '';
+    card.style.paddingBottom = '56.25%';
+    card.style.position = 'relative';
+    card.style.cursor = 'default';
+    card.appendChild(f);
+  }
+  card.addEventListener('click', embedVideo);
+})();
 </script>
 
 </body>
