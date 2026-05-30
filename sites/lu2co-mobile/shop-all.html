@@ -298,7 +298,7 @@
     }
     .pcc-img {
       width: 100%;
-      aspect-ratio: 3/4;
+      aspect-ratio: 2/3;
       overflow: hidden;
       border-radius: 12px;
     }
@@ -889,7 +889,7 @@
       .pss-track.is-grabbing { cursor: grabbing; user-select: none; }
       .pss-card {
         flex: 0 0 88vw; width: 88vw;
-        height: 72vh; height: 72svh;
+        height: 84vh; height: 84svh;
         scroll-snap-align: start;
         position: relative; overflow: hidden;
         cursor: pointer; flex-shrink: 0;
@@ -1740,7 +1740,7 @@ const PRODUCTS = [
 
     gsap.to(col1, {
       y: -h1,
-      duration: h1 / 10,
+      duration: h1 / 16,
       ease: 'none',
       repeat: -1,
       onRepeat: function() { gsap.set(col1, { y: 0 }); }
@@ -1749,7 +1749,7 @@ const PRODUCTS = [
     gsap.set(col2, { y: -h2 });
     gsap.to(col2, {
       y: 0,
-      duration: h2 / 10,
+      duration: h2 / 16,
       ease: 'none',
       repeat: -1,
       onRepeat: function() { gsap.set(col2, { y: -h2 }); }
