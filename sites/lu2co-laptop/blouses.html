@@ -841,8 +841,9 @@ gsap.to('#pageHeading', {
   }
 });
 
+const _parallaxAmt = Math.min(600, Math.max(60, colMid.scrollHeight * 0.18));
 gsap.to(['#colLeft', '#colRight'], {
-  y: -600,
+  y: -_parallaxAmt,
   ease: 'none',
   scrollTrigger: {
     trigger: document.documentElement,
