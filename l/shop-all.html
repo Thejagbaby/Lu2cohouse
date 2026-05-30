@@ -1712,7 +1712,16 @@ gsap.timeline({
     setTimeout(function(){window.location.href=href;},290);
   });
   window.addEventListener('pageshow',function(e){
-    if(e.persisted){o.style.transition='none';o.style.opacity='0';o.style.pointerEvents='none';}
+    if(e.persisted){
+      o.style.transition='none';
+      o.style.opacity='0';
+      o.style.pointerEvents='none';
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          o.style.transition='opacity 0.35s ease';
+        });
+      });
+    }
   });
 })();
 </script>
