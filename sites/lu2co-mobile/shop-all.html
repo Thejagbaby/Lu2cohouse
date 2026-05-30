@@ -1731,12 +1731,19 @@ const PRODUCTS = [
   var list2 = PRODUCTS.slice(half);
   if (list2.length === 0) list2 = list1;
 
-  buildCards(col1, list1); buildCards(col1, list1);
-  buildCards(col2, list2); buildCards(col2, list2);
+  buildCards(col1, list1);
+  buildCards(col2, list2);
 
   requestAnimationFrame(function() {
-    var h1 = col1.scrollHeight / 2 + 24;
-    var h2 = col2.scrollHeight / 2 + 24;
+    var oneH1 = col1.scrollHeight;
+    var oneH2 = col2.scrollHeight;
+    var containerH = col1.parentElement.offsetHeight;
+
+    while (col1.scrollHeight < containerH * 3) buildCards(col1, list1);
+    while (col2.scrollHeight < containerH * 3) buildCards(col2, list2);
+
+    var h1 = oneH1;
+    var h2 = oneH2;
 
     gsap.to(col1, {
       y: -h1,
