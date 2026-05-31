@@ -1777,7 +1777,7 @@ const PRODUCTS = [
         '<div class="pcc-info">' +
           '<p class="pcc-name">' + p.short + '</p>' +
         '</div>';
-      card.addEventListener('click', function(){if(!p.slug)return;window.location.href='products/'+p.slug+'.html';});
+      card.addEventListener('click', function() { openModal(p); });
       el.appendChild(card);
     });
   }
