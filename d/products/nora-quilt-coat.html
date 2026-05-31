@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     (function(){
@@ -51,75 +51,75 @@
 }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#121717;--accent:#8b6770;--accent-dark:#c9a8b2;
-      --text:#f0ebe8;--text-muted:rgba(240,235,232,.48);--divider:rgba(255,255,255,.1);
-      --font-serif:"Cormorant Garamond",Georgia,serif;
-      --font-sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
-    }
+    :root{--bg:#121717;--white:#ffffff;--font-serif:"Cormorant Garamond",Georgia,serif;--font-sans:"Inter",system-ui,sans-serif}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:80px}
+    html{background:var(--bg);scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--white);font-family:var(--font-sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
     #page-overlay{position:fixed;inset:0;background:#0d1212;z-index:9999;pointer-events:none;opacity:1}
-    /* NAV */
-    #nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:5rem;background:rgba(18,23,23,.92);backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border-bottom:1px solid var(--divider);transition:background .4s ease}
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:5rem;background:rgba(18,23,23,.92);backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border-bottom:1px solid rgba(255,255,255,.06);transition:background .4s ease}
     #nav.scrolled{background:rgba(18,23,23,.98)}
     .nav-logo{display:flex;align-items:center;text-decoration:none}
     .nav-logo img{height:42px;width:auto;object-fit:contain;display:block}
     .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-    .nav-link{position:relative;font-family:var(--font-sans);font-size:.6875rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-dark);text-decoration:none;transition:color .25s ease}
-    .nav-link::before{content:'';position:absolute;bottom:-3px;left:0;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left center;transition:transform .3s ease}
+    .nav-link{position:relative;font-family:var(--font-sans);font-size:.6875rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,168,178,1);text-decoration:none;transition:color .25s ease}
+    .nav-link::before{content:'';position:absolute;bottom:-3px;left:0;width:100%;height:1px;background:#8b6770;transform:scaleX(0);transform-origin:left center;transition:transform .3s ease}
     .nav-link:hover::before{transform:scaleX(1)}
-    .nav-book{font-family:var(--font-sans);font-size:.6875rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:.55rem 1.4rem;border-radius:999px;transition:background .25s ease,color .25s ease}
-    .nav-book:hover{background:transparent;color:var(--accent)}
-    /* BREADCRUMB */
-    .breadcrumb{padding:1.5rem 4rem 0;font-size:.75rem;color:var(--text-muted);letter-spacing:.05em}
-    .breadcrumb a{color:var(--text-muted);text-decoration:none}
-    .breadcrumb a:hover{color:var(--accent)}
-    .breadcrumb span{margin:0 .4rem}
-    /* PRODUCT SECTION */
-    .product-section{display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding:3rem 4rem 6rem;max-width:1400px;margin:0 auto;align-items:start}
-    @media(max-width:900px){.product-section{grid-template-columns:1fr;gap:2.5rem;padding:2rem 1.5rem 4rem}}
-    /* GALLERY */
-    .gallery{display:flex;flex-direction:column;gap:1rem;position:sticky;top:6rem}
-    @media(max-width:900px){.gallery{position:static}}
-    .gallery-main{position:relative;width:100%;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:#1a2020}
-    .gallery-main img{width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
-    .gallery-thumbs{display:flex;gap:.5rem;flex-wrap:wrap}
-    .thumb{width:calc(14.28% - .5rem);aspect-ratio:1;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.55;transition:opacity .2s ease;border:2px solid transparent}
-    .thumb.active,.thumb:hover{opacity:1;border-color:var(--accent)}
-    /* PRODUCT INFO */
-    .product-info{display:flex;flex-direction:column;gap:1.5rem}
-    .product-cat{font-size:.7rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-    .product-name{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;color:var(--accent-dark)}
-    .product-badges{display:flex;flex-wrap:wrap;gap:.5rem}
-    .badge{font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .85rem;border-radius:999px;border:1px solid var(--divider);color:var(--text-muted)}
-    .product-desc{font-size:.9rem;line-height:1.75;color:var(--text)}
-    .product-desc .pm-desc-block{margin-bottom:1.25rem}
-    .product-desc .pm-desc-label{font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
-    .product-desc .pm-desc-text{font-size:.9rem;line-height:1.7;color:var(--text)}
-    .product-desc .pm-desc-list{margin:.25rem 0 0 1.1rem;display:flex;flex-direction:column;gap:.3rem}
-    .product-desc .pm-desc-list li{font-size:.9rem;line-height:1.65;color:var(--text)}
-    .product-desc .pm-desc-note{font-size:.8rem;color:var(--text-muted);border-top:1px solid var(--divider);padding-top:.75rem;margin-top:.5rem}
-    .product-cta{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--accent);color:#fff9f9;font-family:var(--font-sans);font-size:.85rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:1rem 2.2rem;border-radius:999px;transition:background .25s ease,transform .2s ease;box-shadow:0 4px 18px rgba(139,103,112,.3)}
-    .product-cta:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(90,61,69,.35)}
-    .product-cta:active{transform:translateY(0)}
-    .product-guarantee{font-size:.78rem;color:var(--text-muted);letter-spacing:.02em}
-    .product-divider{border:none;border-top:1px solid var(--divider)}
-    /* RELATED */
-    .related-section{padding:4rem 4rem 6rem;max-width:1400px;margin:0 auto}
-    @media(max-width:900px){.related-section{padding:2rem 1.5rem 4rem}}
-    .related-eyebrow{font-size:.7rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
-    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-    @media(max-width:700px){.related-grid{grid-template-columns:1fr 1fr}}
-    .rel-card{text-decoration:none;display:flex;flex-direction:column;gap:.75rem}
-    .rel-img-wrap{aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:#1a2020}
-    .rel-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-    .rel-card:hover .rel-img-wrap img{transform:scale(1.04)}
-    .rel-name{font-family:var(--font-sans);font-size:.85rem;font-weight:400;color:var(--accent-dark);letter-spacing:.02em}
-    
+    .nav-book{font-family:var(--font-sans);font-size:.6875rem;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:#8b6770;text-decoration:none;border:1px solid #8b6770;padding:.55rem 1.4rem;border-radius:999px;transition:background .25s ease,color .25s ease}
+    .nav-book:hover{background:transparent;color:#8b6770}
+    .pg-hero{position:relative;width:100%;height:86vh;min-height:540px;overflow:hidden;background:#0d1212}
+    .pg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;opacity:0;transition:opacity .45s ease}
+    .pg-img.is-active{opacity:1}
+    .pg-scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(18,23,23,.92) 0%,rgba(18,23,23,.40) 38%,rgba(18,23,23,.08) 68%);z-index:1;pointer-events:none}
+    .pg-hero-info{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:2rem 3.5rem 3rem}
+    .pg-cat{font-size:.6rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.45rem}
+    .pg-name{font-family:var(--font-sans);font-weight:600;font-size:clamp(1rem,2vw,1.8rem);letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:.3rem;line-height:1.2}
+    .pg-sub{font-family:var(--font-sans);font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:1.2rem}
+    .pg-cta{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
+    .pg-btn{font-family:var(--font-sans);font-size:.55rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--white);border:1px solid rgba(255,255,255,.32);padding:.6rem 1.4rem;border-radius:999px;background:transparent;transition:background .22s ease,border-color .22s ease;display:inline-block;text-decoration:none}
+    .pg-btn:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.65)}
+    .pg-btn:focus-visible{outline:1px solid rgba(255,255,255,.5);outline-offset:3px}
+    .pg-btn:active{opacity:.7}
+    .pg-btn--buy{background:rgba(255,255,255,.92);color:#1a1f1f;border-color:transparent;transition:background .22s ease,transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease}
+    .pg-btn--buy:hover{background:#fff;border-color:transparent;transform:scale(1.05);box-shadow:0 6px 22px rgba(255,255,255,.28)}
+    .pg-thumbs{position:absolute;bottom:2rem;right:2.5rem;z-index:10;display:flex;flex-direction:column;gap:.4rem;max-height:calc(86vh - 5rem);overflow-y:auto;scrollbar-width:none}
+    .pg-thumbs::-webkit-scrollbar{display:none}
+    .pg-thumb{width:4.5rem;height:4.5rem;object-fit:cover;object-position:center top;cursor:pointer;opacity:.42;border:2px solid transparent;transition:opacity .22s ease,border-color .22s ease;flex-shrink:0;display:block}
+    .pg-thumb.is-active,.pg-thumb:hover{opacity:1;border-color:rgba(255,255,255,.7)}
+    .pg-info{background:var(--bg);padding:3rem 4rem 1rem;max-width:900px;margin:0 auto}
+    .pm-desc-block{margin-bottom:1.1rem}
+    .pm-desc-label{font-family:var(--font-sans);font-size:.55rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.35rem}
+    .pm-desc-text{font-family:var(--font-sans);font-size:.82rem;font-weight:300;line-height:1.65;color:rgba(255,255,255,.62)}
+    .pm-desc-list{list-style:none;margin:0;padding:0;font-family:var(--font-sans);font-size:.82rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.62)}
+    .pm-desc-list li::before{content:'· ';color:rgba(255,255,255,.3)}
+    .pm-desc-note{font-family:var(--font-sans);font-size:.78rem;font-weight:300;line-height:1.7;color:rgba(255,255,255,.9);margin-top:.8rem;border-top:1px solid rgba(255,255,255,.07);padding-top:.8rem}
+    .pm-stats-row{display:flex;gap:0;border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden;margin:2.5rem 0 1rem;max-width:480px}
+    .pm-sr-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:1rem .5rem;gap:3px}
+    .pm-sr-sep{width:1px;background:rgba(255,255,255,.1);flex-shrink:0}
+    .pm-sr-label{font-family:var(--font-sans);font-size:.55rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+    .pm-sr-val{font-family:var(--font-sans);font-size:.78rem;font-weight:500;color:rgba(255,255,255,.9)}
+    .pm-reviews-section{padding:2rem 4rem 4rem;max-width:900px;margin:0 auto}
+    .pm-rv-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+    .pm-rv-left{display:flex;flex-direction:column;align-items:flex-start;flex-shrink:0;min-width:5.5rem;gap:.2rem}
+    .pm-rv-score-row{display:flex;align-items:center;gap:.3rem}
+    .pm-rv-star-single{font-size:1.4rem;color:#F5C518;line-height:1}
+    .pm-rv-score{font-size:2.2rem;font-weight:400;color:#fff;line-height:1}
+    .pm-rv-count{font-size:.68rem;color:rgba(255,255,255,.45);margin-top:.1rem}
+    .pm-rv-bars{flex:1}
+    .pm-rv-bar-row{display:flex;align-items:center;gap:.5rem;margin-bottom:5px}
+    .pm-rv-bar-label{font-size:.72rem;color:rgba(255,255,255,.65);width:3.8rem;flex-shrink:0}
+    .pm-rv-bar-track{flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+    .pm-rv-bar-fill{height:100%;background:#F5C518;border-radius:2px}
+    .pm-rv-bar-num{font-size:.72rem;color:rgba(255,255,255,.65);width:2rem;text-align:right;flex-shrink:0}
+    .pm-rv-cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+    .pm-rv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.25rem 1.4rem}
+    .pm-rv-card-stars{font-size:.9rem;color:#fff;margin-bottom:.5rem;letter-spacing:.04em}
+    .pm-rv-card-text{font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.82);margin-bottom:.65rem}
+    .pm-rv-card-meta{font-size:.72rem;color:rgba(255,255,255,.42)}
+    .pm-rv-card-name{font-weight:600;color:rgba(255,255,255,.68)}
+    .pm-rv-more{display:inline-block;font-family:var(--font-sans);font-size:.55rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--white);border:1px solid rgba(255,255,255,.32);padding:.6rem 1.6rem;border-radius:999px;background:transparent;text-decoration:none;transition:background .22s ease,border-color .22s ease}
+    .pm-rv-more:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.65)}
     .site-footer{position:relative;width:100%;min-height:40vh;display:flex;flex-direction:column;justify-content:space-between;padding:5rem 4rem 3.5rem;background:#121717;color:#f0ebe8;overflow:hidden;user-select:none;box-sizing:border-box;-webkit-font-smoothing:antialiased}
     .sf-base{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(to bottom,transparent 0%,rgba(18,23,23,0) 20%,rgba(18,23,23,.5) 50%,#121717 70%,#0d1212 100%)}
     .sf-blob-1,.sf-blob-2,.sf-blob-3,.sf-blob-4,.sf-blob-5,.sf-blob-6{position:absolute;z-index:1;pointer-events:none;border-radius:50%;mix-blend-mode:screen}
@@ -130,10 +130,8 @@
     .sf-blob-4{width:28%;height:165%;bottom:-34%;left:55%;filter:blur(30px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(172,112,135,.54)0%,rgba(200,150,168,.28)50%,transparent 75%);animation:ab1 11s ease-in-out infinite alternate;animation-delay:-2s}
     .sf-blob-5{width:26%;height:162%;bottom:-32%;left:72%;filter:blur(28px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(158,100,124,.52)0%,rgba(190,142,160,.26)50%,transparent 75%);animation:ab1 8s ease-in-out infinite alternate;animation-delay:-9s}
     .sf-blob-6{width:28%;height:168%;bottom:-36%;right:1%;filter:blur(32px);background:radial-gradient(ellipse 80% 50% at 50% 60%,rgba(148,92,116,.5)0%,rgba(180,132,150,.25)50%,transparent 75%);animation:ab1 10s ease-in-out infinite alternate;animation-delay:-5s}
-    .sf-storm-light,.sf-storm-light-l,.sf-storm-light-r,.sf-edge-fade,.sf-grain,.sf-vignette{display:none}
-    .site-footer>*:not(.sf-base):not([class^="sf-blob"]):not(.sf-storm-light):not(.sf-storm-light-l):not(.sf-storm-light-r):not(.sf-edge-fade):not(.sf-grain):not(.sf-vignette){position:relative;z-index:5}
+    .site-footer>*:not(.sf-base):not([class^="sf-blob"]){position:relative;z-index:5}
     .sf-upper{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;align-items:flex-start;flex:1;padding-bottom:4rem}
-    @media(max-width:860px){.sf-upper{grid-template-columns:1fr;gap:2rem;padding-bottom:3rem}}
     .sf-heading{font-family:var(--font-serif);font-size:clamp(1.8rem,2.8vw,2.5rem);font-weight:300;line-height:1.1;letter-spacing:-0.04em;color:#f0ebe8;margin:0 0 1rem}
     .sf-heading em{font-style:italic;font-weight:300;color:#8b6770}
     .sf-sub{font-family:var(--font-sans);font-size:1rem;font-weight:300;color:rgba(240,235,232,.55);margin:0 0 2rem;line-height:1.5}
@@ -144,22 +142,10 @@
     .sf-nav a:hover{opacity:.42}
     .sf-badge{display:inline-flex;align-items:center;background:#8b6770;color:#fff9f9;font-family:var(--font-sans);font-size:.46rem;font-weight:700;letter-spacing:.10em;padding:.2rem .55rem;border-radius:999px}
     .sf-bottom{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem;align-items:start;border-top:1px solid rgba(255,255,255,.08);padding-top:2rem}
-    @media(max-width:768px){.sf-bottom{grid-template-columns:1fr 1fr;gap:1.5rem}}
-    @media(max-width:480px){.sf-bottom{grid-template-columns:1fr;gap:1.25rem}}
     .sf-meta{display:flex;flex-direction:column;gap:.25rem}
     .sf-meta-label{font-family:var(--font-sans);font-size:.875rem;font-weight:400;color:rgba(240,235,232,.88)}
     .sf-meta-val{font-family:var(--font-sans);font-size:.875rem;font-weight:300;color:rgba(240,235,232,.45);text-decoration:none}
     a.sf-meta-val:hover{color:rgba(240,235,232,.75)}
-
-    @media(max-width:900px){
-      .breadcrumb{padding:1rem 1.5rem 0}
-    }
-
-    @media(min-width:1600px){
-      .product-section{gap:7rem;padding:4rem 6rem 8rem;max-width:1600px}
-      .product-name{font-size:clamp(2.8rem,3.5vw,4.2rem)}
-      .related-section{padding:4rem 6rem 8rem;max-width:1600px}
-    }
   </style>
 </head>
 <body>
@@ -168,81 +154,63 @@
   <a href="../index.html" class="nav-logo">
     <img src="../../Brand Logos/logo.webp" alt="LU2COHOUSE" loading="lazy">
   </a>
-  <div class="nav-links">
-    <a href="../jackets.html" class="nav-link">Jackets</a>
-    <a href="../vests.html" class="nav-link">Vests</a>
-    <a href="../blouses.html" class="nav-link">Blouses</a>
-    <a href="../pants.html" class="nav-link">Pants</a>
-    <a href="../shop-all.html" class="nav-link">Shop All</a>
-    <a href="../guides.html" class="nav-link">Guides</a>
-  </div>
+  <ul class="nav-links">
+    <li><a href="../jackets.html" class="nav-link">Jackets</a></li>
+    <li><a href="../vests.html" class="nav-link">Vests</a></li>
+    <li><a href="../blouses.html" class="nav-link">Blouses</a></li>
+    <li><a href="../pants.html" class="nav-link">Pants</a></li>
+    <li><a href="../shop-all.html" class="nav-link">Shop All</a></li>
+    <li><a href="../guides.html" class="nav-link">Guides</a></li>
+  </ul>
   <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener noreferrer" class="nav-book">Visit Etsy</a>
 </nav>
-
-<nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="../index.html">Home</a>
-  <span aria-hidden="true">/</span>
-  <a href="../jackets.html">Jackets & Coats</a>
-  <span aria-hidden="true">/</span>
-  Nora Quilt Coat
-</nav>
-
-<section class="product-section">
-  <div class="gallery">
-    <div class="gallery-main">
-      <img id="main-img" src="../assets/products/Product 10/1.webp" alt="Nora Quilt Coat sewing pattern">
-    </div>
-    <div class="gallery-thumbs">
-      <img class="thumb active" src="../assets/products/Product 10/1.webp" alt="Nora Quilt Coat view 1" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/1.webp')">
-        <img class="thumb" src="../assets/products/Product 10/2.webp" alt="Nora Quilt Coat view 2" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/2.webp')">
-        <img class="thumb" src="../assets/products/Product 10/3.webp" alt="Nora Quilt Coat view 3" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/3.webp')">
-        <img class="thumb" src="../assets/products/Product 10/4.webp" alt="Nora Quilt Coat view 4" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/4.webp')">
-        <img class="thumb" src="../assets/products/Product 10/5.webp" alt="Nora Quilt Coat view 5" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/5.webp')">
-        <img class="thumb" src="../assets/products/Product 10/6.webp" alt="Nora Quilt Coat view 6" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/6.webp')">
-        <img class="thumb" src="../assets/products/Product 10/7.webp" alt="Nora Quilt Coat view 7" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/7.webp')">
-        <img class="thumb" src="../assets/products/Product 10/8.webp" alt="Nora Quilt Coat view 8" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/8.webp')">
-        <img class="thumb" src="../assets/products/Product 10/9.webp" alt="Nora Quilt Coat view 9" loading="lazy" onclick="switchImg(this,'../assets/products/Product 10/9.webp')">
-        
+<div class="pg-hero">
+  <img class="pg-img is-active" id="pg-0" src="../assets/products/Product 10/1.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-1" src="../assets/products/Product 10/2.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-2" src="../assets/products/Product 10/3.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-3" src="../assets/products/Product 10/4.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-4" src="../assets/products/Product 10/5.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-5" src="../assets/products/Product 10/6.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-6" src="../assets/products/Product 10/7.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-7" src="../assets/products/Product 10/8.webp" alt="Nora Quilt Coat">
+  <img class="pg-img" id="pg-8" src="../assets/products/Product 10/9.webp" alt="Nora Quilt Coat">
+  <div class="pg-scrim"></div>
+  <div class="pg-hero-info">
+    <div class="pg-cat">Jackets & Coats</div>
+    <h1 class="pg-name">Nora Quilt Coat</h1>
+    <div class="pg-sub">Sewing Pattern · Instant Download</div>
+    <div class="pg-cta">
+      <a href="../jackets.html" class="pg-btn">← Back</a>
+      <a href="https://www.etsy.com/listing/4432057290/nora-quilt-coat-sewing-pattern-beginner" target="_blank" rel="noopener noreferrer" class="pg-btn pg-btn--buy">Buy on Etsy →</a>
     </div>
   </div>
-
-  <div class="product-info">
-    <p class="product-cat">Jackets & Coats</p>
-    <h1 class="product-name">Nora Quilt Coat</h1>
-    <div class="product-badges">
-      <span class="badge">XXS – 5XL</span>
-      <span class="badge">PDF Instant Download</span>
-      <span class="badge">A4 · US Letter · A0</span>
-      <span class="badge">Beginner Friendly</span>
-    </div>
-    <hr class="product-divider">
-    <div class="product-desc"><div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted coat</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Features</div><ul class="pm-desc-list"><li>Beginner-friendly quilted coat design</li><li>Professional finish achievable with simple construction techniques</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div></div>
-    <a href="https://www.etsy.com/listing/4432057290/nora-quilt-coat-sewing-pattern-beginner" target="_blank" rel="noopener noreferrer" class="product-cta">
-      Get Pattern on Etsy →
-    </a>
-    <p class="product-guarantee">★ 5.0 rating · Money-back guarantee · Instant access after purchase</p>
+  <div class="pg-thumbs">
+  <img class="pg-thumb is-active" src="../assets/products/Product 10/1.webp" alt="View 1" data-idx="0" onclick="switchImg(this,'../assets/products/Product 10/1.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/2.webp" alt="View 2" data-idx="1" onclick="switchImg(this,'../assets/products/Product 10/2.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/3.webp" alt="View 3" data-idx="2" onclick="switchImg(this,'../assets/products/Product 10/3.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/4.webp" alt="View 4" data-idx="3" onclick="switchImg(this,'../assets/products/Product 10/4.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/5.webp" alt="View 5" data-idx="4" onclick="switchImg(this,'../assets/products/Product 10/5.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/6.webp" alt="View 6" data-idx="5" onclick="switchImg(this,'../assets/products/Product 10/6.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/7.webp" alt="View 7" data-idx="6" onclick="switchImg(this,'../assets/products/Product 10/7.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/8.webp" alt="View 8" data-idx="7" onclick="switchImg(this,'../assets/products/Product 10/8.webp')" loading="lazy">
+  <img class="pg-thumb" src="../assets/products/Product 10/9.webp" alt="View 9" data-idx="8" onclick="switchImg(this,'../assets/products/Product 10/9.webp')" loading="lazy">
+  </div>
+</div>
+<section class="pg-info">
+  <div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted coat</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Features</div><ul class="pm-desc-list"><li>Beginner-friendly quilted coat design</li><li>Professional finish achievable with simple construction techniques</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>
+  <div class="pm-stats-row">
+    <div class="pm-sr-item"><span class="pm-sr-label">Shipping</span><span class="pm-sr-val">Free</span></div>
+    <div class="pm-sr-sep"></div>
+    <div class="pm-sr-item"><span class="pm-sr-label">Rating</span><span class="pm-sr-val">★ 4.6 (267)</span></div>
+    <div class="pm-sr-sep"></div>
+    <div class="pm-sr-item"><span class="pm-sr-label">Format</span><span class="pm-sr-val">Digital PDF</span></div>
   </div>
 </section>
-
-
-<section class="related-section">
-  <p class="related-eyebrow">More from Jackets & Coats</p>
-  <div class="related-grid">
-      <a href="siena-quilt-coat.html" class="rel-card">
-        <div class="rel-img-wrap"><img src="../assets/products/product 1/1.webp" alt="Siena Quilt Coat sewing pattern" loading="lazy"></div>
-        <p class="rel-name">Siena Quilt Coat</p>
-      </a>
-      <a href="hooded-quilted-jacket.html" class="rel-card">
-        <div class="rel-img-wrap"><img src="../assets/products/product 2/1.webp" alt="Hooded Quilted Jacket sewing pattern" loading="lazy"></div>
-        <p class="rel-name">Hooded Quilted Jacket</p>
-      </a>
-      <a href="beginner-hooded-jacket.html" class="rel-card">
-        <div class="rel-img-wrap"><img src="../assets/products/Product 3/1.webp" alt="Beginner Hooded Jacket sewing pattern" loading="lazy"></div>
-        <p class="rel-name">Beginner Hooded Jacket</p>
-      </a>
-  </div>
-</section>
-
+<div class="pm-reviews-section">
+<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars"><div class="pm-rv-bar-row"><span class="pm-rv-bar-label">5 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:79%"></div></div><span class="pm-rv-bar-num">79%</span></div><div class="pm-rv-bar-row"><span class="pm-rv-bar-label">4 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:11%"></div></div><span class="pm-rv-bar-num">11%</span></div><div class="pm-rv-bar-row"><span class="pm-rv-bar-label">3 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:3%"></div></div><span class="pm-rv-bar-num">3%</span></div><div class="pm-rv-bar-row"><span class="pm-rv-bar-label">2 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:2%"></div></div><span class="pm-rv-bar-num">2%</span></div><div class="pm-rv-bar-row"><span class="pm-rv-bar-label">1 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:4%"></div></div><span class="pm-rv-bar-num">4%</span></div></div></div>
+<div class="pm-rv-cards-grid"><div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">Absolutely stunning result. Everyone keeps asking me where I bought my jacket. Love that I made it myself!</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Emma T.</span> · 3 weeks ago</div></div><div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">This brand never disappoints. Already on my third pattern from LU2COHOUSE. Each one is better than the last!</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Harper L.</span> · 3 months ago</div></div><div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">The quality of this pattern is outstanding. I've already recommended it to my whole sewing group!</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Penelope A.</span> · 7 weeks ago</div></div><div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">I am obsessed with this pattern! Made it in three different fabrics already. It is truly timeless. So glad I found this brand.</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Luna K.</span> · 1 month ago</div></div></div>
+<a href="https://www.etsy.com/listing/4432057290/nora-quilt-coat-sewing-pattern-beginner" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>
+</div>
 <footer class="site-footer" id="site-footer">
   <div class="sf-base" aria-hidden="true"></div>
   <div class="sf-blob-1" aria-hidden="true"></div><div class="sf-blob-2" aria-hidden="true"></div>
@@ -274,42 +242,23 @@
     <div class="sf-meta"><span class="sf-meta-label">Patterns made by</span><span class="sf-meta-val">Leila.</span></div>
   </div>
 </footer>
-
 <script>
-function switchImg(el, src) {
-  document.getElementById('main-img').src = src;
-  document.querySelectorAll('.thumb').forEach(function(t){ t.classList.remove('active'); });
-  el.classList.add('active');
-}
 (function(){
-  var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function(){
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-  }, {passive:true});
+  window.switchImg=function(el,src){
+    document.querySelectorAll('.pg-img').forEach(function(i){i.classList.remove('is-active');});
+    var n=document.getElementById('pg-'+el.dataset.idx);if(n)n.classList.add('is-active');
+    document.querySelectorAll('.pg-thumb').forEach(function(t){t.classList.remove('is-active');});
+    el.classList.add('is-active');
+  };
 })();
 (function(){
-  var o=document.getElementById('page-overlay');
-  if(!o)return;
-  requestAnimationFrame(function(){
-    requestAnimationFrame(function(){
-      o.style.transition='opacity 0.35s ease';
-      o.style.opacity='0';
-    });
-  });
-  window.addEventListener('pageshow',function(e){
-    if(!e.persisted)return;
-    o.style.transition='none';o.style.opacity='0';o.style.pointerEvents='none';
-    requestAnimationFrame(function(){o.style.transition='opacity 0.35s ease';});
-  });
-  document.addEventListener('click',function(e){
-    var a=e.target.closest('a[href]');
-    if(!a)return;
-    var href=a.getAttribute('href');
-    if(!href||href.startsWith('http')||href.startsWith('#')||href.startsWith('mailto')||a.target==='_blank')return;
-    e.preventDefault();
-    o.style.transition='opacity 0.28s ease';o.style.opacity='1';o.style.pointerEvents='all';
-    setTimeout(function(){window.location.href=href;},290);
-  });
+  var nav=document.getElementById('nav');
+  if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>20);},{passive:true});
+})();
+(function(){
+  var o=document.getElementById('page-overlay');if(!o)return;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){o.style.transition='opacity 0.35s ease';o.style.opacity='0';});});
+  window.addEventListener('pageshow',function(e){if(!e.persisted)return;o.style.transition='none';o.style.opacity='0';o.style.pointerEvents='none';requestAnimationFrame(function(){o.style.transition='opacity 0.35s ease';});});
 })();
 </script>
 </body>
