@@ -10,91 +10,78 @@
     })();
   </script>
   <title>Sleeveless Blouse Sewing Pattern | PDF Pattern XXS–5XL | LU2COHOUSE</title>
-  <meta name="description" content="Download the LU2COHOUSE Sleeveless Blouse sewing pattern — beginner-friendly PDF in sizes XXS–5XL. Instant download. A4, US Letter and A0 formats included.">
+  <meta name="description" content="Download the LU2COHOUSE Sleeveless Blouse sewing pattern — beginner-friendly PDF in sizes XXS–5XL. A4, US Letter and A0 formats. Instant download.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lu2cohouse.com/l/products/sleeveless-blouse.html">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#121717;--bg2:#1a1f1f;
-      --white:#ffffff;--dim:rgba(255,255,255,.42);--dimmer:rgba(255,255,255,.22);
-      --accent:#8b6770;
-      --font-serif:"Cormorant Garamond",Georgia,serif;
-      --font-sans:"Inter",system-ui,sans-serif;
-    }
+    :root{--bg:#121717;--white:#ffffff;--dim:rgba(255,255,255,.42);--dimmer:rgba(255,255,255,.22);--font-serif:"Cormorant Garamond",Georgia,serif;--font-sans:"Inter",system-ui,sans-serif;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{background:var(--bg);overflow-x:hidden}
     body{background:var(--bg);color:var(--white);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
     #page-overlay{position:fixed;inset:0;background:#0d1212;z-index:9999;pointer-events:none;opacity:1}
 
-    /* TOP BAR — matches store nav */
-    .top-bar{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;background:rgba(18,23,23,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:100}
-    .back-btn{font-size:.55rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--dimmer);text-decoration:none}
-    .etsy-top{font-size:.55rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:var(--accent);text-decoration:none;padding:.45rem .95rem;border-radius:999px}
+    /* TOP BAR */
+    .top-bar{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.25rem;background:rgba(18,23,23,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:100}
+    .back-btn{font-size:.55rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.42);text-decoration:none}
+    .etsy-top{font-size:.55rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:#121717;background:rgba(255,255,255,.92);text-decoration:none;padding:.42rem .95rem;border-radius:999px}
 
-    /* IMAGE — same aspect ratio as the store card */
-    .prod-img-wrap{width:100%;aspect-ratio:407/517;overflow:hidden;background:var(--bg2)}
-    .prod-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+    /* CAROUSEL — exact modal mobile style */
+    .pm-carousel-wrap{position:relative;width:100%;aspect-ratio:1/1;background:#0d1212}
+    .pm-carousel{display:flex;overflow-x:scroll;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;width:100%;height:100%;}
+    .pm-carousel::-webkit-scrollbar{display:none}
+    .pm-carousel-img{width:100%;flex-shrink:0;height:100%;object-fit:contain;object-position:center center;scroll-snap-align:start;display:block;background:#0d1212}
+    .pm-dots{display:flex;position:absolute;bottom:10px;left:0;right:0;justify-content:center;align-items:center;gap:5px;pointer-events:none;z-index:5}
+    .pm-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.35);flex-shrink:0;transition:background .2s ease}
+    .pm-dot.is-active{background:#fff}
 
-    /* THUMB STRIP */
-    .thumb-strip{display:flex;gap:.35rem;padding:.55rem 1rem;overflow-x:auto;scrollbar-width:none;background:var(--bg)}
-    .thumb-strip::-webkit-scrollbar{display:none}
-    .thumb-strip img{flex-shrink:0;width:46px;height:46px;object-fit:cover;border-radius:5px;opacity:.38;border:1.5px solid transparent;cursor:pointer;transition:opacity .2s,border-color .2s}
-    .thumb-strip img.t-active{opacity:1;border-color:rgba(255,255,255,.55)}
+    /* INFO — exact pm-right mobile style */
+    .pm-right{padding:1.4rem 1.4rem 1.5rem;background:var(--bg);border-top:1px solid rgba(255,255,255,.06)}
+    .pm-brand{margin-bottom:.5rem}
+    .pm-brand img{height:40px;width:auto;mix-blend-mode:lighten;opacity:.75}
+    .pm-title{font-family:var(--font-sans);font-style:normal;font-weight:600;font-size:clamp(1rem,4.5vw,1.4rem);line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.95);margin:0 0 .5rem}
+    .pm-divider{border:none;border-top:2px solid rgba(255,255,255,.7);margin:.5rem 0 1rem;width:100%}
+    .pm-desc{font-family:var(--font-sans);font-size:.86rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.6);margin:0 0 1.5rem}
+    .pm-desc-block{margin-bottom:.9rem}
+    .pm-desc-label{font-family:var(--font-sans);font-size:.62rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.4rem}
+    .pm-desc-text{font-family:var(--font-sans);font-size:.86rem;font-weight:300;line-height:1.65;color:rgba(255,255,255,.62)}
+    .pm-desc-list{list-style:none;margin:0;padding:0;font-family:var(--font-sans);font-size:.86rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.62)}
+    .pm-desc-list li::before{content:'· ';color:rgba(255,255,255,.3)}
+    .pm-desc-note{font-family:var(--font-sans);font-size:.8rem;font-weight:300;line-height:1.7;color:rgba(255,255,255,.9);margin-top:.8rem;border-top:1px solid rgba(255,255,255,.07);padding-top:.8rem}
+    .pm-btn{display:block;width:100%;text-align:center;font-family:var(--font-sans);font-size:.65rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:#121717;background:var(--white);text-decoration:none;border:1px solid var(--white);padding:.8rem 1.6rem;border-radius:999px;transition:background .25s ease,color .25s ease;margin-bottom:1rem}
+    .pm-btn:hover{background:transparent;color:var(--white)}
 
-    /* CONTENT */
-    .prod-content{padding:1.4rem 1.25rem 3rem}
+    /* STATS ROW */
+    .pm-stats-row{display:flex;gap:0;border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden;margin-bottom:1.5rem}
+    .pm-sr-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:.75rem .25rem;gap:2px}
+    .pm-sr-sep{width:1px;background:rgba(255,255,255,.1);flex-shrink:0}
+    .pm-sr-label{font-family:var(--font-sans);font-size:.55rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38)}
+    .pm-sr-val{font-family:var(--font-sans);font-size:.72rem;font-weight:500;color:rgba(255,255,255,.9)}
 
-    /* LOGO */
-    .prod-logo{height:38px;width:auto;object-fit:contain;display:block;margin-bottom:1.1rem}
-
-    /* CATEGORY */
-    .prod-cat{font-size:.55rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--dimmer);margin-bottom:.35rem}
-
-    /* NAME — exact card-name style */
-    .prod-name{font-family:var(--font-sans);font-size:.9rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.88);line-height:1.3;margin-bottom:1.2rem}
-
-    /* BADGES */
-    .prod-badges{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.4rem}
-    .prod-badge{font-size:.5rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;padding:.26rem .65rem;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.38)}
-
-    /* DESCRIPTION */
-    .prod-desc{font-size:.82rem;line-height:1.7;color:var(--dimmer);margin-bottom:1.5rem}
-    .prod-desc .pm-desc-block{margin-bottom:.9rem}
-    .prod-desc .pm-desc-label{font-size:.55rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.22rem}
-    .prod-desc .pm-desc-text{font-size:.82rem;line-height:1.65;color:var(--dimmer)}
-    .prod-desc .pm-desc-list{margin:.18rem 0 0 .9rem;display:flex;flex-direction:column;gap:.18rem}
-    .prod-desc .pm-desc-list li{font-size:.82rem;line-height:1.6;color:var(--dimmer)}
-    .prod-desc .pm-desc-note{font-size:.7rem;color:rgba(255,255,255,.2);border-top:1px solid rgba(255,255,255,.08);padding-top:.45rem;margin-top:.35rem}
-
-    /* BUY BUTTON — exact card-btn--buy style */
-    .buy-btn{display:block;text-align:center;background:rgba(255,255,255,.92);color:#1a1f1f;font-family:var(--font-sans);font-size:.6rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:.85rem 1.5rem;border-radius:999px;margin-bottom:1.5rem;transition:background .22s ease,transform .22s cubic-bezier(.34,1.56,.64,1)}
-    .buy-btn:hover{background:#fff;transform:scale(1.03)}
-
-    /* DIVIDER */
-    .prod-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin-bottom:1.4rem}
-
-    /* RATING */
-    .rating-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.85rem}
-    .rating-stars{font-size:.9rem;letter-spacing:.04em;color:rgba(255,255,255,.88)}
-    .rating-count{font-size:.6rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--dimmer)}
-    .rating-bars{margin-bottom:1rem}
-    .rating-bar-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.28rem}
-    .rb-label{font-size:.52rem;letter-spacing:.06em;color:var(--dimmer);width:1.6rem;text-align:right;flex-shrink:0}
-    .rb-track{flex:1;height:3px;background:rgba(255,255,255,.1);border-radius:999px;overflow:hidden}
-    .rb-fill{height:100%;background:rgba(255,255,255,.55);border-radius:999px}
-    .rb-pct{font-size:.52rem;color:rgba(255,255,255,.28);width:2.2rem;flex-shrink:0}
-
-    /* REVIEW QUOTE */
-    .review-quote{border-left:2px solid rgba(255,255,255,.15);padding-left:.85rem;margin-bottom:1.2rem}
-    .review-text{font-size:.78rem;line-height:1.6;color:var(--dimmer);font-style:italic;margin-bottom:.35rem}
-    .review-author{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28)}
-
-    /* READ MORE REVIEWS */
-    .more-reviews{display:block;text-align:center;background:transparent;color:rgba(255,255,255,.88);font-family:var(--font-sans);font-size:.55rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:.65rem 1.2rem;border-radius:999px;border:1px solid rgba(255,255,255,.28);margin-bottom:2rem}
+    /* REVIEWS */
+    .pm-reviews-section{margin-bottom:2rem}
+    .pm-rv-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(255,255,255,.08)}
+    .pm-rv-left{display:flex;flex-direction:column;align-items:flex-start;flex-shrink:0;min-width:5rem;gap:.2rem}
+    .pm-rv-score-row{display:flex;align-items:center;gap:.25rem}
+    .pm-rv-star-single{font-size:1.4rem;color:#F5C518;line-height:1}
+    .pm-rv-score{font-size:2rem;font-weight:400;color:#fff;line-height:1}
+    .pm-rv-count{font-size:.68rem;color:rgba(255,255,255,.45);margin-top:.1rem}
+    .pm-rv-bars{flex:1}
+    .pm-rv-bar-row{display:flex;align-items:center;gap:.5rem;margin-bottom:4px}
+    .pm-rv-bar-label{font-size:.72rem;color:rgba(255,255,255,.65);width:3.8rem;flex-shrink:0}
+    .pm-rv-bar-track{flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+    .pm-rv-bar-fill{height:100%;background:#F5C518;border-radius:2px}
+    .pm-rv-bar-num{font-size:.72rem;color:rgba(255,255,255,.65);width:2rem;text-align:right;flex-shrink:0}
+    .pm-rv-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1rem 1.1rem;margin-bottom:.75rem}
+    .pm-rv-card-stars{font-size:.85rem;color:#ffffff;margin-bottom:.45rem;letter-spacing:.04em}
+    .pm-rv-card-text{font-size:.875rem;line-height:1.55;color:rgba(255,255,255,.82);margin-bottom:.6rem}
+    .pm-rv-card-meta{font-size:.72rem;color:rgba(255,255,255,.42)}
+    .pm-rv-card-name{font-weight:600;color:rgba(255,255,255,.68)}
+    .pm-rv-more{display:block;width:100%;text-align:center;font-family:var(--font-sans);font-size:.5rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:#121717;background:var(--white);text-decoration:none;border:1px solid var(--white);padding:.55rem 1.4rem;border-radius:999px;margin-top:.75rem;transition:background .25s ease,color .25s ease}
+    .pm-rv-more:hover{background:transparent;color:var(--white)}
 
     /* FOOTER */
     footer{background:#0d1212;padding:1.4rem 1.25rem;text-align:center;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2);font-family:var(--font-sans);line-height:2.2}
@@ -103,61 +90,71 @@
 </head>
 <body>
 <div id="page-overlay"></div>
-
 <div class="top-bar">
   <a href="../index.html" class="back-btn">← Store</a>
   <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener" class="etsy-top">Shop Etsy</a>
 </div>
 
-<div class="prod-img-wrap">
-  <img id="m-main" src="../assets/products/Product 40/1.webp" alt="Sleeveless Blouse sewing pattern">
+<div class="pm-carousel-wrap">
+  <div class="pm-carousel" id="pmCarousel">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/1.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/2.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/3.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/4.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/5.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/6.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/7.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/8.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/9.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/10.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/11.webp" alt="Sleeveless Blouse" loading="lazy">
+  <img class="pm-carousel-img" src="../assets/products/Product 40/12.webp" alt="Sleeveless Blouse" loading="lazy">
+  </div>
+  <div class="pm-dots" id="pmDots">
+  <div class="pm-dot  is-active"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  <div class="pm-dot"></div>
+  </div>
 </div>
-<div class="thumb-strip">
-  <img class="t-active" src="../assets/products/Product 40/1.webp" alt="Sleeveless Blouse 1" loading="lazy" onclick="sw(this,'../assets/products/Product 40/1.webp')">
-  <img src="../assets/products/Product 40/2.webp" alt="Sleeveless Blouse 2" loading="lazy" onclick="sw(this,'../assets/products/Product 40/2.webp')">
-  <img src="../assets/products/Product 40/3.webp" alt="Sleeveless Blouse 3" loading="lazy" onclick="sw(this,'../assets/products/Product 40/3.webp')">
-  <img src="../assets/products/Product 40/4.webp" alt="Sleeveless Blouse 4" loading="lazy" onclick="sw(this,'../assets/products/Product 40/4.webp')">
-  <img src="../assets/products/Product 40/5.webp" alt="Sleeveless Blouse 5" loading="lazy" onclick="sw(this,'../assets/products/Product 40/5.webp')">
-  <img src="../assets/products/Product 40/6.webp" alt="Sleeveless Blouse 6" loading="lazy" onclick="sw(this,'../assets/products/Product 40/6.webp')">
-  <img src="../assets/products/Product 40/7.webp" alt="Sleeveless Blouse 7" loading="lazy" onclick="sw(this,'../assets/products/Product 40/7.webp')">
-  <img src="../assets/products/Product 40/8.webp" alt="Sleeveless Blouse 8" loading="lazy" onclick="sw(this,'../assets/products/Product 40/8.webp')">
-  <img src="../assets/products/Product 40/9.webp" alt="Sleeveless Blouse 9" loading="lazy" onclick="sw(this,'../assets/products/Product 40/9.webp')">
-  <img src="../assets/products/Product 40/10.webp" alt="Sleeveless Blouse 10" loading="lazy" onclick="sw(this,'../assets/products/Product 40/10.webp')">
-  <img src="../assets/products/Product 40/11.webp" alt="Sleeveless Blouse 11" loading="lazy" onclick="sw(this,'../assets/products/Product 40/11.webp')">
-  <img src="../assets/products/Product 40/12.webp" alt="Sleeveless Blouse 12" loading="lazy" onclick="sw(this,'../assets/products/Product 40/12.webp')">
+
+<div class="pm-right">
+  <div class="pm-brand"><img src="../../Brand Logos/DarkLogo.webp" alt="LU2COHOUSE"></div>
+  <h1 class="pm-title">Sleeveless Blouse</h1>
+  <hr class="pm-divider">
+  <div class="pm-desc"><div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the blouse</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Finishing Options</div><div class="pm-desc-text">Option A: fully lined · Option B: facing finish</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><ul class="pm-desc-list"><li>1.4 yds main fabric (min 46" wide)</li><li>1.4 yds lining fabric — Option A, or 0.4 yds facing — Option B</li><li>Fusible interfacing (optional)</li><li>Invisible zipper min 21"/55 cm + invisible zipper foot</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div></div>
+  <a href="https://www.etsy.com/listing/4494575782/sleeveless-blouse-sewing-pattern" target="_blank" rel="noopener noreferrer" class="pm-btn">Buy on Etsy →</a>
+  <div class="pm-stats-row">
+    <div class="pm-sr-item"><span class="pm-sr-label">Shipping</span><span class="pm-sr-val">Free</span></div>
+    <div class="pm-sr-sep"></div>
+    <div class="pm-sr-item"><span class="pm-sr-label">Rating</span><span class="pm-sr-val">★ 4.6 (267)</span></div>
+    <div class="pm-sr-sep"></div>
+    <div class="pm-sr-item"><span class="pm-sr-label">Format</span><span class="pm-sr-val">Digital PDF</span></div>
+  </div>
+  <div class="pm-reviews-section"><div class="pm-rv-header">
+  <div class="pm-rv-left">
+    <div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div>
+    <span class="pm-rv-count">267 ratings</span>
+  </div>
+  <div class="pm-rv-bars"><div class="pm-rv-bar-row"><span class="pm-rv-bar-label">5 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:79%"></div></div><span class="pm-rv-bar-num">79%</span></div>
+<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">4 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:11%"></div></div><span class="pm-rv-bar-num">11%</span></div>
+<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">3 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:3%"></div></div><span class="pm-rv-bar-num">3%</span></div>
+<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">2 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:2%"></div></div><span class="pm-rv-bar-num">2%</span></div>
+<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">1 star</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:4%"></div></div><span class="pm-rv-bar-num">4%</span></div></div>
 </div>
-
-<div class="prod-content">
-  <img class="prod-logo" src="../../Brand Logos/DarkLogo.webp" alt="LU2COHOUSE" loading="lazy">
-  <p class="prod-cat">Blouses</p>
-  <h1 class="prod-name">Sleeveless Blouse</h1>
-  <div class="prod-badges">
-    <span class="prod-badge">XXS – 5XL</span>
-    <span class="prod-badge">Instant Download</span>
-    <span class="prod-badge">A4 · US Letter · A0</span>
-    <span class="prod-badge">Beginner Friendly</span>
-  </div>
-  <div class="prod-desc"><div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the blouse</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Finishing Options</div><div class="pm-desc-text">Option A: fully lined · Option B: facing finish</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><ul class="pm-desc-list"><li>1.4 yds main fabric (min 46" wide)</li><li>1.4 yds lining fabric — Option A, or 0.4 yds facing — Option B</li><li>Fusible interfacing (optional)</li><li>Invisible zipper min 21"/55 cm + invisible zipper foot</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div></div>
-  <a href="https://www.etsy.com/listing/4494575782/sleeveless-blouse-sewing-pattern" target="_blank" rel="noopener noreferrer" class="buy-btn">Buy on Etsy →</a>
-
-  <hr class="prod-divider">
-
-  <div class="rating-row">
-    <span class="rating-stars">★★★★☆</span>
-    <span class="rating-count">4.6 · 225 reviews</span>
-  </div>
-  <div class="rating-bars">
-    <div class="rating-bar-row"><span class="rb-label">5★</span><div class="rb-track"><div class="rb-fill" style="width:80%"></div></div><span class="rb-pct">80%</span></div>
-    <div class="rating-bar-row"><span class="rb-label">4★</span><div class="rb-track"><div class="rb-fill" style="width:11%"></div></div><span class="rb-pct">11%</span></div>
-    <div class="rating-bar-row"><span class="rb-label">3★</span><div class="rb-track"><div class="rb-fill" style="width:4%"></div></div><span class="rb-pct">4%</span></div>
-    <div class="rating-bar-row"><span class="rb-label">2★</span><div class="rb-track"><div class="rb-fill" style="width:2%"></div></div><span class="rb-pct">2%</span></div>
-    <div class="rating-bar-row"><span class="rb-label">1★</span><div class="rb-track"><div class="rb-fill" style="width:3%"></div></div><span class="rb-pct">3%</span></div>
-  </div>
-  <div class="review-quote">
-    <p class="review-text">"The pattern was so clear and easy to follow — my coat turned out absolutely beautiful. Will definitely be buying more!"</p>
-    <p class="review-author">Verified buyer · ★★★★★</p>
-  </div>
-  <a href="https://www.etsy.com/shop/LU2COHOUSE#reviews" target="_blank" rel="noopener" class="more-reviews">Read more reviews →</a>
+<div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">Made two of these already. Quick to sew and the end result always looks professional. Highly recommend!</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Maria L.</span> · 3 months ago</div></div>
+<div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">I am obsessed with this pattern! Made it in three different fabrics already. It is truly timeless. So glad I found this brand.</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Luna K.</span> · 1 month ago</div></div>
+<div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">I appreciated that the pattern includes all sizes in one file. No extra costs for different sizes — very thoughtful design.</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Isabella F.</span> · 7 weeks ago</div></div>
+<div class="pm-rv-card"><div class="pm-rv-card-stars">★★★★★</div><div class="pm-rv-card-text">I have bought many sewing patterns and this is by far the best quality. The A0 file is perfect for printing at a copy shop.</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">Chloe B.</span> · 2 weeks ago</div></div>
+<a href="https://www.etsy.com/listing/4494575782/sleeveless-blouse-sewing-pattern" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a></div>
 </div>
 
 <footer>
@@ -166,11 +163,16 @@
 </footer>
 
 <script>
-function sw(el,src){
-  document.getElementById('m-main').src=src;
-  document.querySelectorAll('.thumb-strip img').forEach(function(t){t.classList.remove('t-active')});
-  el.classList.add('t-active');
-}
+(function(){
+  var c=document.getElementById('pmCarousel');
+  var dots=document.getElementById('pmDots').querySelectorAll('.pm-dot');
+  if(c&&dots.length){
+    c.addEventListener('scroll',function(){
+      var idx=Math.round(c.scrollLeft/c.offsetWidth);
+      dots.forEach(function(d,i){d.classList.toggle('is-active',i===idx);});
+    },{passive:true});
+  }
+})();
 (function(){
   var o=document.getElementById('page-overlay');if(!o)return;
   requestAnimationFrame(function(){requestAnimationFrame(function(){o.style.transition='opacity 0.35s ease';o.style.opacity='0';});});
