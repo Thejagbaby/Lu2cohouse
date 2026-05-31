@@ -334,19 +334,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/beginner-hooded-jacket-ii.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/lirio-quilted-jacket-ii.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/cashmere-cardigan.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
 </urlset>
