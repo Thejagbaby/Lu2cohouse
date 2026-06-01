@@ -3202,7 +3202,7 @@
     <a href="shop-all.html" class="mob-link">Shop All</a>
     <a href="guides.html" class="mob-link">Guides</a>
     <div class="mob-video-card">
-      <video class="mob-video-img" src="assets/v1.mp4" autoplay muted loop playsinline></video>
+      <video class="mob-video-img" src="assets/v1.mp4" autoplay muted loop playsinline preload="auto"></video>
     </div>
   </div>
   <div class="mob-etsy-logo-wrap">
@@ -3743,7 +3743,7 @@
     </ul>
   </div>
   <div class="duo-video-col">
-    <video class="duo-video" src="assets/v1.mp4" autoplay muted loop playsinline></video>
+    <video class="duo-video" src="assets/v1.mp4" autoplay muted loop playsinline preload="auto"></video>
     <div class="duo-video-logo-wrap">
       <a href="https://lu2cohouse.etsy.com" target="_blank" rel="noopener" style="display:inline-block;">
         <img src="../../Brand Logos/logo1.webp" alt="LU2COHOUSE" class="duo-video-logo">
@@ -5553,6 +5553,27 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
   card.addEventListener('click', embedVideo);
   card.addEventListener('touchend', function (e) { e.preventDefault(); embedVideo(); }, { passive: false });
 })();
+</script>
+
+<script>
+/* Force mp4 videos to play on mobile — autoplay alone is unreliable on iOS/Android */
+function tryPlayVideos() {
+  document.querySelectorAll('video[autoplay]').forEach(function(v) {
+    v.muted = true;
+    var p = v.play();
+    if (p !== undefined) p.catch(function() {});
+  });
+}
+if (document.readyState === 'complete') {
+  tryPlayVideos();
+} else {
+  window.addEventListener('load', tryPlayVideos);
+}
+/* Re-attempt on first touch (covers Low Power Mode on iOS) */
+document.addEventListener('touchstart', function retryOnTouch() {
+  tryPlayVideos();
+  document.removeEventListener('touchstart', retryOnTouch);
+}, { once: true, passive: true });
 </script>
 
 </body>
