@@ -23,16 +23,16 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
       else if (window.matchMedia('(min-width: 768px)').matches)
-        location.replace('../lu2co-laptop/' + p);
+        location.replace('../l/' + p);
     })();
   </script>
   <title>FAQ | Sewing Pattern Questions Answered | LU2COHOUSE</title>
   <meta name="description" content="Answers to common questions about LU2COHOUSE sewing patterns — printing, downloads, skill levels, seam allowance, the shop bundle, licensing, and support.">
   <meta name="keywords" content="sewing pattern FAQ, sewing pattern questions, PDF pattern help, how to print sewing patterns, sewing pattern for beginners, lu2cohouse FAQ">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/faq">
+  <link rel="canonical" href="https://lu2cohouse.com/l/faq.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lu2cohouse.com/faq">
   <meta property="og:site_name" content="LU2COHOUSE">
@@ -227,15 +227,15 @@
     /* ─── CATEGORY LABEL ─── */
     .faq-category {
       font-family: var(--font-sans);
-      font-size: 0.5625rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 1.5rem;
       margin-top: 4rem;
     }
-    .faq-category:first-child { margin-top: 0; }
+    .faq-category:first-child { margin-top: 0; border-top: none; padding-top: 0; }
 
     /* ─── ACCORDION ─── */
     .faq-item {
@@ -601,7 +601,7 @@
       .faq-title { font-size: clamp(1.8rem, 7vw, 2.8rem); margin-bottom: 1.4rem; }
       .faq-intro { font-size: 0.88rem; line-height: 1.8; }
       .faq-body { padding: 3rem 1.25rem 6rem; }
-      .faq-category { font-size: 0.68rem; margin-top: 3rem; margin-bottom: 1rem; }
+      .faq-category { font-size: 1.35rem; font-weight: 700; letter-spacing: 0.04em; margin-top: 4.5rem; margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--accent); }
       .faq-question { padding: 1.2rem 0; }
       .faq-question-text { font-size: clamp(0.95rem, 4vw, 1.2rem); }
       .faq-icon { width: 22px; height: 22px; }
@@ -644,7 +644,7 @@
       .faq-divider { width: 68px; margin-bottom: 3rem; }
       .faq-intro { font-size: 1.15rem; max-width: 820px; line-height: 2; }
       .faq-body { max-width: 1200px; padding: 8rem 5rem 14rem; }
-      .faq-category { font-size: 0.8rem; letter-spacing: 0.23em; margin-bottom: 2rem; margin-top: 5.5rem; }
+      .faq-category { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 2rem; margin-top: 5.5rem; }
       .faq-question { padding: 2.4rem 0; }
       .faq-question-text { font-size: clamp(1.35rem, 1.8vw, 2rem); }
       .faq-icon { width: 32px; height: 32px; }

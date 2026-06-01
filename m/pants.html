@@ -23,16 +23,16 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
       else if (window.matchMedia('(min-width: 768px)').matches)
-        location.replace('../lu2co-laptop/' + p);
+        location.replace('../l/' + p);
     })();
   </script>
   <title>Womens Pants Sewing Patterns | PDF Sewing Patterns | LU2COHOUSE</title>
   <meta name="description" content="Browse beginner-friendly womens pants sewing patterns by LU2COHOUSE. Flattering silhouettes in sizes XXS–5XL, instant PDF download.">
   <meta name="keywords" content="pants sewing pattern, womens pants pattern, trousers sewing pattern, sewing patterns for women, sewing patterns, sewing pattern, lu2cohouse">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/pants">
+  <link rel="canonical" href="https://lu2cohouse.com/l/pants.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lu2cohouse.com/pants">
   <meta property="og:site_name" content="LU2COHOUSE">
@@ -988,6 +988,7 @@
       font-size: 0.5rem; letter-spacing: 0.14em;
       color: rgba(255,255,255,0.28); margin-bottom: 0.18rem;
     }
+    .pcc-link { display:block; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); text-decoration:none; margin-top:.3rem; }
     .pcc-name {
       font-family: var(--font-sans);
       font-size: clamp(0.5rem, 1.2vw, 0.65rem);
@@ -1162,6 +1163,7 @@
 const PRODUCTS = [
   {
     short: 'Nova Pants',
+    slug: 'nova-pants',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Sizes</div><div class="pm-desc-text">0–34 (24"–54" waist · 34"–65" hip)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Design Features</div><ul class="pm-desc-list"><li>High-waisted wide-leg trousers</li><li>Elastic waistband</li><li>Full length with elegant drape</li><li>Optional cargo pockets</li><li>Optional drawstring</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Digital PDF sewing pattern — layered files (print only your size)</li><li>A4 &amp; US Letter print-at-home format</li><li>Large format A0/Copyshop file</li><li>Seam allowances included · cm &amp; in measurements</li><li>Step-by-step illustrated instruction booklet</li><li>Detailed YouTube tutorial video</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Recommended Fabrics</div><div class="pm-desc-text">Wide variety of fabrics; cottons or linens between 3–9 oz per square yard are favorites.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 16/1.webp','assets/products/Product 16/2.webp','assets/products/Product 16/3.webp','assets/products/Product 16/4.webp','assets/products/Product 16/5.webp','assets/products/Product 16/6.webp','assets/products/Product 16/7.webp','assets/products/Product 16/8.webp'],
     url: 'https://www.etsy.com/listing/4460905421/nova-pants-pdf-sewing-pattern-wide-leg'
@@ -1183,7 +1185,10 @@ const PRODUCTS = [
         '<div class="pcc-img"><img src="' + src + '" alt="' + p.short + '" ' + (i === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" width="400" height="520"></div>' +
         '<div class="pcc-info">' +
           '<p class="pcc-name">' + p.short + '</p>' +
+          (p.slug ? '<a class="pcc-link" href="products/' + p.slug + '.html">View →</a>' : '') +
         '</div>';
+      var lnk = card.querySelector('.pcc-link');
+      if (lnk) lnk.addEventListener('click', function(e) { e.stopPropagation(); });
       card.addEventListener('click', function() { openModal(p); });
       el.appendChild(card);
     });
@@ -1418,7 +1423,7 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
       pmReviews.innerHTML =
         '<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars">' + bars.map(function(b){return '<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">'+b[0]+'</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:'+b[1]+'"></div></div><span class="pm-rv-bar-num">'+b[1]+'</span></div>';}).join('') + '</div></div>' +
         REVIEWS2.map(function(r){return '<div class="pm-rv-card"><div class="pm-rv-card-stars">'+'★'.repeat(r.stars)+'</div><div class="pm-rv-card-text">'+r.text+'</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">'+r.name+'</span> · '+r.date+'</div></div>';}).join('') +
-        '<a href="'+p.link+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
+        '<a href="'+p.url+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
     }    const _pmPanel = modal.querySelector('.pm-panel');
     modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';

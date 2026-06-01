@@ -23,9 +23,9 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
       else if (window.matchMedia('(min-width: 768px)').matches)
-        location.replace('../lu2co-laptop/' + p);
+        location.replace('../l/' + p);
     })();
   </script>
   <title>LU2COHOUSE</title>
@@ -42,7 +42,7 @@
   <meta property="og:locale"      content="en_US">
   <meta property="og:title"       content="LU2COHOUSE — Sewing Patterns">
   <meta property="og:description" content="Beginner-friendly womens sewing patterns — quilted jackets, coats, vests, blouses and pants. Sizes XXS–5XL, instant PDF download.">
-  <meta property="og:image"       content="https://lu2cohouse.com/assets/products/product%201/1.jpg">
+  <meta property="og:image"       content="https://lu2cohouse.com/Brand%20Logos/132.webp">
   <meta property="og:image:width"  content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt"    content="LU2COHOUSE quilted jacket sewing pattern">
@@ -51,7 +51,7 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="LU2COHOUSE — Sewing Patterns">
   <meta name="twitter:description" content="Beginner-friendly womens sewing patterns — quilted jackets, coats, vests, blouses and pants. Sizes XXS–5XL, instant PDF download.">
-  <meta name="twitter:image"       content="https://lu2cohouse.com/assets/products/product%201/1.jpg">
+  <meta name="twitter:image"       content="https://lu2cohouse.com/Brand%20Logos/132.webp">
   <meta name="twitter:image:alt"   content="LU2COHOUSE quilted jacket sewing pattern">
 
   <!-- ─── JSON-LD Structured Data ─── -->
@@ -61,7 +61,7 @@
     "@type": "Organization",
     "name": "LU2COHOUSE",
     "url": "https://lu2cohouse.com",
-    "logo": "https://lu2cohouse.com/assets/products/product%201/1.jpg",
+    "logo": "https://lu2cohouse.com/Brand%20Logos/132.webp",
     "description": "Beginner-friendly womens sewing patterns — quilted jackets, coats, vests, blouses and pants. Sizes XXS–5XL, instant PDF download.",
     "sameAs": [
       "https://www.instagram.com/lu2cohouse",
@@ -70,6 +70,21 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "LU2COHOUSE",
+    "url": "https://lu2cohouse.com",
+    "description": "Women's PDF sewing patterns — instant download, beginner-friendly, sizes XXS to 5XL.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LU2COHOUSE"
+    }
+  }
+  </script>
+
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,13 +102,6 @@
   <link rel="preload" as="image" href="../../Brand%20Logos/132.webp">
 
   <!-- Preload carousel product images at highest browser priority -->
-  <link rel="preload" as="image" href="assets/products/product%201/2.webp">
-  <link rel="preload" as="image" href="assets/products/product%202/2.webp">
-  <link rel="preload" as="image" href="assets/products/Product%203/2.webp">
-  <link rel="preload" as="image" href="assets/products/Product%204/2.webp">
-  <link rel="preload" as="image" href="assets/products/Product%205/4.webp">
-  <link rel="preload" as="image" href="assets/products/Product%206/2.webp">
-
   <!-- GSAP + ScrollTrigger -->
 
   <style>
@@ -4894,7 +4902,7 @@ ScrollTrigger.create({
           '</div>' +
         '</div>' +
         REVIEWS.map(function(r){ return '<div class="pm-rv-card"><div class="pm-rv-card-stars">'+'★'.repeat(r.stars)+'</div><div class="pm-rv-card-text">'+r.text+'</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">'+r.name+'</span> · '+r.date+'</div></div>'; }).join('') +
-        '<a href="' + p.link + '" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
+        '<a href="' + p.url + '" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
     }
 
     /* reset scroll & open */
@@ -5532,7 +5540,7 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
   if (!card) return;
   function embedVideo() {
     var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/GZ2QQRiP6FU?playsinline=1&rel=0&modestbranding=1';
+    f.src = 'https://www.youtube-nocookie.com/embed/GZ2QQRiP6FU?autoplay=1&playsinline=1&rel=0&modestbranding=1';
     f.allow = 'autoplay; encrypted-media; fullscreen';
     f.allowFullscreen = true;
     f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;';
@@ -5545,6 +5553,27 @@ window.addEventListener('load', () => { setTimeout(() => ScrollTrigger.refresh()
   card.addEventListener('click', embedVideo);
   card.addEventListener('touchend', function (e) { e.preventDefault(); embedVideo(); }, { passive: false });
 })();
+</script>
+
+<script>
+/* Force mp4 videos to play on mobile — autoplay alone is unreliable on iOS/Android */
+function tryPlayVideos() {
+  document.querySelectorAll('video[autoplay]').forEach(function(v) {
+    v.muted = true;
+    var p = v.play();
+    if (p !== undefined) p.catch(function() {});
+  });
+}
+if (document.readyState === 'complete') {
+  tryPlayVideos();
+} else {
+  window.addEventListener('load', tryPlayVideos);
+}
+/* Re-attempt on first touch (covers Low Power Mode on iOS) */
+document.addEventListener('touchstart', function retryOnTouch() {
+  tryPlayVideos();
+  document.removeEventListener('touchstart', retryOnTouch);
+}, { once: true, passive: true });
 </script>
 
 </body>

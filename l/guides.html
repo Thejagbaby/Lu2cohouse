@@ -23,30 +23,30 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(max-width: 767px)').matches)
-        location.replace('../lu2co-mobile/' + p);
+        location.replace('../m/' + p);
       else if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
     })();
   </script>
   <title>Quilted Jacket Sewing Patterns | Womens Jacket Patterns PDF | LU2COHOUSE</title>
   <meta name="description" content="Browse beginner-friendly womens jacket sewing patterns and tutorials — quilted jackets, hooded coats, crop jackets, funnel neck, and vests. Sizes XXS–5XL, instant PDF download.">
   <meta name="keywords" content="womens jacket patterns, quilted jacket pattern, quilted jacket sewing pattern, jacket sewing pattern, sewing patterns, sewing pattern, coat sewing pattern, quilt coat pattern, quilted coat pattern, hooded quilted jacket pattern, crop jacket pattern, funnel neck jacket pattern, quilted vest pattern, sewing patterns for women, lu2cohouse">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/guides">
+  <link rel="canonical" href="https://lu2cohouse.com/l/guides.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lu2cohouse.com/guides">
+  <meta property="og:url" content="https://lu2cohouse.com/l/guides.html">
   <meta property="og:site_name" content="LU2COHOUSE">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Sewing Pattern Guides & Tutorials | LU2COHOUSE">
   <meta property="og:description" content="Step-by-step sewing guides for quilted jackets, coats, vests, blouses and pants. Beginner-friendly tutorials from LU2COHOUSE.">
-  <meta property="og:image" content="https://lu2cohouse.com/assets/products/product%201/1.jpg">
+  <meta property="og:image" content="https://lu2cohouse.com/Brand%20Logos/COVER1.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Sewing Pattern Guides & Tutorials | LU2COHOUSE">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sewing Pattern Guides & Tutorials | LU2COHOUSE">
   <meta name="twitter:description" content="Step-by-step sewing guides for quilted jackets, coats, vests and more.">
-  <meta name="twitter:image" content="https://lu2cohouse.com/assets/products/product%201/1.jpg">
+  <meta name="twitter:image" content="https://lu2cohouse.com/Brand%20Logos/COVER1.webp">
   <meta name="twitter:image:alt" content="Sewing Pattern Guides & Tutorials | LU2COHOUSE">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1081,6 +1081,15 @@
     requestAnimationFrame(function(){
       o.style.transition='opacity 0.35s ease';
       o.style.opacity='0';
+    });
+  });
+  window.addEventListener('pageshow',function(e){
+    if(!e.persisted)return;
+    o.style.transition='none';
+    o.style.opacity='0';
+    o.style.pointerEvents='none';
+    requestAnimationFrame(function(){
+      o.style.transition='opacity 0.35s ease';
     });
   });
   document.addEventListener('click',function(e){

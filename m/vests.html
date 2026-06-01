@@ -23,16 +23,16 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
       else if (window.matchMedia('(min-width: 768px)').matches)
-        location.replace('../lu2co-laptop/' + p);
+        location.replace('../l/' + p);
     })();
   </script>
   <title>Womens Vest Sewing Patterns | Quilted Vest Patterns XXS–5XL | LU2COHOUSE</title>
   <meta name="description" content="Browse beginner-friendly womens vest sewing patterns — quilted vests, wrap vests, and shawl collar styles. Sizes XXS–5XL, instant PDF download.">
   <meta name="keywords" content="quilted vest pattern, vest sewing pattern, womens jacket patterns, sewing patterns, quilt vest pattern, quilted jacket pattern, sewing patterns for women, coat sewing pattern, lu2cohouse">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/vests">
+  <link rel="canonical" href="https://lu2cohouse.com/l/vests.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lu2cohouse.com/vests">
   <meta property="og:site_name" content="LU2COHOUSE">
@@ -1152,6 +1152,7 @@
       font-size: 0.5rem; letter-spacing: 0.14em;
       color: rgba(255,255,255,0.28); margin-bottom: 0.18rem;
     }
+    .pcc-link { display:block; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); text-decoration:none; margin-top:.3rem; }
     .pcc-name {
       font-family: var(--font-sans);
       font-size: clamp(0.5rem, 1.2vw, 0.65rem);
@@ -1342,12 +1343,14 @@ gsap.registerPlugin(ScrollTrigger);
 const PRODUCTS = [
   {
     short: 'Quilted Vest',
+    slug: 'quilted-vest',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted vest</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Layers for all the sizes</li><li>Measures include sizes in cm &amp; in</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Quilting cotton, flannel, sherpa, pre-quilted fabric, and more. Cottons or linens between 3–7 oz per square yard recommended. Knit fabrics with a lot of stretch are not recommended.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 15/1.webp','assets/products/Product 15/2.webp','assets/products/Product 15/3.webp','assets/products/Product 15/4.webp','assets/products/Product 15/5.webp','assets/products/Product 15/6.webp','assets/products/Product 15/7.webp','assets/products/Product 15/8.webp','assets/products/Product 15/9.webp'],
     url: 'https://www.etsy.com/listing/4464713439/quilted-vest-sewing-pattern-beginner'
   },
   {
     short: 'Jersey Puffer Vest',
+    slug: 'jersey-puffer-vest',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the puffer vest</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li><li>Tutorial video: how to turn jersey into a puffer vest</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Features</div><ul class="pm-desc-list"><li>Beginner-friendly puffer vest design</li><li>Professional finish achievable with simple construction techniques</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 20/1.webp','assets/products/Product 20/2.webp','assets/products/Product 20/3.webp','assets/products/Product 20/4.webp','assets/products/Product 20/5.webp','assets/products/Product 20/6.webp','assets/products/Product 20/7.webp','assets/products/Product 20/8.webp'],
     url: 'https://www.etsy.com/listing/4450004963/jersey-puffer-vest-sewing-pattern'
@@ -1369,7 +1372,10 @@ const PRODUCTS = [
         '<div class="pcc-img"><img src="' + src + '" alt="' + p.short + '" ' + (i === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" width="400" height="520"></div>' +
         '<div class="pcc-info">' +
           '<p class="pcc-name">' + p.short + '</p>' +
+          (p.slug ? '<a class="pcc-link" href="products/' + p.slug + '.html">View →</a>' : '') +
         '</div>';
+      var lnk = card.querySelector('.pcc-link');
+      if (lnk) lnk.addEventListener('click', function(e) { e.stopPropagation(); });
       card.addEventListener('click', function() { openModal(p); });
       el.appendChild(card);
     });
@@ -1611,7 +1617,7 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
       pmReviews.innerHTML =
         '<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars">' + bars.map(function(b){return '<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">'+b[0]+'</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:'+b[1]+'"></div></div><span class="pm-rv-bar-num">'+b[1]+'</span></div>';}).join('') + '</div></div>' +
         REVIEWS2.map(function(r){return '<div class="pm-rv-card"><div class="pm-rv-card-stars">'+'★'.repeat(r.stars)+'</div><div class="pm-rv-card-text">'+r.text+'</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">'+r.name+'</span> · '+r.date+'</div></div>';}).join('') +
-        '<a href="'+p.link+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
+        '<a href="'+p.url+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
     }    const _pmPanel = modal.querySelector('.pm-panel');
     modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';

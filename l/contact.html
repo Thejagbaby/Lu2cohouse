@@ -23,18 +23,18 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(max-width: 767px)').matches)
-        location.replace('../lu2co-mobile/' + p);
+        location.replace('../m/' + p);
       else if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
     })();
   </script>
   <title>Contact | LU2COHOUSE Sewing Patterns</title>
   <meta name="description" content="Get in touch with LU2COHOUSE. For all order and pattern questions, reach us through Etsy — we respond within 24 hours.">
   <meta name="keywords" content="contact lu2cohouse, sewing pattern support, etsy sewing patterns, lu2cohouse customer service">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/contact">
+  <link rel="canonical" href="https://lu2cohouse.com/l/contact.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lu2cohouse.com/contact">
+  <meta property="og:url" content="https://lu2cohouse.com/l/contact.html">
   <meta property="og:site_name" content="LU2COHOUSE">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Contact | LU2COHOUSE Sewing Patterns">
@@ -548,6 +548,15 @@
     requestAnimationFrame(function(){
       o.style.transition='opacity 0.35s ease';
       o.style.opacity='0';
+    });
+  });
+  window.addEventListener('pageshow',function(e){
+    if(!e.persisted)return;
+    o.style.transition='none';
+    o.style.opacity='0';
+    o.style.pointerEvents='none';
+    requestAnimationFrame(function(){
+      o.style.transition='opacity 0.35s ease';
     });
   });
   document.addEventListener('click',function(e){

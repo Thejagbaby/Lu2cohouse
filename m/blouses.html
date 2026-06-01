@@ -23,16 +23,16 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
       else if (window.matchMedia('(min-width: 768px)').matches)
-        location.replace('../lu2co-laptop/' + p);
+        location.replace('../l/' + p);
     })();
   </script>
   <title>Womens Blouse Sewing Patterns | PDF Sewing Patterns | LU2COHOUSE</title>
   <meta name="description" content="Browse beginner-friendly womens blouse sewing patterns by LU2COHOUSE. Clean, elegant silhouettes in sizes XXS–5XL, instant PDF download.">
   <meta name="keywords" content="blouse sewing pattern, womens blouse pattern, blouse pattern, sewing patterns for women, sewing patterns, sewing pattern, lu2cohouse">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/blouses">
+  <link rel="canonical" href="https://lu2cohouse.com/l/blouses.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lu2cohouse.com/blouses">
   <meta property="og:site_name" content="LU2COHOUSE">
@@ -987,6 +987,7 @@
       font-size: 0.5rem; letter-spacing: 0.14em;
       color: rgba(255,255,255,0.28); margin-bottom: 0.18rem;
     }
+    .pcc-link { display:block; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:rgba(255,255,255,.75); text-decoration:none; margin-top:.3rem; }
     .pcc-name {
       font-family: var(--font-sans);
       font-size: clamp(0.5rem, 1.2vw, 0.65rem);
@@ -1161,18 +1162,21 @@
 const PRODUCTS = [
   {
     short: 'Side Tie Tank Blouse',
+    slug: 'side-tie-tank-blouse',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the blouse</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Finishing Options</div><div class="pm-desc-text">Option A: fully lined · Option B: facing finish</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><ul class="pm-desc-list"><li>1.4 yds main fabric (min 46" wide)</li><li>1.4 yds lining fabric — Option A, or 0.4 yds facing — Option B</li><li>Fusible interfacing (optional)</li><li>Invisible zipper min 21"/55 cm + invisible zipper foot</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 14/1.webp','assets/products/Product 14/2.webp','assets/products/Product 14/3.webp','assets/products/Product 14/4.webp','assets/products/Product 14/5.webp','assets/products/Product 14/6.webp','assets/products/Product 14/7.webp','assets/products/Product 14/8.webp'],
     url: 'https://www.etsy.com/listing/4476610444/side-tie-tank-blouse-sewing-pattern'
   },
   {
     short: 'Sleeveless Blouse',
+    slug: 'sleeveless-blouse',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the blouse</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Finishing Options</div><div class="pm-desc-text">Option A: fully lined · Option B: facing finish</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><ul class="pm-desc-list"><li>1.4 yds main fabric (min 46" wide)</li><li>1.4 yds lining fabric — Option A, or 0.4 yds facing — Option B</li><li>Fusible interfacing (optional)</li><li>Invisible zipper min 21"/55 cm + invisible zipper foot</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 40/1.webp','assets/products/Product 40/2.webp','assets/products/Product 40/3.webp','assets/products/Product 40/4.webp','assets/products/Product 40/5.webp','assets/products/Product 40/6.webp','assets/products/Product 40/7.webp','assets/products/Product 40/8.webp','assets/products/Product 40/9.webp','assets/products/Product 40/10.webp','assets/products/Product 40/11.webp','assets/products/Product 40/12.webp'],
     url: 'https://www.etsy.com/listing/4494575782/sleeveless-blouse-sewing-pattern'
   },
   {
     short: 'Evania Blouse',
+    slug: 'evania-blouse',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the blouse</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Recommendations</div><div class="pm-desc-text">Lightweight woven fabrics with softness and drape — cotton lawn, voile, lightweight linen, or soft poplin. Sample is a linen blend, 140 gsm.</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Usage (View E)</div><div class="pm-desc-text">1.59–2.37 m (EU 34–54) · 1.74–2.59 yds (US 2/4–24) · Based on 140 cm / 55" wide fabric</div></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 41/1.webp','assets/products/Product 41/2.webp','assets/products/Product 41/3.webp','assets/products/Product 41/4.webp','assets/products/Product 41/5.webp','assets/products/Product 41/6.webp','assets/products/Product 41/7.webp','assets/products/Product 41/8.webp'],
     url: 'https://www.etsy.com/listing/4498251678/evania-blouse-sewing-pattern-confident'
@@ -1194,7 +1198,10 @@ const PRODUCTS = [
         '<div class="pcc-img"><img src="' + src + '" alt="' + p.short + '" ' + (i === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" width="400" height="520"></div>' +
         '<div class="pcc-info">' +
           '<p class="pcc-name">' + p.short + '</p>' +
+          (p.slug ? '<a class="pcc-link" href="products/' + p.slug + '.html">View →</a>' : '') +
         '</div>';
+      var lnk = card.querySelector('.pcc-link');
+      if (lnk) lnk.addEventListener('click', function(e) { e.stopPropagation(); });
       card.addEventListener('click', function() { openModal(p); });
       el.appendChild(card);
     });
@@ -1429,7 +1436,7 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
       pmReviews.innerHTML =
         '<div class="pm-rv-header"><div class="pm-rv-left"><div class="pm-rv-score-row"><span class="pm-rv-star-single">★</span><span class="pm-rv-score">4.6</span></div><span class="pm-rv-count">267 ratings</span></div><div class="pm-rv-bars">' + bars.map(function(b){return '<div class="pm-rv-bar-row"><span class="pm-rv-bar-label">'+b[0]+'</span><div class="pm-rv-bar-track"><div class="pm-rv-bar-fill" style="width:'+b[1]+'"></div></div><span class="pm-rv-bar-num">'+b[1]+'</span></div>';}).join('') + '</div></div>' +
         REVIEWS2.map(function(r){return '<div class="pm-rv-card"><div class="pm-rv-card-stars">'+'★'.repeat(r.stars)+'</div><div class="pm-rv-card-text">'+r.text+'</div><div class="pm-rv-card-meta"><span class="pm-rv-card-name">'+r.name+'</span> · '+r.date+'</div></div>';}).join('') +
-        '<a href="'+p.link+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
+        '<a href="'+p.url+'" target="_blank" rel="noopener" class="pm-rv-more">Read More Reviews →</a>';
     }    const _pmPanel = modal.querySelector('.pm-panel');
     modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';

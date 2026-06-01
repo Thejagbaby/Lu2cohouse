@@ -23,18 +23,18 @@
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
       if (window.matchMedia('(max-width: 767px)').matches)
-        location.replace('../lu2co-mobile/' + p);
+        location.replace('../m/' + p);
       else if (window.matchMedia('(min-width: 1600px)').matches)
-        location.replace('../lu2co-desktop/' + p);
+        location.replace('../d/' + p);
     })();
   </script>
   <title>Shop All Sewing Patterns | Jackets, Vests, Blouses & Pants | LU2COHOUSE</title>
   <meta name="description" content="Shop all beginner-friendly womens sewing patterns by LU2COHOUSE — quilted jackets, coats, vests, blouses and pants. Sizes XXS–5XL, instant PDF download.">
   <meta name="keywords" content="sewing patterns, sewing pattern, womens jacket patterns, quilted jacket pattern, quilted vest pattern, blouse sewing pattern, pants sewing pattern, sewing patterns for women, lu2cohouse">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://lu2cohouse.com/shop-all">
+  <link rel="canonical" href="https://lu2cohouse.com/l/shop-all.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lu2cohouse.com/shop-all">
+  <meta property="og:url" content="https://lu2cohouse.com/l/shop-all.html">
   <meta property="og:site_name" content="LU2COHOUSE">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Shop All Sewing Patterns | LU2COHOUSE">
@@ -333,7 +333,8 @@
     }
 
     .side-nav-item { display: flex; flex-direction: column; gap: .3rem; cursor: default; }
-    .side-nav-item.is-next { cursor: pointer; }
+    .side-nav-item.is-next,
+    .side-nav-item.is-prev { cursor: pointer; }
 
     .side-nav-name {
       font-family: var(--font-sans);
@@ -348,11 +349,10 @@
       transition: opacity .25s ease;
     }
 
-    .side-nav-item.is-next .side-nav-name {
-      color: rgba(255,255,255,.28);
-      font-size: 1rem;
-    }
-    .side-nav-item.is-next:hover .side-nav-name { color: rgba(255,255,255,.55); }
+    .side-nav-item.is-next .side-nav-name,
+    .side-nav-item.is-prev .side-nav-name { color: rgba(255,255,255,.28); font-size: 1rem; }
+    .side-nav-item.is-next:hover .side-nav-name,
+    .side-nav-item.is-prev:hover .side-nav-name { color: rgba(255,255,255,.55); }
 
     .side-nav-sub {
       font-family: var(--font-sans);
@@ -361,7 +361,8 @@
       color: rgba(255,255,255,.3);
       line-height: 1;
     }
-    .side-nav-item.is-next .side-nav-sub { display: none; }
+    .side-nav-item.is-next .side-nav-sub,
+    .side-nav-item.is-prev .side-nav-sub { display: none; }
 
     /* ── FOOTER ── */
     .page-footer {
@@ -1082,234 +1083,273 @@ gsap.registerPlugin(ScrollTrigger);
 const PRODUCTS = [
   {
     short: 'Siena Quilt Coat',
+    slug: 'siena-quilt-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted coat</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Features</div><ul class="pm-desc-list"><li>Beginner-friendly quilted coat design</li><li>Professional finish achievable with simple construction techniques</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/product 1/1.webp','assets/products/product 1/2.webp','assets/products/product 1/3.webp','assets/products/product 1/4.webp','assets/products/product 1/5.webp','assets/products/product 1/6.webp','assets/products/product 1/7.webp'],
     url: 'https://www.etsy.com/listing/4430351753/siena-quilt-coat-sewing-pattern-beginner'
   },
   {
     short: 'Hooded Quilted Jacket',
+    slug: 'hooded-quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Features</div><ul class="pm-desc-list"><li>Beginner-friendly quilted jacket design</li><li>Professional finish achievable with simple construction techniques</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/product 2/1.webp','assets/products/product 2/2.webp','assets/products/product 2/3.webp','assets/products/product 2/4.webp','assets/products/product 2/5.webp','assets/products/product 2/6.webp','assets/products/product 2/7.webp'],
     url: 'https://www.etsy.com/listing/4411882487/hooded-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Beginner Hooded Jacket',
+    slug: 'beginner-hooded-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 3/1.webp','assets/products/Product 3/2.webp','assets/products/Product 3/3.webp','assets/products/Product 3/4.webp','assets/products/Product 3/5.webp','assets/products/Product 3/6.webp','assets/products/Product 3/7.webp','assets/products/Product 3/8.webp'],
     url: 'https://www.etsy.com/listing/4430353699/beginner-hooded-quilted-jacket-sewing'
   },
   {
     short: 'Florence Quilt Coat',
+    slug: 'florence-quilt-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 4/1.webp','assets/products/Product 4/2.webp','assets/products/Product 4/3.webp','assets/products/Product 4/4.webp','assets/products/Product 4/5.webp','assets/products/Product 4/6.webp','assets/products/Product 4/7.webp','assets/products/Product 4/8.webp'],
     url: 'https://www.etsy.com/listing/4415566335/florence-quilt-coat-beginner-sewing'
   },
   {
     short: 'Blossom Quilt Coat',
+    slug: 'blossom-quilt-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 5/1.webp','assets/products/Product 5/2.webp','assets/products/Product 5/3.webp','assets/products/Product 5/4.webp','assets/products/Product 5/5.webp','assets/products/Product 5/6.webp','assets/products/Product 5/7.webp','assets/products/Product 5/8.webp'],
     url: 'https://www.etsy.com/listing/4432059064/blossom-quilt-coat-sewing-pattern'
   },
   {
     short: 'Rosa Quilted Jacket',
+    slug: 'rosa-quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><ul class="pm-desc-list"><li>Fabric 150cm wide: 120-205cm</li><li>Bias Band: approximately 8-10 meters</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 6/1.webp','assets/products/Product 6/2.webp','assets/products/Product 6/3.webp','assets/products/Product 6/4.webp','assets/products/Product 6/5.webp','assets/products/Product 6/6.webp'],
     url: 'https://www.etsy.com/listing/4431240739/rosa-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Laurel Crop Jacket',
+    slug: 'laurel-crop-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 7/1.webp','assets/products/Product 7/2.webp','assets/products/Product 7/3.webp','assets/products/Product 7/4.webp','assets/products/Product 7/5.webp','assets/products/Product 7/6.webp','assets/products/Product 7/7.webp'],
     url: 'https://www.etsy.com/listing/4430346985/laurel-crop-jacket-sewing-pattern'
   },
   {
     short: 'Funnel Neck Jacket',
+    slug: 'funnel-neck-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 8/1.webp','assets/products/Product 8/2.webp','assets/products/Product 8/3.webp','assets/products/Product 8/4.webp','assets/products/Product 8/5.webp','assets/products/Product 8/6.webp','assets/products/Product 8/8.webp'],
     url: 'https://www.etsy.com/listing/4430351399/funnel-neck-jacket-sewing-pattern'
   },
   {
     short: 'Hooded Quilted Jacket II',
+    slug: 'hooded-quilted-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 9/1.webp','assets/products/Product 9/2.webp','assets/products/Product 9/3.webp','assets/products/Product 9/4.webp','assets/products/Product 9/5.webp','assets/products/Product 9/6.webp','assets/products/Product 9/7.webp','assets/products/Product 9/8.webp','assets/products/Product 9/9.webp'],
     url: 'https://www.etsy.com/listing/4431757951/hooded-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Nora Quilt Coat',
+    slug: 'nora-quilt-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 10/1.webp','assets/products/Product 10/2.webp','assets/products/Product 10/3.webp','assets/products/Product 10/4.webp','assets/products/Product 10/5.webp','assets/products/Product 10/6.webp','assets/products/Product 10/7.webp','assets/products/Product 10/8.webp','assets/products/Product 10/9.webp'],
     url: 'https://www.etsy.com/listing/4432057290/nora-quilt-coat-sewing-pattern-beginner'
   },
   {
     short: 'Siena Quilt Coat II',
+    slug: 'siena-quilt-coat-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 11/1.webp','assets/products/Product 11/2.webp','assets/products/Product 11/3.webp','assets/products/Product 11/4.webp','assets/products/Product 11/5.webp','assets/products/Product 11/6.webp','assets/products/Product 11/7.webp','assets/products/Product 11/8.webp','assets/products/Product 11/9.webp'],
     url: 'https://www.etsy.com/listing/4430343668/siena-quilt-coat-sewing-pattern-beginner'
   },
   {
     short: 'Siena Quilt Coat III',
+    slug: 'siena-quilt-coat-iii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 12/1.webp','assets/products/Product 12/2.webp','assets/products/Product 12/3.webp','assets/products/Product 12/4.webp','assets/products/Product 12/5.webp','assets/products/Product 12/6.webp','assets/products/Product 12/7.webp','assets/products/Product 12/8.webp'],
     url: 'https://www.etsy.com/listing/4430351753/siena-quilt-coat-sewing-pattern-beginner'
   },
   {
     short: 'Lirio Quilted Jacket',
+    slug: 'lirio-quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 13/1.webp','assets/products/Product 13/2.webp','assets/products/Product 13/3.webp','assets/products/Product 13/4.webp','assets/products/Product 13/5.webp','assets/products/Product 13/6.webp','assets/products/Product 13/7.webp','assets/products/Product 13/8.webp','assets/products/Product 13/9.webp'],
     url: 'https://www.etsy.com/listing/4431772326/lirio-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Side Tie Tank Blouse',
+    slug: 'side-tie-tank-blouse',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Finishing Options</div><div class="pm-desc-text">Option A: fully lined · Option B: facing finish</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><ul class="pm-desc-list"><li>1.4 yds main fabric (min 46" wide)</li><li>1.4 yds lining fabric — Option A, or 0.4 yds facing — Option B</li><li>Fusible interfacing (optional)</li><li>Invisible zipper min 21"/55 cm + invisible zipper foot</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 14/1.webp','assets/products/Product 14/2.webp','assets/products/Product 14/3.webp','assets/products/Product 14/4.webp','assets/products/Product 14/5.webp','assets/products/Product 14/6.webp','assets/products/Product 14/7.webp','assets/products/Product 14/8.webp'],
     url: 'https://www.etsy.com/listing/4476610444/side-tie-tank-blouse-sewing-pattern'
   },
   {
     short: 'Quilted Vest',
+    slug: 'quilted-vest',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Quilting cotton, flannel, sherpa, pre-quilted fabric, and more. Cottons or linens between 3–7 oz per square yard recommended.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 15/1.webp','assets/products/Product 15/2.webp','assets/products/Product 15/3.webp','assets/products/Product 15/4.webp','assets/products/Product 15/5.webp','assets/products/Product 15/6.webp','assets/products/Product 15/7.webp','assets/products/Product 15/8.webp','assets/products/Product 15/9.webp'],
     url: 'https://www.etsy.com/listing/4464713439/quilted-vest-sewing-pattern-beginner'
   },
   {
     short: 'Nova Pants',
+    slug: 'nova-pants',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Sizes</div><div class="pm-desc-text">0–34 (24"–54" waist · 34"–65" hip)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Design Features</div><ul class="pm-desc-list"><li>High-waisted wide-leg trousers</li><li>Elastic waistband</li><li>Full length with elegant drape</li><li>Optional cargo pockets</li><li>Optional drawstring</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Recommended Fabrics</div><div class="pm-desc-text">Wide variety of fabrics; cottons or linens between 3–9 oz per square yard are favorites.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 16/1.webp','assets/products/Product 16/2.webp','assets/products/Product 16/3.webp','assets/products/Product 16/4.webp','assets/products/Product 16/5.webp','assets/products/Product 16/6.webp','assets/products/Product 16/7.webp','assets/products/Product 16/8.webp'],
     url: 'https://www.etsy.com/listing/4460905421/nova-pants-pdf-sewing-pattern-wide-leg'
   },
   {
     short: 'Wool Jacket',
+    slug: 'wool-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">Medium to heavy coat fabrics such as wool blends, bouclé, tweed, or other structured synthetics. Seam allowance already added: 1 cm.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 17/1.webp','assets/products/Product 17/2.webp','assets/products/Product 17/3.webp','assets/products/Product 17/4.webp','assets/products/Product 17/5.webp','assets/products/Product 17/6.webp','assets/products/Product 17/7.webp','assets/products/Product 17/8.webp','assets/products/Product 17/9.webp'],
     url: 'https://www.etsy.com/listing/4432054776/jacket-sewing-pattern-beginner-friendly'
   },
   {
     short: 'Mariner Quilt Coat',
+    slug: 'mariner-quilt-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 18/1.webp','assets/products/Product 18/2.webp','assets/products/Product 18/3.webp','assets/products/Product 18/4.webp','assets/products/Product 18/5.webp','assets/products/Product 18/6.webp','assets/products/Product 18/7.webp','assets/products/Product 18/8.webp'],
     url: 'https://www.etsy.com/listing/4446701330/mariner-quilt-coat-sewing-pattern'
   },
   {
     short: 'Siena Quilted Coat',
+    slug: 'siena-quilted-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 19/1.webp','assets/products/Product 19/2.webp','assets/products/Product 19/3.webp','assets/products/Product 19/4.webp','assets/products/Product 19/5.webp','assets/products/Product 19/6.webp','assets/products/Product 19/7.webp'],
     url: 'https://www.etsy.com/listing/4430370932/quilted-coat-sewing-pattern-siena-jacket'
   },
   {
     short: 'Jersey Puffer Vest',
+    slug: 'jersey-puffer-vest',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the puffer vest</li><li>Tutorial video: how to turn jersey into a puffer vest</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 20/1.webp','assets/products/Product 20/2.webp','assets/products/Product 20/3.webp','assets/products/Product 20/4.webp','assets/products/Product 20/5.webp','assets/products/Product 20/6.webp','assets/products/Product 20/7.webp','assets/products/Product 20/8.webp'],
     url: 'https://www.etsy.com/listing/4450004963/jersey-puffer-vest-sewing-pattern'
   },
   {
     short: 'Laurel Crop Jacket II',
+    slug: 'laurel-crop-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 21/1.webp','assets/products/Product 21/2.webp','assets/products/Product 21/3.webp','assets/products/Product 21/4.webp','assets/products/Product 21/5.webp','assets/products/Product 21/6.webp','assets/products/Product 21/7.webp'],
     url: 'https://www.etsy.com/listing/4468105879/wool-jacket-sewing-pattern-beginner'
   },
   {
     short: 'Hooded Jacket III',
+    slug: 'hooded-jacket-iii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 22/1.webp','assets/products/Product 22/2.webp','assets/products/Product 22/3.webp','assets/products/Product 22/4.webp','assets/products/Product 22/5.webp','assets/products/Product 22/6.webp','assets/products/Product 22/7.webp'],
     url: 'https://www.etsy.com/listing/4431142828/hooded-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Valentine Quilted Jacket',
+    slug: 'valentine-quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 23/1.webp','assets/products/Product 23/2.webp','assets/products/Product 23/3.webp','assets/products/Product 23/4.webp','assets/products/Product 23/5.webp','assets/products/Product 23/6.webp','assets/products/Product 23/7.webp','assets/products/Product 23/8.webp'],
     url: 'https://www.etsy.com/listing/4451580504/valentine-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Artful Quilted Jacket',
+    slug: 'artful-quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 24/1.webp','assets/products/Product 24/2.webp','assets/products/Product 24/3.webp','assets/products/Product 24/4.webp','assets/products/Product 24/5.webp','assets/products/Product 24/6.webp','assets/products/Product 24/7.webp','assets/products/Product 24/8.webp'],
     url: 'https://www.etsy.com/listing/4447656918/artful-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Blossom Quilt Coat II',
+    slug: 'blossom-quilt-coat-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 25/1.webp','assets/products/Product 25/2.webp','assets/products/Product 25/3.webp','assets/products/Product 25/4.webp','assets/products/Product 25/5.webp','assets/products/Product 25/6.webp','assets/products/Product 25/7.webp','assets/products/Product 25/8.webp'],
     url: 'https://www.etsy.com/listing/4432060364/blossom-quilt-coat-sewing-pattern'
   },
   {
     short: 'Sunset Patchwork Coat',
+    slug: 'sunset-patchwork-coat',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 26/1.webp','assets/products/Product 26/2.webp','assets/products/Product 26/3.webp','assets/products/Product 26/4.webp','assets/products/Product 26/5.webp','assets/products/Product 26/6.webp','assets/products/Product 26/7.webp','assets/products/Product 26/8.webp','assets/products/Product 26/9.webp'],
     url: 'https://www.etsy.com/listing/4431133729/sunset-patchwork-coat-sewing-pattern'
   },
   {
     short: 'Quilted Jacket',
+    slug: 'quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 27/1.webp','assets/products/Product 27/2.webp','assets/products/Product 27/3.webp','assets/products/Product 27/4.webp','assets/products/Product 27/5.webp','assets/products/Product 27/6.webp','assets/products/Product 27/7.webp','assets/products/Product 27/8.webp'],
     url: 'https://www.etsy.com/listing/4431813149/quilted-jacket-sewing-pattern-beginner'
   },
   {
     short: 'Rosa Quilted Jacket II',
+    slug: 'rosa-quilted-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 28/1.webp','assets/products/Product 28/2.webp','assets/products/Product 28/3.webp','assets/products/Product 28/4.webp','assets/products/Product 28/5.webp','assets/products/Product 28/6.webp','assets/products/Product 28/7.webp','assets/products/Product 28/8.webp','assets/products/Product 28/9.webp'],
     url: 'https://www.etsy.com/listing/4431242531/rosa-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Haven Quilted Jacket',
+    slug: 'haven-quilted-jacket',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 29/1.webp','assets/products/Product 29/2.webp','assets/products/Product 29/3.webp','assets/products/Product 29/4.webp','assets/products/Product 29/5.webp','assets/products/Product 29/6.webp','assets/products/Product 29/7.webp','assets/products/Product 29/8.webp'],
     url: 'https://www.etsy.com/listing/4482010284/haven-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Funnel Neck Jacket II',
+    slug: 'funnel-neck-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 30/1.webp','assets/products/Product 30/2.webp','assets/products/Product 30/3.webp','assets/products/Product 30/4.webp','assets/products/Product 30/5.webp','assets/products/Product 30/6.webp','assets/products/Product 30/7.webp','assets/products/Product 30/8.webp'],
     url: 'https://www.etsy.com/listing/4432130828/funnel-neck-jacket-sewing-pattern'
   },
   {
     short: 'Nora Quilt Coat II',
+    slug: 'nora-quilt-coat-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 31/1.webp','assets/products/Product 31/2.webp','assets/products/Product 31/3.webp','assets/products/Product 31/4.webp','assets/products/Product 31/5.webp','assets/products/Product 31/6.webp','assets/products/Product 31/7.webp','assets/products/Product 31/8.webp'],
     url: 'https://www.etsy.com/listing/4430363418/nora-quilt-coat-sewing-pattern-beginner'
   },
   {
     short: 'Laurel Crop Jacket III',
+    slug: 'laurel-crop-jacket-iii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 32/1.webp','assets/products/Product 32/2.webp','assets/products/Product 32/3.webp','assets/products/Product 32/4.webp','assets/products/Product 32/5.webp','assets/products/Product 32/6.webp','assets/products/Product 32/7.webp'],
     url: 'https://www.etsy.com/listing/4431252432/laurel-crop-jacket-sewing-pattern'
   },
   {
     short: 'Quilted Jacket II',
+    slug: 'quilted-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 33/1.webp','assets/products/Product 33/2.webp','assets/products/Product 33/3.webp','assets/products/Product 33/4.webp','assets/products/Product 33/5.webp','assets/products/Product 33/6.webp','assets/products/Product 33/7.webp','assets/products/Product 33/8.webp'],
     url: 'https://www.etsy.com/listing/4420433813/quilted-jacket-sewing-pattern-beginner'
   },
   {
     short: 'Florence Quilt Coat II',
+    slug: 'florence-quilt-coat-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">One existing bound twin-size quilt (minimum 65" x 85"). Upcycle a thrifted quilt or vintage blanket into a unique, one-of-a-kind coat.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 34/1.webp','assets/products/Product 34/2.webp','assets/products/Product 34/3.webp','assets/products/Product 34/4.webp','assets/products/Product 34/5.webp','assets/products/Product 34/6.webp','assets/products/Product 34/7.webp','assets/products/Product 34/8.webp'],
     url: 'https://www.etsy.com/listing/4431136468/florence-quilt-coat-beginner-sewing'
   },
   {
     short: 'Beginner Hooded Jacket II',
+    slug: 'beginner-hooded-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 35/1.webp','assets/products/Product 35/2.webp','assets/products/Product 35/3.webp','assets/products/Product 35/4.webp','assets/products/Product 35/5.webp','assets/products/Product 35/6.webp','assets/products/Product 35/7.webp','assets/products/Product 35/8.webp','assets/products/Product 35/9.webp'],
     url: 'https://www.etsy.com/listing/4471705134/hooded-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Cloud Crop Cardigan',
+    slug: 'cloud-crop-cardigan',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Knit yarn such as Wool or Wool Blends, Acrylic Yarn, Cotton Yarn, or any medium-to-thick yarn suitable for knitting a jacket or cardigan.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 36/1.webp','assets/products/Product 36/2.webp','assets/products/Product 36/3.webp','assets/products/Product 36/4.webp','assets/products/Product 36/5.webp','assets/products/Product 36/6.webp','assets/products/Product 36/8.webp'],
     url: 'https://www.etsy.com/listing/4444193383/cloud-crop-cardigan-sewing-pattern'
   },
   {
     short: 'Lirio Quilted Jacket II',
+    slug: 'lirio-quilted-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, or Velvet or Velour.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 37/1.webp','assets/products/Product 37/2.webp','assets/products/Product 37/3.webp','assets/products/Product 37/4.webp','assets/products/Product 37/5.webp','assets/products/Product 37/6.webp','assets/products/Product 37/7.webp','assets/products/Product 37/8.webp'],
     url: 'https://www.etsy.com/listing/4431775220/lirio-quilted-jacket-sewing-pattern'
   },
   {
     short: 'Wool Jacket II',
+    slug: 'wool-jacket-ii',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">Medium to heavy coat fabrics such as wool blends, bouclé, tweed, or other structured synthetics. Seam allowance already added: 1 cm.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 38/1.webp','assets/products/Product 38/2.webp','assets/products/Product 38/3.webp','assets/products/Product 38/4.webp','assets/products/Product 38/5.webp','assets/products/Product 38/6.webp','assets/products/Product 38/7.webp','assets/products/Product 38/8.webp','assets/products/Product 38/9.webp'],
     url: 'https://www.etsy.com/listing/4426111922/wool-jacket-sewing-pattern-beginner'
   },
   {
     short: 'Cashmere Cardigan',
+    slug: 'cashmere-cardigan',
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">Medium to heavy coat fabrics such as wool blends, bouclé, tweed, or other structured synthetics. Seam allowance already added: 1 cm.</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the cashmere cardigan</li><li>Comprehensive step-by-step instruction booklet to guide your sewing journey</li><li>Printable pattern pieces marked clearly for easy cutting and assembly</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 39/1.webp','assets/products/Product 39/2.webp','assets/products/Product 39/3.webp','assets/products/Product 39/4.webp','assets/products/Product 39/5.webp','assets/products/Product 39/6.webp','assets/products/Product 39/7.webp','assets/products/Product 39/8.webp','assets/products/Product 39/9.webp'],
     url: 'https://www.etsy.com/listing/4426111932/wool-jacket-sewing-pattern-beginner'
@@ -1337,13 +1377,14 @@ function makeCard(p, i) {
       <div class="card-name">${p.short}</div>
       <div class="card-sub">View pattern</div>
       <div class="card-cta">
-        <span class="card-btn">Open →</span>
+        <a class="card-btn" href="products/${p.slug}.html">Open →</a>
         <a class="card-btn card-btn--buy" href="${p.url}" target="_blank" rel="noopener">Buy Now</a>
       </div>
     </div>
   `;
 
   card.querySelector('.card-btn--buy').addEventListener('click', e => e.stopPropagation());
+  card.querySelector('.card-btn:not(.card-btn--buy)').addEventListener('click', function(e){ e.stopPropagation(); if(p.slug) window.location.href='products/'+p.slug+'.html'; });
   card.addEventListener('click', () => openModal(p));
   wrap.appendChild(card);
   return wrap;
@@ -1596,23 +1637,42 @@ gsap.timeline({
   let currentIdx  = PAGES.findIndex(p => p.url === filename);
   if (currentIdx < 0) currentIdx = 4;
 
+  const prevIdx = currentIdx - 1;
   const nextIdx = (currentIdx + 1) % PAGES.length;
   const nav     = document.getElementById('sideNav');
 
   function render(cIdx, nIdx) {
     nav.innerHTML = '';
+    const elems = [];
+
+    if (prevIdx >= 0) {
+      const prev = document.createElement('div');
+      prev.className = 'side-nav-item is-prev';
+      prev.innerHTML = `<span class="side-nav-name">${PAGES[prevIdx].name}</span>`;
+      prev.addEventListener('click', () => {
+        sessionStorage.setItem('fromScroll', '1');
+        gsap.to(['.grid-wrap', 'footer'], { y: -80, opacity: 0, duration: 0.5, ease: 'power2.in' });
+        gsap.to(elems, { y: -50, opacity: 0, duration: .45, ease: 'power2.in', stagger: .08,
+          onComplete() { window.location.href = PAGES[prevIdx].url; }
+        });
+      });
+      nav.appendChild(prev);
+      elems.push(prev);
+    }
 
     const active = document.createElement('div');
     active.className = 'side-nav-item is-active';
     active.innerHTML = `<span class="side-nav-name">${PAGES[cIdx].name}</span>`;
     nav.appendChild(active);
+    elems.push(active);
 
     const next = document.createElement('div');
     next.className = 'side-nav-item is-next';
     next.innerHTML = `<span class="side-nav-name">${PAGES[nIdx].name}</span>`;
     nav.appendChild(next);
+    elems.push(next);
 
-    gsap.from([active, next], {
+    gsap.from(elems, {
       y: 40, opacity: 0, duration: .9, ease: 'power3.out', stagger: .12
     });
 
@@ -1621,7 +1681,7 @@ gsap.timeline({
       gsap.to(['.grid-wrap', 'footer'], {
         y: -80, opacity: 0, duration: 0.5, ease: 'power2.in'
       });
-      gsap.to([active, next], {
+      gsap.to(elems, {
         y: -50, opacity: 0, duration: .45, ease: 'power2.in', stagger: .08,
         onComplete() { window.location.href = PAGES[nIdx].url; }
       });
@@ -1698,6 +1758,15 @@ gsap.timeline({
     requestAnimationFrame(function(){
       o.style.transition='opacity 0.35s ease';
       o.style.opacity='0';
+    });
+  });
+  window.addEventListener('pageshow',function(e){
+    if(!e.persisted)return;
+    o.style.transition='none';
+    o.style.opacity='0';
+    o.style.pointerEvents='none';
+    requestAnimationFrame(function(){
+      o.style.transition='opacity 0.35s ease';
     });
   });
   document.addEventListener('click',function(e){
