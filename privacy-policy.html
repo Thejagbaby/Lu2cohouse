@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | LU2COHOUSE</title>
+  <script>
+    (function(){
+      var p = 'privacy-policy.html';
+      if (window.matchMedia('(max-width: 767px)').matches)
+        location.replace('./m/' + p);
+      else if (window.matchMedia('(max-width: 1599px)').matches)
+        location.replace('./l/' + p);
+      else
+        location.replace('./d/' + p);
+    })();
+  </script>
+</head>
+<body></body>
+</html>
