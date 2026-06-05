@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LU2COHOUSE × Pinterest | Auto-Pin Products</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff9f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;color:#3d2b30}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,249,249,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(139,103,112,0.15);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:Georgia,serif;font-size:1.1rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#5a3d45;text-decoration:none}
+.nav-p{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#8b6770}
+.nav-p svg{width:16px;height:16px;fill:#E60023}
+
+/* HERO */
+.hero{padding:120px 2rem 60px;max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-left{}
+.eyebrow{font-size:.625rem;letter-spacing:.22em;text-transform:uppercase;color:#8b6770;margin-bottom:1.2rem}
+.hero-title{font-family:Georgia,serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;color:#3d2b30;line-height:1.15;margin-bottom:1.2rem;letter-spacing:-.01em}
+.hero-title em{font-style:italic;color:#8b6770}
+.hero-desc{font-size:.9375rem;font-weight:300;color:rgba(61,43,48,0.65);line-height:1.8;margin-bottom:2rem;max-width:360px}
+.connect-btn{display:inline-flex;align-items:center;gap:10px;background:#E60023;color:#fff;border:none;border-radius:50px;padding:14px 28px;font-size:.875rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s}
+.connect-btn:hover{background:#c0001e}
+.connect-btn svg{width:18px;height:18px;fill:#fff}
+.hero-note{margin-top:1rem;font-size:.75rem;color:rgba(61,43,48,0.4);font-weight:300}
+
+/* PRODUCT GRID PREVIEW */
+.hero-right{}
+.product-stack{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.p-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 20px rgba(61,43,48,0.07);position:relative}
+.p-card img{width:100%;height:140px;object-fit:cover;display:block;background:#f4dada}
+.p-card-body{padding:10px 12px 12px}
+.p-card-name{font-size:.75rem;font-weight:600;color:#3d2b30;letter-spacing:.02em;margin-bottom:2px}
+.p-card-sub{font-size:.625rem;color:rgba(61,43,48,0.45);font-weight:300}
+.p-pin-badge{position:absolute;top:8px;right:8px;background:#E60023;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center}
+.p-pin-badge svg{width:13px;height:13px;fill:#fff}
+
+/* STEPS */
+.steps-section{background:#fff;border-top:1px solid rgba(139,103,112,0.1);padding:60px 2rem}
+.steps-inner{max-width:900px;margin:0 auto}
+.steps-label{font-size:.625rem;letter-spacing:.22em;text-transform:uppercase;color:#8b6770;margin-bottom:1.5rem;text-align:center}
+.steps-title{font-family:Georgia,serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;color:#3d2b30;text-align:center;margin-bottom:3rem}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.step-box{text-align:center}
+.step-num{width:40px;height:40px;border-radius:50%;background:rgba(230,0,35,0.08);color:#E60023;font-size:.875rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.step-box h3{font-size:.875rem;font-weight:600;color:#3d2b30;margin-bottom:.5rem}
+.step-box p{font-size:.8125rem;font-weight:300;color:rgba(61,43,48,0.6);line-height:1.7}
+
+/* CONNECTED STATE (hidden by default) */
+.connected-state{display:none;padding:48px 2rem;max-width:900px;margin:0 auto}
+.connected-badge{display:inline-flex;align-items:center;gap:8px;background:#e8faf0;color:#15803d;border-radius:8px;padding:8px 16px;font-size:.8125rem;font-weight:700;margin-bottom:1.5rem}
+.connected-title{font-family:Georgia,serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;color:#3d2b30;margin-bottom:.5rem}
+.connected-sub{font-size:.875rem;color:rgba(61,43,48,0.55);font-weight:300;margin-bottom:2.5rem}
+
+/* BOARDS */
+.boards-label{font-size:.5625rem;letter-spacing:.22em;text-transform:uppercase;color:#8b6770;margin-bottom:.75rem}
+.boards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-bottom:2.5rem}
+.board-chip{background:#fff;border:1px solid rgba(139,103,112,0.15);border-radius:10px;padding:12px 14px}
+.board-chip-name{font-size:.8125rem;font-weight:600;color:#3d2b30}
+.board-chip-id{font-size:.625rem;color:rgba(61,43,48,0.4);margin-top:2px}
+
+/* OAUTH STEPS */
+.oauth-card{background:#fff;border-radius:14px;padding:24px;margin-bottom:2rem;border:1px solid rgba(139,103,112,0.12)}
+.oauth-label{font-size:.5625rem;letter-spacing:.22em;text-transform:uppercase;color:#8b6770;margin-bottom:1rem}
+.oauth-steps{display:flex;flex-direction:column;gap:10px}
+.oauth-step{display:flex;align-items:center;gap:12px;font-size:.8125rem;color:#5a3d45}
+.oauth-dot{width:8px;height:8px;border-radius:50%;background:#E60023;flex-shrink:0}
+
+/* INTEGRATION CARD */
+.integration-card{background:#fff;border-radius:14px;padding:24px;border:1px solid rgba(139,103,112,0.12)}
+.integration-label{font-size:.5625rem;letter-spacing:.22em;text-transform:uppercase;color:#8b6770;margin-bottom:1rem}
+.integration-steps{display:flex;flex-direction:column;gap:10px}
+.integration-step{display:flex;align-items:center;gap:12px;font-size:.8125rem;color:#5a3d45}
+
+@media(max-width:700px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:100px 1.25rem 40px}
+  .steps-grid{grid-template-columns:1fr}
+  .product-stack{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://lu2cohouse.com" class="nav-logo">LU2COHOUSE</a>
+  <div class="nav-p">
+    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+    Pinterest Integration
+  </div>
+</nav>
+
+<!-- LANDING STATE -->
+<div id="landing">
+  <div class="hero">
+    <div class="hero-left">
+      <p class="eyebrow">LU2COHOUSE · Pinterest API</p>
+      <h1 class="hero-title">Auto-pin your<br>products to <em>Pinterest</em></h1>
+      <p class="hero-desc">Connect your Pinterest business account to automatically publish new sewing patterns and products directly to your Pinterest boards — no manual posting needed.</p>
+      <a href="/pinterest-callback" class="connect-btn" id="connectBtn">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        Connect with Pinterest
+      </a>
+      <p class="hero-note">You'll be redirected to Pinterest to authorise access.</p>
+    </div>
+    <div class="hero-right">
+      <div class="product-stack">
+        <div class="p-card">
+          <img src="https://lu2cohouse.com/assets/products/product%201/1.jpg" alt="Hooded Quilted Jacket">
+          <div class="p-pin-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></div>
+          <div class="p-card-body">
+            <div class="p-card-name">Hooded Quilted Jacket</div>
+            <div class="p-card-sub">XXS–5XL · PDF Pattern</div>
+          </div>
+        </div>
+        <div class="p-card">
+          <img src="https://lu2cohouse.com/assets/products/product%202/1.webp" alt="Blossom Quilt Coat">
+          <div class="p-pin-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></div>
+          <div class="p-card-body">
+            <div class="p-card-name">Blossom Quilt Coat</div>
+            <div class="p-card-sub">XXS–5XL · PDF Pattern</div>
+          </div>
+        </div>
+        <div class="p-card">
+          <img src="https://lu2cohouse.com/assets/products/product%203/1.webp" alt="Siena Quilt Coat">
+          <div class="p-pin-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></div>
+          <div class="p-card-body">
+            <div class="p-card-name">Siena Quilt Coat</div>
+            <div class="p-card-sub">XXS–5XL · PDF Pattern</div>
+          </div>
+        </div>
+        <div class="p-card">
+          <img src="https://lu2cohouse.com/assets/products/product%204/1.webp" alt="Florence Quilt Coat">
+          <div class="p-pin-badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></div>
+          <div class="p-card-body">
+            <div class="p-card-name">Florence Quilt Coat</div>
+            <div class="p-card-sub">XXS–5XL · PDF Pattern</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps-section">
+    <div class="steps-inner">
+      <p class="steps-label">How it works</p>
+      <h2 class="steps-title">Three steps to auto-publish your products</h2>
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-num">1</div>
+          <h3>Connect your Pinterest</h3>
+          <p>Click the button above. You'll be redirected to Pinterest to authorise LU2COHOUSE access via OAuth 2.0.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">2</div>
+          <h3>Select your board</h3>
+          <p>After connecting, your Pinterest boards are retrieved via the API. Choose where new products should be pinned.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-num">3</div>
+          <h3>Products auto-post</h3>
+          <p>New patterns are automatically published as Pins with the product image, title, description and link to your shop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT: redirect Connect button to real OAuth, handle callback -->
+<script>
+(function(){
+  var APP_ID = '1576745';
+  var REDIRECT = 'http://localhost:8080/callback';
+
+  // If we're on the callback page with a code, show success
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get('code');
+
+  document.getElementById('connectBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    var state = Math.random().toString(36).slice(2);
+    sessionStorage.setItem('pint_state', state);
+    var url = 'https://www.pinterest.com/oauth/'
+      + '?client_id=' + APP_ID
+      + '&redirect_uri=' + encodeURIComponent(REDIRECT)
+      + '&response_type=code'
+      + '&scope=pins:read,boards:read,pins:write,boards:write,user_accounts:read'
+      + '&state=' + state;
+    window.location.href = url;
+  });
+})();
+</script>
+</body>
+</html>
