@@ -191,6 +191,7 @@
     .mob-menu.is-open .mob-link:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.43s; }
     .mob-menu.is-open .mob-link:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.50s; }
     .mob-menu.is-open .mob-link:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.57s; }
+    .mob-menu.is-open .mob-link:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 0.64s; }
     .mob-link--active { color: #fff !important; font-weight: 500; }
     .mob-link:active { color: #fff; }
     .mob-etsy-logo-wrap {
@@ -1452,8 +1453,9 @@
   <div class="mob-menu-inner">
     <a href="index.html" class="mob-link">Home</a>
     <a href="jackets.html" class="mob-link  mob-link--active">Jackets</a>
-    <a href="vests.html" class="mob-link">Vests</a>
-    <a href="blouses.html" class="mob-link">Blouses</a>
+    <a href="tops.html" class="mob-link">Tops</a>
+    <a href="jumpsuits.html" class="mob-link">Jumpsuits</a>
+    <a href="dresses.html" class="mob-link">Dresses</a>
     <a href="pants.html" class="mob-link">Pants</a>
     <a href="shop-all.html" class="mob-link">Shop All</a>
     <a href="guides.html" class="mob-link">Guides</a>
@@ -1759,6 +1761,13 @@ const PRODUCTS = [
     desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the quilted jacket</li><li>Comprehensive step-by-step instruction booklet to guide your sewing guidance</li><li>Printable pattern pieces marked clearly for easy cutting and assembly</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Materials Needed</div><div class="pm-desc-text">Medium to heavy coat fabrics such as wool blends, bouclé, tweed, or other structured synthetics. Seam allowance already added: 1 cm.</div></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
     imgs: ['assets/products/Product 38/1.webp','assets/products/Product 38/2.webp','assets/products/Product 38/3.webp','assets/products/Product 38/4.webp','assets/products/Product 38/5.webp','assets/products/Product 38/6.webp','assets/products/Product 38/7.webp','assets/products/Product 38/8.webp','assets/products/Product 38/9.webp'],
     url: 'https://www.etsy.com/listing/4426111922/wool-jacket-sewing-pattern-beginner'
+  },
+  {
+    short: 'Funnel Collar Jacket',
+    slug: 'funnel-collar-jacket',
+    desc: `<div class="pm-desc-block"><div class="pm-desc-label">Size Range</div><div class="pm-desc-text">XXS, XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</div></div><div class="pm-desc-block"><div class="pm-desc-label">Pattern Formats</div><div class="pm-desc-text">A4, US Letter, A0 (print shop friendly)</div></div><div class="pm-desc-block"><div class="pm-desc-label">Included With Your Pattern</div><ul class="pm-desc-list"><li>Detailed PDF sewing patterns to craft the funnel collar jacket</li><li>Comprehensive step-by-step instruction booklet with fabric recommendations, dimensions, and sewing guidance</li><li>Printable pattern pieces marked clearly for easy cutting and assembly</li></ul></div><div class="pm-desc-block"><div class="pm-desc-label">Fabric Suggestions</div><div class="pm-desc-text">Pre-Quilted Cotton, Nylon or Polyester, Denim, Wool or Wool Blends, Velvet or Velour</div></div><div class="pm-desc-block"><div class="pm-desc-label">What You'll Receive</div><ul class="pm-desc-list"><li>US Letter printable pattern</li><li>A4 printable pattern</li><li>A0 printable pattern (print shop)</li><li>Detailed instruction manual with fabric recommendations, dimensions, pattern assembly instructions, and sewing guidance</li></ul></div><div class="pm-desc-note">Quality Guarantee: Rigorously tested. Money Back Guarantee if unsatisfied.<br>Digital Product · Instant Download</div>`,
+    imgs: ['assets/products/Product 48/1.png','assets/products/Product 48/2.png','assets/products/Product 48/3.png','assets/products/Product 48/4.jpeg','assets/products/Product 48/5.jpeg','assets/products/Product 48/6.png','assets/products/Product 48/7.png','assets/products/Product 48/8.jpeg','assets/products/Product 48/9.png'],
+    url: 'https://www.etsy.com/listing/4517055269/funnel-collar-jacket-sewing-pattern'
   },
 ];
 
@@ -2109,8 +2118,9 @@ gsap.to('#pageHeading', { yPercent: 0, duration: 1.15, ease: 'power3.out', delay
 (function initSideNav() {
   const PAGES = [
     { name: 'Jackets',  sub: 'Quilted',  url: 'jackets.html'  },
-    { name: 'Vests',    sub: 'Knitted',  url: 'vests.html'    },
-    { name: 'Blouses',  sub: 'Woven',    url: 'blouses.html'  },
+    { name: 'Tops',     sub: 'Casual',   url: 'tops.html'     },
+    { name: 'Jumpsuits', sub: 'Flowy',   url: 'jumpsuits.html' },
+    { name: 'Dresses',  sub: 'Elegant', url: 'dresses.html'   },
     { name: 'Pants',    sub: 'Tailored', url: 'pants.html'    },
     { name: 'Shop All', sub: 'All',      url: 'shop-all.html' },
   ];
