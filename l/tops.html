@@ -846,12 +846,14 @@ if (PRODUCTS.length === 1) {
   PRODUCTS.forEach((p, i) => cols[i % 3].appendChild(makeCard(p, i)));
 }
 
-/* Fill last row so it always ends with 3 visible cards */
+/* Fill last row — clones are invisible to prevent duplicate products showing */
 if (PRODUCTS.length >= 3) {
   const maxLen = Math.max(...cols.map(c => c.children.length));
   cols.forEach(col => {
     while (col.children.length < maxLen) {
       const clone = col.lastElementChild.cloneNode(true);
+      clone.style.opacity = '0';
+      clone.style.pointerEvents = 'none';
       col.appendChild(clone);
     }
   });
