@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://lu2cohouse.com/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,31 +12,37 @@
   <!-- Product Category Pages -->
   <url>
     <loc>https://lu2cohouse.com/l/jackets.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lu2cohouse.com/l/vests.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <loc>https://lu2cohouse.com/l/tops.html</loc>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lu2cohouse.com/l/blouses.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <loc>https://lu2cohouse.com/l/jumpsuits.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/dresses.html</loc>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/pants.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/shop-all.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -44,37 +50,37 @@
   <!-- SEO Blog Posts -->
   <url>
     <loc>https://lu2cohouse.com/l/seo/posts/siena-quilt-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/seo/posts/hooded-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/seo/posts/blossom-quilted-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/seo/posts/blossom-quilted-vest.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/seo/posts/funnel-neck-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/seo/posts/laurel-crop-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -82,274 +88,337 @@
   <!-- Supporting Pages -->
   <url>
     <loc>https://lu2cohouse.com/l/guides.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/faq.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/contact.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/digital-download-policy.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
-
+  <!-- Product Pages — Jackets -->
   <url>
     <loc>https://lu2cohouse.com/l/products/siena-quilt-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/hooded-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/beginner-hooded-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/florence-quilt-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/blossom-quilt-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/rosa-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/laurel-crop-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/funnel-neck-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/hooded-quilted-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/nora-quilt-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/lirio-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/wool-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/mariner-quilt-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/siena-quilted-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/valentine-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/sunset-patchwork-coat.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/haven-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/funnel-neck-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/cloud-crop-cardigan.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/siena-quilt-coat-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/siena-quilt-coat-iii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/laurel-crop-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/hooded-jacket-iii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/artful-quilted-jacket.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/blossom-quilt-coat-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/rosa-quilted-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/nora-quilt-coat-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/laurel-crop-jacket-iii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/quilted-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/florence-quilt-coat-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/wool-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/side-tie-tank-blouse.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/sleeveless-blouse.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/evania-blouse.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/nova-pants.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/quilted-vest.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lu2cohouse.com/l/products/jersey-puffer-vest.html</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
   <url>
     <loc>https://lu2cohouse.com/l/products/beginner-hooded-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/cashmere-cardigan.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lu2cohouse.com/l/products/lirio-quilted-jacket-ii.html</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/funnel-collar-jacket.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Product Pages — Tops -->
+  <url>
+    <loc>https://lu2cohouse.com/l/products/side-tie-tank-blouse.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/sleeveless-blouse.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/evania-blouse.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/side-tie-tank-blouse-ii.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Product Pages — Jumpsuits & Dresses -->
+  <url>
+    <loc>https://lu2cohouse.com/l/products/sedona-jumpsuit.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/clara-jumpsuit.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/leila-jumpsuit.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/leila-playsuit.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/leila-dress.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/linen-bias-dress.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Product Pages — Pants -->
+  <url>
+    <loc>https://lu2cohouse.com/l/products/nova-pants.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Product Pages — Skirts -->
+  <url>
+    <loc>https://lu2cohouse.com/l/products/clara-skirt.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Product Pages — Vests (legacy, kept for redirect coverage) -->
+  <url>
+    <loc>https://lu2cohouse.com/l/products/quilted-vest.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lu2cohouse.com/l/products/jersey-puffer-vest.html</loc>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
