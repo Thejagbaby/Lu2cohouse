@@ -127,96 +127,6 @@
 
     html { scroll-behavior: auto; }
 
-    /* ─── SPIRAL OUTRO ─── */
-    #spiral-outro {
-      position: fixed;
-      inset: 0;
-      z-index: 10001;
-      background: #000;
-      overflow: hidden;
-    }
-    #spiral-outro-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-    }
-    #spiral-outro-enter {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      opacity: 0;
-      transform: translateY(1rem);
-      transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-    }
-    #spiral-outro-enter.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    #spiral-outro-enter button {
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-      font-size: 1.5rem;
-      font-weight: 200;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 0;
-      transition: letter-spacing 0.7s cubic-bezier(0.4, 0, 0.6, 1);
-      animation: spiralPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    #spiral-outro-enter button:hover { letter-spacing: 0.3em; }
-    #spiral-outro-enter button:focus-visible {
-      outline: 1px solid rgba(255,255,255,0.5);
-      outline-offset: 6px;
-    }
-    @keyframes spiralPulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.5; }
-    }
-
-    /* ─── PRELOADER ─── */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    #preloader-brand {
-      position: absolute;
-      font-family: 'TeX Gyre Termes', var(--font-serif);
-      font-size: clamp(4rem, 9vw, 8rem);
-      font-weight: 400;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      color: #ffffff;
-      line-height: 1;
-      white-space: nowrap;
-      will-change: transform;
-      font-variant-numeric: lining-nums;
-      font-feature-settings: "lnum" 1;
-      opacity: 0;
-    }
-    #preloader-count {
-      position: absolute;
-      font-family: var(--font-sans);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      color: #ffffff;
-      font-variant-numeric: tabular-nums;
-      will-change: transform;
-      opacity: 0;
-    }
 
     body {
       margin: 0;
@@ -2555,11 +2465,6 @@
 <body>
 <div id="page-overlay"></div>
 
-<!-- ─── PRELOADER ─── -->
-<div id="preloader">
-  <span id="preloader-brand">LU2CO</span>
-  <span id="preloader-count">0%</span>
-</div>
 
 <!-- ─── PRODUCT MODAL ─── -->
 <div class="prod-modal" id="prodModal" role="dialog" aria-modal="true">
@@ -2587,13 +2492,6 @@
   </div>
 </div>
 
-<!-- ─── SPIRAL OUTRO ─── -->
-<div id="spiral-outro">
-  <canvas id="spiral-outro-canvas"></canvas>
-  <div id="spiral-outro-enter">
-    <button id="spiral-outro-btn">Enter</button>
-  </div>
-</div>
 
 <!-- ─── NAVIGATION ─── -->
 <nav id="nav">
@@ -3290,24 +3188,15 @@ ScrollTrigger.create({
   onUpdate: self => document.getElementById('nav').classList.toggle('scrolled', self.progress > 0)
 });
 
-/* ── SPIRAL INTRO → PRELOADER → ENTRANCE ── */
+/* ── ENTRANCE ── */
 (function() {
-  /* ── refs ── */
-  const outro     = document.getElementById('spiral-outro');
-  const oCanvas   = document.getElementById('spiral-outro-canvas');
-  const oEnterEl  = document.getElementById('spiral-outro-enter');
-  const oEnterBtn = document.getElementById('spiral-outro-btn');
-  const preloader = document.getElementById('preloader');
-  const brandEl   = document.getElementById('preloader-brand');
-  const countEl   = document.getElementById('preloader-count');
-  const nav       = document.getElementById('nav');
+  const nav = document.getElementById('nav');
 
-  /* pre-split hero chars */
   const wordEls = document.querySelectorAll('.t-word');
   wordEls.forEach(word => {
     const text = word.textContent;
     word.innerHTML = [...text].map(ch =>
-      `<span class="char-clip"><span class="char">${ch === ' ' ? ' ' : ch}</span></span>`
+      `<span class="char-clip"><span class="char">${ch === ' ' ? ' ' : ch}</span></span>`
     ).join('');
   });
   gsap.set('.char',        { yPercent: 110 });
@@ -3315,332 +3204,14 @@ ScrollTrigger.create({
   gsap.set('#hero-sub',    { opacity: 0, y: 30 });
   gsap.set('#hero-scroll', { opacity: 0, y: 20 });
 
-  /* skip spiral if user has already entered this session */
-  if (sessionStorage.getItem('lu2co_entered')) {
-    outro.style.display = 'none';
-    runPreloader();
-    return;
-  }
-
-  /* first visit — hide preloader so spiral plays cleanly */
-  preloader.style.display = 'none';
-
-  /* ─────────────────────────────────────────────
-     STEP 1 — spiral animation (faithful 1:1 port
-     of the original React/TS component)
-  ───────────────────────────────────────────── */
-  const dpr  = window.devicePixelRatio || 1;
-  const W    = window.innerWidth;
-  const H    = window.innerHeight;
-  const size = Math.max(W, H);
-
-  /* canvas: internal size×size, CSS W×H — matches original exactly */
-  oCanvas.width        = size * dpr;
-  oCanvas.height       = size * dpr;
-  oCanvas.style.width  = W + 'px';
-  oCanvas.style.height = H + 'px';
-
-  const ctx = oCanvas.getContext('2d');
-  ctx.scale(dpr, dpr);
-
-  /* constants — unchanged from original */
-  const CHANGE_T   = 0.32;
-  const CAMERA_Z   = -400;
-  const TRAVEL     = 3400;
-  const Y_OFFSET   = 28;
-  const VIEW_ZOOM  = 100;
-  const TRAIL_LEN  = 80;
-
-  /* math helpers */
-  function ease(p, g) {
-    return p < 0.5 ? 0.5 * Math.pow(2*p, g) : 1 - 0.5 * Math.pow(2*(1-p), g);
-  }
-  function easeOutElastic(x) {
-    if (x <= 0) return 0; if (x >= 1) return 1;
-    const c4 = (2 * Math.PI) / 4.5;
-    return Math.pow(2, -8*x) * Math.sin((x*8 - 0.75) * c4) + 1;
-  }
-  function mapRange(v, s1, e1, s2, e2) { return s2 + (e2-s2) * ((v-s1)/(e1-s1)); }
-  function constrain(v, lo, hi)        { return Math.min(Math.max(v, lo), hi); }
-  function lerp(a, b, t)               { return a*(1-t) + b*t; }
-
-  function spiralPath(p) {
-    p = constrain(1.2*p, 0, 1);
-    p = ease(p, 1.8);
-    const theta = 2 * Math.PI * 6 * Math.sqrt(p);
-    const r     = 170 * Math.sqrt(p);
-    return { x: r*Math.cos(theta), y: r*Math.sin(theta) + Y_OFFSET };
-  }
-
-  function rotate(v1, v2, p, orientation) {
-    const mx = (v1.x+v2.x)/2, my = (v1.y+v2.y)/2;
-    const dx = v1.x-mx, dy = v1.y-my;
-    const angle = Math.atan2(dy, dx);
-    const o = orientation ? -1 : 1;
-    const r = Math.sqrt(dx*dx + dy*dy);
-    const bounce = Math.sin(p*Math.PI) * 0.05 * (1-p);
-    const a2 = angle + o * Math.PI * easeOutElastic(p);
-    return { x: mx + r*(1+bounce)*Math.cos(a2), y: my + r*(1+bounce)*Math.sin(a2) };
-  }
-
-  /* showProjectedDot — growBlend 0→1 smoothly lerps radius from 0.5 to sw-based size */
-  function showProjectedDot(time, pos, sizeFactor, growBlend) {
-    const t2    = constrain(mapRange(time, CHANGE_T, 1, 0, 1), 0, 1);
-    const camZ  = CAMERA_Z + ease(Math.pow(t2, 1.2), 1.8) * TRAVEL;
-    if (pos.z <= camZ) return;
-    const depth = pos.z - camZ;
-    const x     = VIEW_ZOOM * pos.x / depth;
-    const y     = VIEW_ZOOM * pos.y / depth;
-    const sw    = 400 * sizeFactor / depth;
-    ctx.lineWidth = sw;
-    const bigR = Math.min(sw * 0.6, 16);
-    const r    = 0.5 + (bigR - 0.5) * (growBlend || 0);
-    ctx.beginPath();
-    ctx.arc(x, y, Math.max(0.5, r), 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  /* seeded stars — same seed & formula as original setupRandomGenerator */
-  let seed = 1234;
-  function seededRand() {
-    seed = (seed * 9301 + 49297) % 233280;
-    return seed / 233280;
-  }
-
-  const stars = [];
-  for (let i = 0; i < 14000; i++) {
-    const angle   = seededRand() * Math.PI * 2;
-    const dist    = 30 * seededRand() + 15;
-    const rotDir  = seededRand() > 0.5 ? 1 : -1;
-    const expRate = 1.2 + seededRand() * 0.8;     /* original range */
-    const fScale  = 0.7 + seededRand() * 0.6;
-    let   sl      = (1 - Math.pow(1 - seededRand(), 3.0)) / 1.3;
-    let   z       = lerp(seededRand() * 0.5 * CAMERA_Z + CAMERA_Z * 0.5, TRAVEL + CAMERA_Z, seededRand());
-    z = lerp(z, TRAVEL / 2, 0.3 * sl);
-    stars.push({
-      angle, dist, rotDir, expRate, fScale,
-      dx: dist * Math.cos(angle), dy: dist * Math.sin(angle),
-      sl, z, sw: Math.pow(seededRand(), 2.0)
-    });
-  }
-
-  const _animStart = performance.now();
-
-  /* render — matches original render() + drawTrail() + Star.render() exactly */
-  function renderFrame(time) {
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, size, size);
-    ctx.save();
-    ctx.translate(size / 2, size / 2);
-
-    const t1 = constrain(mapRange(time, 0, CHANGE_T + 0.25, 0, 1), 0, 1);
-    const t2 = constrain(mapRange(time, CHANGE_T, 1, 0, 1), 0, 1);
-    const realSec = (performance.now() - _animStart) / 1000;
-    /* ease-based rotation + continuous spin that ramps up with t2 */
-    ctx.rotate(-Math.PI * ease(t2, 2.7) - realSec * 0.18 * t2);
-
-    /* drawTrail */
-    for (let i = 0; i < TRAIL_LEN; i++) {
-      const f   = mapRange(i, 0, TRAIL_LEN, 1.1, 0.1);
-      const sw  = (1.3*(1-t1) + 3.0*Math.sin(Math.PI*t1)) * f;
-      ctx.fillStyle  = 'white';
-      ctx.lineWidth  = sw;
-      const pt  = spiralPath(t1 - 0.00015*i);
-      const off = { x: pt.x+5, y: pt.y+5 };
-      const rot = rotate(pt, off, Math.sin(time*Math.PI*2)*0.5+0.5, i%2===0);
-      ctx.beginPath();
-      ctx.arc(rot.x, rot.y, sw/2, 0, Math.PI*2);
-      ctx.fill();
-    }
-
-    /* stars — Star.render() */
-    ctx.fillStyle = 'white';
-    for (const s of stars) {
-      const q = t1 - s.sl;
-      if (q <= 0) continue;
-      const dp = constrain(4*q, 0, 1);
-      const sp = spiralPath(s.sl);
-      let sx, sy;
-
-      if (dp < 0.3) {
-        const lin  = dp, pow = Math.pow(dp, 2);
-        const ea   = lerp(lin, pow, dp/0.3);
-        sx = lerp(sp.x, sp.x + s.dx*0.3, ea/0.3);
-        sy = lerp(sp.y, sp.y + s.dy*0.3, ea/0.3);
-      } else if (dp < 0.7) {
-        const mp  = (dp-0.3)/0.4;
-        const cs  = Math.sin(mp*Math.PI) * s.rotDir * 1.5;
-        const bx  = sp.x + s.dx*0.3, by = sp.y + s.dy*0.3;
-        const tx2 = sp.x + s.dx*0.7, ty2 = sp.y + s.dy*0.7;
-        sx = lerp(bx, tx2, mp) + (-s.dy*0.4*cs)*mp;
-        sy = lerp(by, ty2, mp) + ( s.dx*0.4*cs)*mp;
-      } else {
-        const fp  = (dp-0.7)/0.3;
-        const bx  = sp.x + s.dx*0.7, by = sp.y + s.dy*0.7;
-        const td  = s.dist * s.expRate * 1.5;
-        const sa  = s.angle + 1.2 * s.rotDir * fp * Math.PI;
-        sx = lerp(bx, sp.x + td*Math.cos(sa), fp);
-        sy = lerp(by, sp.y + td*Math.sin(sa), fp);
-      }
-
-      const vx = (s.z - CAMERA_Z) * sx / VIEW_ZOOM;
-      const vy = (s.z - CAMERA_Z) * sy / VIEW_ZOOM;
-
-      let sm;
-      if (dp < 0.6) {
-        sm = 1.0 + dp*0.2;
-      } else {
-        const t = (dp-0.6)/0.4;
-        sm = 1.2*(1-t) + s.fScale*t;
-      }
-
-      const t2Blend = constrain((t2 - 0.1) / 0.9, 0, 1);
-      showProjectedDot(time, { x: vx, y: vy, z: s.z }, 8.5 * s.sw * sm, t2Blend);
-    }
-
-    /* drawStartDot */
-    if (time > CHANGE_T) {
-      const dy = CAMERA_Z * Y_OFFSET / VIEW_ZOOM;
-      showProjectedDot(time, { x: 0, y: dy, z: TRAVEL }, 2.5);
-    }
-
-    ctx.restore();
-  }
-
-  /* GSAP — play spiral once, then hand off to infinite warp */
-  let warpAnimId = null;
-  const state = { t: 0 };
-  const tween = gsap.to(state, {
-    t: 1, duration: 15, ease: 'none', repeat: 0,
-    onUpdate: () => renderFrame(state.t),
-    onComplete: startInfiniteWarp
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.to(nav, { opacity: 1, duration: 3.0, ease: 'power2.inOut' }, 1.8);
+  wordEls.forEach((word, wi) => {
+    tl.to(word.querySelectorAll('.char'), { yPercent: 0, duration: 1.6, ease: 'power2.out' }, 1.1 + wi*0.15);
   });
-
-  /* infinite warp — camera keeps flying, canvas keeps rotating, stars respawn ahead */
-  function startInfiniteWarp() {
-    let warpCamZ  = CAMERA_Z + TRAVEL;
-    let warpAngle = -Math.PI;
-    let warpLast  = null;
-
-    function warpFrame(now) {
-      if (warpLast === null) warpLast = now;
-      const dt = Math.min((now - warpLast) / 1000, 0.05);
-      warpLast = now;
-
-      warpCamZ  += 100 * dt;
-      warpAngle -= 0.18 * dt;
-
-      ctx.fillStyle = 'black';
-      ctx.fillRect(0, 0, size, size);
-      ctx.save();
-      ctx.translate(size / 2, size / 2);
-      ctx.rotate(warpAngle);
-      ctx.fillStyle = 'white';
-
-      for (const s of stars) {
-        const sp = spiralPath(s.sl);
-        const td = s.dist * s.expRate * 1.5;
-        const sa = s.angle + 1.2 * s.rotDir * Math.PI;
-        const sx = sp.x + td * Math.cos(sa);
-        const sy = sp.y + td * Math.sin(sa);
-
-        /* wrap star z ahead of camera so it never runs out */
-        let starZ = s.z;
-        while (starZ < warpCamZ - 10) starZ += TRAVEL;
-
-        const depth = starZ - warpCamZ;
-        if (depth < 10) continue;
-
-        const vx  = (starZ - CAMERA_Z) * sx / VIEW_ZOOM;
-        const vy  = (starZ - CAMERA_Z) * sy / VIEW_ZOOM;
-        const px  = VIEW_ZOOM * vx / depth;
-        const py  = VIEW_ZOOM * vy / depth;
-        const sw  = 400 * (8.5 * s.sw * s.fScale) / depth;
-        const r   = Math.min(sw * 0.6, 16);
-
-        ctx.beginPath();
-        ctx.arc(px, py, Math.max(0.5, r), 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      ctx.restore();
-      warpAnimId = requestAnimationFrame(warpFrame);
-    }
-
-    warpAnimId = requestAnimationFrame(warpFrame);
-  }
-
-  /* Enter button — fades in after 2s, matching demo.tsx useEffect timer */
-  setTimeout(() => { oEnterEl.classList.add('visible'); }, 2000);
-
-  /* ─────────────────────────────────────────────
-     STEP 2 — Enter click → fade spiral → preloader
-  ───────────────────────────────────────────── */
-  oEnterBtn.addEventListener('click', function () {
-    oEnterBtn.disabled = true;
-    tween.pause();
-    if (warpAnimId !== null) { cancelAnimationFrame(warpAnimId); warpAnimId = null; }
-    sessionStorage.setItem('lu2co_entered', '1');
-
-    /* show preloader immediately */
-    runPreloader();
-
-    /* spiral fades out behind the preloader */
-    gsap.to(outro, {
-      opacity: 0, duration: 1.2, ease: 'power2.inOut',
-      onComplete() { outro.style.display = 'none'; }
-    });
-  }, { once: true });
-
-  /* ─────────────────────────────────────────────
-     STEP 3 — LU2CO preloader
-  ───────────────────────────────────────────── */
-  function runPreloader() {
-    preloader.style.display = 'flex';
-    gsap.set(preloader, { opacity: 1 });
-    document.fonts.load('400 1em "Cormorant Garamond"').then(() => {
-      gsap.to(brandEl, { opacity: 1, duration: 0.25, ease: 'power2.out' });
-    });
-    const obj = { val: 0 };
-    gsap.to(obj, {
-      val: 100, duration: 2.2, ease: 'power1.inOut',
-      onUpdate()   { countEl.textContent = Math.round(obj.val) + '%'; },
-      onComplete:  dismissPreloader
-    });
-    setTimeout(() => {
-      gsap.to(brandEl, { x: '30vw', scale: 0.55, duration: 0.9, ease: 'power2.inOut' });
-      gsap.fromTo(countEl,
-        { x: 0, opacity: 0 },
-        { x: '-35vw', opacity: 1, duration: 0.9, ease: 'power2.inOut' }
-      );
-    }, 700);
-  }
-
-  function dismissPreloader() {
-    gsap.fromTo(preloader,
-      { clipPath: 'inset(0% 0% 0% 0%)' },
-      {
-        clipPath: 'inset(0% 0% 100% 0%)',
-        duration: 0.85, ease: 'power3.inOut',
-        onStart()    { runEntrance(); },
-        onComplete() { preloader.style.display = 'none'; }
-      }
-    );
-  }
-
-  /* ─────────────────────────────────────────────
-     STEP 4 — site entrance (original unchanged)
-  ───────────────────────────────────────────── */
-  function runEntrance() {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.to(nav, { opacity: 1, duration: 3.0, ease: 'power2.inOut' }, 1.8);
-    wordEls.forEach((word, wi) => {
-      tl.to(word.querySelectorAll('.char'), { yPercent: 0, duration: 1.6, ease: 'power2.out' }, 1.1 + wi*0.15);
-    });
-    tl.to('#hero-sub',    { opacity: 1, y: 0, duration: 1.5, ease: 'power1.inOut' }, 2.4)
-      .to('#hero-scroll', { opacity: 1, y: 0, duration: 1.2, ease: 'power1.inOut' }, 3.2)
-      .call(() => gsap.set('.char', { clearProps: 'transform' }));
-  }
+  tl.to('#hero-sub',    { opacity: 1, y: 0, duration: 1.5, ease: 'power1.inOut' }, 2.4)
+    .to('#hero-scroll', { opacity: 1, y: 0, duration: 1.2, ease: 'power1.inOut' }, 3.2)
+    .call(() => gsap.set('.char', { clearProps: 'transform' }));
 })();
 
 /* ── 4. ABOUT SECTION ── */
