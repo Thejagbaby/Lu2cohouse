@@ -1,5 +1,11 @@
 {
   "redirects": [
-    { "source": "/privacy-policy", "destination": "/l/privacy-policy.html", "permanent": true }
+    { "source": "/privacy-policy", "destination": "/l/privacy-policy.html", "permanent": true },
+    { "source": "/seo/posts/siena-quilt-jacket", "destination": "/l/seo/posts/siena-quilt-jacket.html", "permanent": true },
+    { "source": "/seo/posts/blossom-quilted-coat", "destination": "/l/seo/posts/blossom-quilted-coat.html", "permanent": true },
+    { "source": "/seo/posts/blossom-quilted-vest", "destination": "/l/seo/posts/blossom-quilted-vest.html", "permanent": true },
+    { "source": "/seo/posts/hooded-quilted-jacket", "destination": "/l/seo/posts/hooded-quilted-jacket.html", "permanent": true },
+    { "source": "/seo/posts/funnel-neck-jacket", "destination": "/l/seo/posts/funnel-neck-jacket.html", "permanent": true },
+    { "source": "/seo/posts/laurel-crop-jacket", "destination": "/l/seo/posts/laurel-crop-jacket.html", "permanent": true }
   ]
 }
