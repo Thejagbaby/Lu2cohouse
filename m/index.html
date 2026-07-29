@@ -87,6 +87,10 @@
 
 
   <!-- Fonts -->
+  <!-- Hero image first — highest priority for LCP -->
+  <link rel="preload" as="image" href="assets/phonecov2.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../../Brand%20Logos/132.webp">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
@@ -97,10 +101,6 @@
   <noscript><link rel="stylesheet" href="https://fonts.cdnfonts.com/css/tex-gyre-termes"></noscript>
   <link rel="preload" href="https://db.onlinewebfonts.com/c/5da49843f66caf14799662bd12aa55a2?family=Dream+Avenue" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5da49843f66caf14799662bd12aa55a2?family=Dream+Avenue"></noscript>
-
-  <!-- Preload hero background at highest priority to eliminate black flash on load -->
-  <link rel="preload" as="image" href="assets/phonecov2.webp" type="image/webp">
-  <link rel="preload" as="image" href="../../Brand%20Logos/132.webp">
 
   <!-- Preload carousel product images at highest browser priority -->
   <!-- GSAP + ScrollTrigger -->
@@ -3122,7 +3122,7 @@
     <a href="shop-all.html" class="mob-link">Shop All</a>
     <a href="guides.html" class="mob-link">Guides</a>
     <div class="mob-video-card">
-      <video class="mob-video-img" src="assets/v1.mp4" autoplay muted loop playsinline></video>
+      <video class="mob-video-img" src="assets/v1.mp4" autoplay muted loop playsinline preload="none"></video>
     </div>
   </div>
   <div class="mob-etsy-logo-wrap">
